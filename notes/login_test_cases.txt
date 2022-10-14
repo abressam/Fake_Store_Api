@@ -2,7 +2,7 @@
 
 --> Valid Tests:
 
-Test Case 1: POST Login User 200
+Test Case 1: POST Login User
     Validate status code
     Validade response content
 
