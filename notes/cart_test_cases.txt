@@ -1,0 +1,36 @@
+# Cart
+
+--> Valid Tests:
+
+Test Case 1: GET List All Carts
+    Validate status code
+    Validade response content
+
+Test Case 2: GET Cart By ID
+    Validade status code
+    Validade response content
+
+Test Case 3: GET Limited List Of Carts
+    Validate status code
+    Validade response content
+
+Test Case 4: GET Carts In Descending Order
+    Validate status code
+    Validade response content
+    Validate first id number
+    Validate last id number
+
+Test Case 5: GET Carts In Ascending Order
+    Validate status code
+    Validade response content
+    Validate first id number
+    Validate last id number
+
+Test Case 6: GET Carts In Range Date
+    Validate status code
+    Validade response content
+_______________________________________________________
+_______________________________________________________
+
+--> Invalid Tests:
+
