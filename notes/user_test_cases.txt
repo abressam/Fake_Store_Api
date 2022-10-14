@@ -1,0 +1,100 @@
+# User
+
+--> Valid Tests:
+
+Test Case 1: GET List All Users 200
+    Validate status code
+    Validade response content
+
+Test Case 2: GET User By ID
+    Validade status code
+    Validade response content
+
+Test Case 3: GET Limited List Of User
+    Validate status code
+    Validade response content
+
+Test Case 4: GET Users In Descending Order
+    Validate status code
+    Validade response content
+    Validate first id number
+    Validate last id number
+
+Test Case 4: GET Users In Ascending Order
+    Validate status code
+    Validade response content
+    Validate first id number
+    Validate last id number
+
+Test Case 5: POST Add New User
+    Validate status code
+    Validade response content
+
+_______________________________________________________
+_______________________________________________________
+
+--> Invalid Tests:
+
+Test Case 1: GET User ID Does Not Exists
+    Validate status code
+    Validate message
+
+Test Case 2: GET Exceed The Number Of Users
+    Validate status code
+    Validate message
+
+Test Case 3: POST User With Invalid Email
+    Validate status code
+    Validade response message
+
+Test Case 4: POST User Without Email
+    Validate status code
+    Validade response message
+
+Test Case 5: POST User Without Username
+    Validate status code
+    Validade response message
+
+Test Case 6: POST User Without Password
+    Validate status code
+    Validade response message
+
+Test Case 7: POST User Without First Name
+    Validate status code
+    Validade response message
+
+Test Case 8: POST User Without Last Name
+    Validate status code
+    Validade response message
+
+Test Case 9: POST User Without City
+    Validate status code
+    Validade response message
+
+Test Case 10: POST User Without Street
+    Validate status code
+    Validade response message
+
+Test Case 11: POST User Without Number
+    Validate status code
+    Validade response message
+
+Test Case 12: POST User Without Zipcode
+    Validate status code
+    Validade response message
+
+Test Case 13: POST User Without Latitude
+    Validate status code
+    Validade response message
+
+Test Case 14: POST User Without Longitude
+    Validate status code
+    Validade response message
+
+Test Case 15: POST User Without Phone
+    Validate status code
+    Validade response message
+
+Test Case 16: POST User With Blank Spaces On Email
+    Validate status code
+    Validade response message
