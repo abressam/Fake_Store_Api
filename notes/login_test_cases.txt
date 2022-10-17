@@ -1,0 +1,16 @@
+# Login
+
+--> Valid Tests:
+
+Test Case 1: POST Login User
+    Validate status code
+    Validade response content
+
+_______________________________________________________
+_______________________________________________________
+
+--> Invalid Tests:
+
+Test Case 1: POST Login With User Does Not Exists
+    Validate status code
+    Validate message
