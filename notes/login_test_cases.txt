@@ -13,9 +13,9 @@ _______________________________________________________
 
 Test Case 1: POST Login With User Does Not Exists     --- OK
 
-Test Case 2: POST Login User Without Username
+Test Case 2: POST Login User Without Username     --- OK
 
-Test Case 3: POST Login With Without Password
+Test Case 3: POST Login With Without Password     --- OK
 
 Test Case 4: POST Login User With Blank Spaces Username     --- OK
 

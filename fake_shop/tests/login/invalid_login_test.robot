@@ -11,14 +11,14 @@ Test Case 1: POST Login With User Does Not Exists
     Print Return Status Code
     Print Return Message
 
-# Test is not executing
+# Test return status code 524 - Server Timeout 
 Test Case 2: POST Login User Without Username
     [Tags]    2
     Login Without Username
     Print Return Status Code
     Print Return Message
 
-# Test is not executing
+# Test return status code 524 - Server Timeout 
 Test Case 3: POST Login With Without Password
     [Tags]    3
     Login Without Password
