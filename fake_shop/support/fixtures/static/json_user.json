@@ -1,0 +1,317 @@
+{
+    "valid_user": {
+        "email": "gooduser@qa.com",
+        "username": "gooduser",
+        "password": "teste123",
+        "name": {
+            "firstname": "Good",
+            "lastname": "User"
+        },
+        "address": {
+            "city": "São Paulo",
+            "street": "Avenida Principal",
+            "number": 465,
+            "zipcode": "54785-9631",
+            "geolocation":{
+                "lat": "-35.6971",
+                "long": "10.3647"
+            }
+        },
+        "phone": "1-547-320-8954"
+    },
+
+    "user_invalid_email": {
+        "email": "invalid.com",
+        "username": "gooduser",
+        "password": "teste123",
+        "name": {
+            "firstname": "Good",
+            "lastname": "User"
+        },
+        "address": {
+            "city": "São Paulo",
+            "street": "Avenida Principal",
+            "number": 465,
+            "zipcode": "54785-9631",
+            "geolocation":{
+                "lat": "-35.6971",
+                "long": "10.3647"
+            }
+        },
+        "phone": "1-547-320-8954"
+    },
+
+    "user_without_email": {
+        "email": "",
+        "username": "gooduser",
+        "password": "teste123",
+        "name": {
+            "firstname": "Good",
+            "lastname": "User"
+        },
+        "address": {
+            "city": "São Paulo",
+            "street": "Avenida Principal",
+            "number": 465,
+            "zipcode": "54785-9631",
+            "geolocation":{
+                "lat": "-35.6971",
+                "long": "10.3647"
+            }
+        },
+        "phone": "1-547-320-8954"
+    },
+
+    "user_without_username": {
+        "email": "gooduser@qa.com",
+        "username": "",
+        "password": "teste123",
+        "name": {
+            "firstname": "Good",
+            "lastname": "User"
+        },
+        "address": {
+            "city": "São Paulo",
+            "street": "Avenida Principal",
+            "number": 465,
+            "zipcode": "54785-9631",
+            "geolocation":{
+                "lat": "-35.6971",
+                "long": "10.3647"
+            }
+        },
+        "phone": "1-547-320-8954"
+    },
+
+    "user_without_password": {
+        "email": "gooduser@qa.com",
+        "username": "gooduser",
+        "password": "",
+        "name": {
+            "firstname": "Good",
+            "lastname": "User"
+        },
+        "address": {
+            "city": "São Paulo",
+            "street": "Avenida Principal",
+            "number": 465,
+            "zipcode": "54785-9631",
+            "geolocation":{
+                "lat": "-35.6971",
+                "long": "10.3647"
+            }
+        },
+        "phone": "1-547-320-8954"
+    },
+
+    "user_without_firstname": {
+        "email": "gooduser@qa.com",
+        "username": "gooduser",
+        "password": "teste123",
+        "name": {
+            "firstname": "",
+            "lastname": "User"
+        },
+        "address": {
+            "city": "São Paulo",
+            "street": "Avenida Principal",
+            "number": 465,
+            "zipcode": "54785-9631",
+            "geolocation":{
+                "lat": "-35.6971",
+                "long": "10.3647"
+            }
+        },
+        "phone": "1-547-320-8954"
+    },
+
+    "user_without_lastname": {
+        "email": "gooduser@qa.com",
+        "username": "gooduser",
+        "password": "teste123",
+        "name": {
+            "firstname": "Good",
+            "lastname": ""
+        },
+        "address": {
+            "city": "São Paulo",
+            "street": "Avenida Principal",
+            "number": 465,
+            "zipcode": "54785-9631",
+            "geolocation":{
+                "lat": "-35.6971",
+                "long": "10.3647"
+            }
+        },
+        "phone": "1-547-320-8954"
+    },
+
+    "user_without_city": {
+        "email": "gooduser@qa.com",
+        "username": "gooduser",
+        "password": "teste123",
+        "name": {
+            "firstname": "Good",
+            "lastname": "User"
+        },
+        "address": {
+            "city": "",
+            "street": "Avenida Principal",
+            "number": 465,
+            "zipcode": "54785-9631",
+            "geolocation":{
+                "lat": "-35.6971",
+                "long": "10.3647"
+            }
+        },
+        "phone": "1-547-320-8954"
+    },
+
+    "user_without_street": {
+        "email": "gooduser@qa.com",
+        "username": "gooduser",
+        "password": "teste123",
+        "name": {
+            "firstname": "Good",
+            "lastname": "User"
+        },
+        "address": {
+            "city": "São Paulo",
+            "street": "",
+            "number": 465,
+            "zipcode": "54785-9631",
+            "geolocation":{
+                "lat": "-35.6971",
+                "long": "10.3647"
+            }
+        },
+        "phone": "1-547-320-8954"
+    },
+
+    "user_without_number": {
+        "email": "gooduser@qa.com",
+        "username": "gooduser",
+        "password": "teste123",
+        "name": {
+            "firstname": "Good",
+            "lastname": "User"
+        },
+        "address": {
+            "city": "São Paulo",
+            "street": "Avenida Principal",
+            "number": "",
+            "zipcode": "54785-9631",
+            "geolocation":{
+                "lat": "-35.6971",
+                "long": "10.3647"
+            }
+        },
+        "phone": "1-547-320-8954"
+    },
+
+    "user_without_zipcode": {
+        "email": "gooduser@qa.com",
+        "username": "gooduser",
+        "password": "teste123",
+        "name": {
+            "firstname": "Good",
+            "lastname": "User"
+        },
+        "address": {
+            "city": "São Paulo",
+            "street": "Avenida Principal",
+            "number": 465,
+            "zipcode": "",
+            "geolocation":{
+                "lat": "-35.6971",
+                "long": "10.3647"
+            }
+        },
+        "phone": "1-547-320-8954"
+    },
+
+    "user_without_lat": {
+        "email": "gooduser@qa.com",
+        "username": "gooduser",
+        "password": "teste123",
+        "name": {
+            "firstname": "Good",
+            "lastname": "User"
+        },
+        "address": {
+            "city": "São Paulo",
+            "street": "Avenida Principal",
+            "number": 465,
+            "zipcode": "54785-9631",
+            "geolocation":{
+                "lat": "",
+                "long": "10.3647"
+            }
+        },
+        "phone": "1-547-320-8954"
+    },
+
+    "user_without_long": {
+        "email": "gooduser@qa.com",
+        "username": "gooduser",
+        "password": "teste123",
+        "name": {
+            "firstname": "Good",
+            "lastname": "User"
+        },
+        "address": {
+            "city": "São Paulo",
+            "street": "Avenida Principal",
+            "number": 465,
+            "zipcode": "54785-9631",
+            "geolocation":{
+                "lat": "-35.6971",
+                "long": ""
+            }
+        },
+        "phone": "1-547-320-8954"
+    },
+
+    "user_without_phone": {
+        "email": "gooduser@qa.com",
+        "username": "gooduser",
+        "password": "teste123",
+        "name": {
+            "firstname": "Good",
+            "lastname": "User"
+        },
+        "address": {
+            "city": "São Paulo",
+            "street": "Avenida Principal",
+            "number": 465,
+            "zipcode": "54785-9631",
+            "geolocation":{
+                "lat": "-35.6971",
+                "long": "10.3647"
+            }
+        },
+        "phone": ""
+    },
+
+    "empty_user": {
+        "email": "",
+        "username": "",
+        "password": "",
+        "name": {
+            "firstname": "",
+            "lastname": ""
+        },
+        "address": {
+            "city": "",
+            "street": "",
+            "number": "",
+            "zipcode": "",
+            "geolocation":{
+                "lat": "",
+                "long": ""
+            }
+        },
+        "phone": ""
+    }
+
+}

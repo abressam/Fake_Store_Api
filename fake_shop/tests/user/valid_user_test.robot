@@ -22,3 +22,21 @@ Test Case 3: GET Limited List Of User
     GET Limited Users
     Print Return Status Code
     Print Return Message
+
+Test Case 4: GET Users In Descending Order
+    [Tags]    4
+    GET Users In Descending Order
+    Print Return Status Code
+    Print Return Message
+
+Test Case 5: GET Users In Ascending Order
+    [Tags]    5
+    GET Users In Ascending Order
+    Print Return Status Code
+    Print Return Message
+
+Test Case 6: POST Add New User
+    [Tags]    6
+    Register New User
+    Print Return Status Code
+    Print Return Message

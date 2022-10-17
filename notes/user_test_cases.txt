@@ -2,31 +2,31 @@
 
 --> Valid Tests:
 
-Test Case 1: GET List All Users
+Test Case 1: GET List All Users     --- OK
     Validate status code
     Validade response content
 
-Test Case 2: GET User By ID
+Test Case 2: GET User By ID     --- OK
     Validade status code
     Validade response content
 
-Test Case 3: GET Limited List Of User
+Test Case 3: GET Limited List Of User     --- OK
     Validate status code
     Validade response content
 
-Test Case 4: GET Users In Descending Order
-    Validate status code
-    Validade response content
-    Validate first id number
-    Validate last id number
-
-Test Case 5: GET Users In Ascending Order
+Test Case 4: GET Users In Descending Order     --- OK
     Validate status code
     Validade response content
     Validate first id number
     Validate last id number
 
-Test Case 6: POST Add New User
+Test Case 5: GET Users In Ascending Order     --- OK
+    Validate status code
+    Validade response content
+    Validate first id number
+    Validate last id number
+
+Test Case 6: POST Add New User     --- OK
     Validate status code
     Validade response content
 
@@ -86,78 +86,86 @@ _______________________________________________________
 
 --> Invalid Tests:
 
-Test Case 1: GET User ID Does Not Exists
+Test Case 1: GET User ID Does Not Exists     --- OK
     Validate status code
     Validate message
 
-Test Case 2: GET Exceed The Number Of Users
+Test Case 2: GET Exceed The Number Of Users     --- OK
     Validate status code
     Validate message
 
-Test Case 3: POST User With Invalid Email
+Test Case 3: GET Negative Limit Of Users     --- OK
+    Validate status code
+    Validate message
+
+Test Case 3: POST User With Invalid Email     --- OK
     Validate status code
     Validade response message
 
-Test Case 4: POST User Without Email
+Test Case 4: POST User Without Email     --- OK
     Validate status code
     Validade response message
 
-Test Case 5: POST User Without Username
+Test Case 5: POST User Without Username     --- OK
     Validate status code
     Validade response message
 
-Test Case 6: POST User Without Password
+Test Case 6: POST User Without Password     --- OK
     Validate status code
     Validade response message
 
-Test Case 7: POST User Without First Name
+Test Case 7: POST User Without First Name     --- OK
     Validate status code
     Validade response message
 
-Test Case 8: POST User Without Last Name
+Test Case 8: POST User Without Last Name     --- OK
     Validate status code
     Validade response message
 
-Test Case 9: POST User Without City
+Test Case 9: POST User Without City     --- OK
     Validate status code
     Validade response message
 
-Test Case 10: POST User Without Street
+Test Case 10: POST User Without Street     --- OK
     Validate status code
     Validade response message
 
-Test Case 11: POST User Without Number
+Test Case 11: POST User Without Number     --- OK
     Validate status code
     Validade response message
 
-Test Case 12: POST User Without Zipcode
+Test Case 12: POST User Without Zipcode     --- OK
     Validate status code
     Validade response message
 
-Test Case 13: POST User Without Latitude
+Test Case 13: POST User Without Latitude     --- OK
     Validate status code
     Validade response message
 
-Test Case 14: POST User Without Longitude
+Test Case 14: POST User Without Longitude     --- OK
     Validate status code
     Validade response message
 
-Test Case 15: POST User Without Phone
+Test Case 15: POST User Without Phone     --- OK
     Validate status code
     Validade response message
 
-Test Case 16: POST User With Blank Spaces On Email
+Test Case 16: POST Empty User     --- OK
     Validate status code
     Validade response message
 
-Test Case 17: PUT Update User Does Not Exists
+Test Case 17: POST User With Blank Spaces On Email
     Validate status code
     Validade response message
 
-Test Case 18: PUT Update User With Same Email As Another
+Test Case 18: PUT Update User Does Not Exists
     Validate status code
     Validade response message
 
-Test Case 19: PUT Update User With Same Username As Another
+Test Case 19: PUT Update User With Same Email As Another
+    Validate status code
+    Validade response message
+
+Test Case 20: PUT Update User With Same Username As Another
     Validate status code
     Validade response message
