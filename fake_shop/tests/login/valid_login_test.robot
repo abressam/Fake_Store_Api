@@ -7,5 +7,7 @@ Suite Setup     Open Session
 *** Test Cases ***
 Test Case 1: POST Login User
     [Tags]    1
-    POST Login User /auth/login 200
+    Valid Login
     Do Login And Save Token
+    Print Return Status Code
+    Print Return Message

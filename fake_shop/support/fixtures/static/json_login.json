@@ -1,0 +1,41 @@
+{
+    "do_not_exists": {
+        "username": "NoExists",
+        "password": "nopassword"
+    },
+
+    "valid_login": {
+        "username": "kate_h",
+        "password": "kfejk@*_"
+    },
+
+    "without_username": {
+        "username": "",
+        "password": "kfejk@*_"
+    },
+
+    "without_password": {
+        "username": "kate_h",
+        "password": ""
+    },
+
+    "blank_spaces_username": {
+        "username": "      ",
+        "password": "kfejk@*_"
+    },
+
+    "blank_spaces_password": {
+        "username": "kate_h",
+        "password": "      "
+    },
+
+    "wrong_username": {
+        "username": "kateeee",
+        "password": "kfejk@*_"
+    },
+
+    "wrong_password": {
+        "username": "kate_h",
+        "password": "kfejk@*****"
+    }
+}

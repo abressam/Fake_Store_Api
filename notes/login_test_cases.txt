@@ -1,16 +1,26 @@
 # Login
 
+* All the tests should print the response content and the status code
+
 --> Valid Tests:
 
-Test Case 1: POST Login User
-    Validate status code
-    Validade response content
+Test Case 1: POST Login User     --- OK
 
 _______________________________________________________
 _______________________________________________________
 
 --> Invalid Tests:
 
-Test Case 1: POST Login With User Does Not Exists
-    Validate status code
-    Validate message
+Test Case 1: POST Login With User Does Not Exists     --- OK
+
+Test Case 2: POST Login User Without Username
+
+Test Case 3: POST Login With Without Password
+
+Test Case 4: POST Login User With Blank Spaces Username     --- OK
+
+Test Case 5: POST Login User With Blank Spaces Password     --- OK
+
+Test Case 6: POST Login User Wrong Username     --- OK
+
+Test Case 7: POST Login With Wrong Password     --- OK

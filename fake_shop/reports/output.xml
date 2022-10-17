@@ -1,76 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.8.2 on win32)" generated="20221017 13:39:49.559" rpa="false" schemaversion="3">
-<suite id="s1" name="Invalid User Test" source="C:\Users\amanda.martins\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\Fake_Store_Api\fake_shop\tests\user\invalid_user_test.robot">
+<robot generator="Robot 5.0.1 (Python 3.8.2 on win32)" generated="20221017 14:27:43.400" rpa="false" schemaversion="3">
+<suite id="s1" name="Invalid Login Test" source="C:\Users\amanda.martins\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\Fake_Store_Api\fake_shop\tests\login\invalid_login_test.robot">
 <kw name="Open Session" library="base" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>fakeshop</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20221017 13:39:49.685" level="INFO">Creating Session using : alias=fakeshop, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20221017 13:39:49.685" endtime="20221017 13:39:49.685"/>
+<msg timestamp="20221017 14:27:43.530" level="INFO">Creating Session using : alias=fakeshop, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221017 14:27:43.530" endtime="20221017 14:27:43.530"/>
 </kw>
-<status status="PASS" starttime="20221017 13:39:49.685" endtime="20221017 13:39:49.685"/>
+<status status="PASS" starttime="20221017 14:27:43.529" endtime="20221017 14:27:43.530"/>
 </kw>
-<test id="s1-t1" name="Test Case 3: GET Negative Limit Of Users" line="25">
-<kw name="GET Negative Limit Of Users" library="user_keywords">
-<kw name="GET On Session" library="RequestsLibrary">
+<test id="s1-t1" name="Test Case 7: POST Login With Wrong Password" line="46">
+<kw name="Login With Wrong Password" library="login_keyword">
+<kw name="Import Static Json" library="common">
+<var>${json}</var>
+<arg>./json_login.json</arg>
+<kw name="Get File" library="OperatingSystem">
+<var>${file}</var>
+<arg>${EXECDIR}/fake_shop/support/fixtures/static${file_name}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20221017 14:27:43.533" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\amanda.martins\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\Fake_Store_Api\fake_shop\support\fixtures\static\json_login.json"&gt;C:\Users\amanda.martins\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\Fake_Store_Api\fake_shop\support\fixtures\static\json_login.json&lt;/a&gt;'.</msg>
+<msg timestamp="20221017 14:27:43.534" level="INFO">${file} = {
+    "do_not_exists": {
+        "username": "NoExists",
+        "password": "nopassword"
+    },
+
+    "valid_login": {
+        "username": "kate_h",
+        "password": "kfejk@*_"
+    },
+
+    "without...</msg>
+<status status="PASS" starttime="20221017 14:27:43.533" endtime="20221017 14:27:43.534"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${data}</var>
+<arg>json.loads('''${file}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221017 14:27:43.534" level="INFO">${data} = {'do_not_exists': {'username': 'NoExists', 'password': 'nopassword'}, 'valid_login': {'username': 'kate_h', 'password': 'kfejk@*_'}, 'without_username': {'username': '', 'password': 'kfejk@*_'}, 'with...</msg>
+<status status="PASS" starttime="20221017 14:27:43.534" endtime="20221017 14:27:43.534"/>
+</kw>
+<msg timestamp="20221017 14:27:43.534" level="INFO">${json} = {'do_not_exists': {'username': 'NoExists', 'password': 'nopassword'}, 'valid_login': {'username': 'kate_h', 'password': 'kfejk@*_'}, 'without_username': {'username': '', 'password': 'kfejk@*_'}, 'with...</msg>
+<status status="PASS" starttime="20221017 14:27:43.532" endtime="20221017 14:27:43.535"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${payload}</var>
+<arg>${json["wrong_password"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221017 14:27:43.535" level="INFO">${payload} = {'username': 'kate_h', 'password': 'kfejk@*****'}</msg>
+<status status="PASS" starttime="20221017 14:27:43.535" endtime="20221017 14:27:43.535"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${payload}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221017 14:27:43.536" level="INFO">${payload} = {'username': 'kate_h', 'password': 'kfejk@*****'}</msg>
+<status status="PASS" starttime="20221017 14:27:43.535" endtime="20221017 14:27:43.536"/>
+</kw>
+<kw name="POST Login User /auth/login" library="login_keyword">
+<kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>fakeshop</arg>
-<arg>/users?</arg>
-<arg>params=limit=${NEGATIVE_VALUE}</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20221017 13:39:50.589" level="INFO">GET Request : url=https://fakestoreapi.com/users?limit=-40 
- path_url=/users?limit=-40 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
+<arg>/auth/login</arg>
+<arg>json=&amp;{payload}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20221017 14:27:44.391" level="INFO">POST Request : url=https://fakestoreapi.com/auth/login 
+ path_url=/auth/login 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '49', 'Content-Type': 'application/json'} 
+ body=b'{"username": "kate_h", "password": "kfejk@*****"}' 
  </msg>
-<msg timestamp="20221017 13:39:50.589" level="INFO">GET Response : url=https://fakestoreapi.com/users?limit=-40 
- status=200, reason=OK 
- headers={'Date': 'Mon, 17 Oct 2022 16:39:49 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"bae-Vi0JNVg0EAD6LcGk4v18ASK0bgA"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=FCtu%2FR7Ux8sPnGmnTo4TX%2FnWxiWoUN3swOwMptuCtieuv6dxGdqb9eP5kkwQ8Bbt9%2BOQnOsmrbwU0MFcG89Yz2ojspJcZrrc1Ux%2BhNw0nDWXNquz3P0e1%2Bv9WKzoYkL8CVoB"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75ba78f2fef6a48c-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
- body=[{"address":{"geolocation":{"lat":"-37.3159","long":"81.1496"},"city":"kilcoole","street":"new road","number":7682,"zipcode":"12926-3874"},"id":1,"email":"john@gmail.com","username":"johnd","password":"m38rmF$","name":{"firstname":"john","lastname":"doe"},"phone":"1-570-236-7033","__v":0},{"address":{"geolocation":{"lat":"-37.3159","long":"81.1496"},"city":"kilcoole","street":"Lovers Ln","number":7267,"zipcode":"12926-3874"},"id":2,"email":"morrison@gmail.com","username":"mor_2314","password":"83r5^_","name":{"firstname":"david","lastname":"morrison"},"phone":"1-570-236-7033","__v":0},{"address":{"geolocation":{"lat":"40.3467","long":"-30.1310"},"city":"Cullman","street":"Frances Ct","number":86,"zipcode":"29567-1452"},"id":3,"email":"kevin@gmail.com","username":"kevinryan","password":"kev02937@","name":{"firstname":"kevin","lastname":"ryan"},"phone":"1-567-094-1345","__v":0},{"address":{"geolocation":{"lat":"50.3467","long":"-20.1310"},"city":"San Antonio","street":"Hunters Creek Dr","number":6454,"zipcode":"98234-1734"},"id":4,"email":"don@gmail.com","username":"donero","password":"ewedon","name":{"firstname":"don","lastname":"romer"},"phone":"1-765-789-6734","__v":0},{"address":{"geolocation":{"lat":"40.3467","long":"-40.1310"},"city":"san Antonio","street":"adams St","number":245,"zipcode":"80796-1234"},"id":5,"email":"derek@gmail.com","username":"derek","password":"jklg*_56","name":{"firstname":"derek","lastname":"powell"},"phone":"1-956-001-1945","__v":0},{"address":{"geolocation":{"lat":"20.1677","long":"-10.6789"},"city":"el paso","street":"prospect st","number":124,"zipcode":"12346-0456"},"id":6,"email":"david_r@gmail.com","username":"david_r","password":"3478*#54","name":{"firstname":"david","lastname":"russell"},"phone":"1-678-345-9856","__v":0},{"address":{"geolocation":{"lat":"10.3456","long":"20.6419"},"city":"fresno","street":"saddle st","number":1342,"zipcode":"96378-0245"},"id":7,"email":"miriam@gmail.com","username":"snyder","password":"f238&amp;@*$","name":{"firstname":"miriam","lastname":"snyder"},"phone":"1-123-943-0563","__v":0},{"address":{"geolocation":{"lat":"50.3456","long":"10.6419"},"city":"mesa","street":"vally view ln","number":1342,"zipcode":"96378-0245"},"id":8,"email":"william@gmail.com","username":"hopkins","password":"William56$hj","name":{"firstname":"william","lastname":"hopkins"},"phone":"1-478-001-0890","__v":0},{"address":{"geolocation":{"lat":"40.12456","long":"20.5419"},"city":"miami","street":"avondale ave","number":345,"zipcode":"96378-0245"},"id":9,"email":"kate@gmail.com","username":"kate_h","password":"kfejk@*_","name":{"firstname":"kate","lastname":"hale"},"phone":"1-678-456-1934","__v":0},{"address":{"geolocation":{"lat":"30.24788","long":"-20.545419"},"city":"fort wayne","street":"oak lawn ave","number":526,"zipcode":"10256-4532"},"id":10,"email":"jimmie@gmail.com","username":"jimmie_k","password":"klein*#%*","name":{"firstname":"jimmie","lastname":"klein"},"phone":"1-104-001-4567","__v":0}] 
+<msg timestamp="20221017 14:27:44.391" level="INFO">POST Response : url=https://fakestoreapi.com/auth/login 
+ status=401, reason=Unauthorized 
+ headers={'Date': 'Mon, 17 Oct 2022 17:27:43 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=x%2BN%2B8g%2BDPyArw2bpDJJRui2GICE2qEO5xcLKR9yCMk%2FkV4%2BDxsREcJMqGhyR9C3YyG6ywb2SojoLk5D0Edh7P6fd6m8jrPx2VtjExO9JJ7Odn0gfCNkzpm1WUHjDpxMPIl1p"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75babf1c9e4251c6-GRU', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body=username or password is incorrect 
  </msg>
-<msg timestamp="20221017 13:39:50.589" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221017 13:39:49.687" endtime="20221017 13:39:50.589"/>
+<msg timestamp="20221017 14:27:44.392" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20221017 14:27:43.536" endtime="20221017 14:27:44.392"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221017 13:39:50.589" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221017 13:39:50.589" endtime="20221017 13:39:50.589"/>
+<msg timestamp="20221017 14:27:44.395" level="INFO">${response} = &lt;Response [401]&gt;</msg>
+<status status="PASS" starttime="20221017 14:27:44.393" endtime="20221017 14:27:44.395"/>
 </kw>
-<status status="PASS" starttime="20221017 13:39:49.687" endtime="20221017 13:39:50.589"/>
+<status status="PASS" starttime="20221017 14:27:43.536" endtime="20221017 14:27:44.395"/>
+</kw>
+<status status="PASS" starttime="20221017 14:27:43.531" endtime="20221017 14:27:44.396"/>
 </kw>
 <kw name="Print Return Status Code" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221017 13:39:50.597" endtime="20221017 13:39:50.602"/>
+<status status="PASS" starttime="20221017 14:27:44.399" endtime="20221017 14:27:44.401"/>
 </kw>
-<status status="PASS" starttime="20221017 13:39:50.596" endtime="20221017 13:39:50.602"/>
+<status status="PASS" starttime="20221017 14:27:44.397" endtime="20221017 14:27:44.401"/>
 </kw>
 <kw name="Print Return Message" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221017 13:39:50.605" endtime="20221017 13:39:50.614"/>
+<status status="PASS" starttime="20221017 14:27:44.402" endtime="20221017 14:27:44.405"/>
 </kw>
-<status status="PASS" starttime="20221017 13:39:50.604" endtime="20221017 13:39:50.615"/>
+<status status="PASS" starttime="20221017 14:27:44.402" endtime="20221017 14:27:44.405"/>
 </kw>
-<tag>3</tag>
-<status status="PASS" starttime="20221017 13:39:49.685" endtime="20221017 13:39:50.616"/>
+<tag>7</tag>
+<status status="PASS" starttime="20221017 14:27:43.530" endtime="20221017 14:27:44.406"/>
 </test>
-<doc>Creating valid test for the endpoint /user</doc>
-<status status="PASS" starttime="20221017 13:39:49.565" endtime="20221017 13:39:50.618"/>
+<doc>Creating invalid test for the endpoint /login</doc>
+<status status="PASS" starttime="20221017 14:27:43.402" endtime="20221017 14:27:44.408"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">3</stat>
+<stat pass="1" fail="0" skip="0">7</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Invalid User Test">Invalid User Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Invalid Login Test">Invalid Login Test</stat>
 </suite>
 </statistics>
 <errors>
