@@ -2,6 +2,7 @@
 Documentation       Keywords and variables for general uses
 Library             RequestsLibrary
 Library             Collections
+Resource            ../common/common.robot
 
 *** Keywords ***
 Open Session

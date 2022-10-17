@@ -2,7 +2,7 @@
 
 --> Valid Tests:
 
-Test Case 1: GET List All Users 200
+Test Case 1: GET List All Users
     Validate status code
     Validade response content
 
