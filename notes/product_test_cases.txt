@@ -1,0 +1,36 @@
+# User
+
+* All the tests should print the response content and the status code
+
+--> Valid Tests:
+
+Test Case 1: GET List All Products
+
+Test Case 2: GET Product By ID
+
+Test Case 3: GET Limit Of Products
+
+Test Case 4: GET Products In Descending Order
+
+Test Case 5: GET Products In Ascending Order
+
+Test Case 6: GET List Products Category
+
+Test Case 7: GET List All Products In Electronics Category
+
+Test Case 8: GET List All Products In Jewelery Category
+
+Test Case 9: GET List All Products In Men's Clothing Category
+
+Test Case 10: GET List All Products In Women's Clothing Category
+
+Test Case 11: POST Add New Product
+
+* Fazer PUT, PATCH e DELETE
+
+_______________________________________________________
+_______________________________________________________
+
+--> Invalid Tests:
+
+Test Case 1: GET User ID Does Not Exists

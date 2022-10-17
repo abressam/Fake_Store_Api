@@ -83,7 +83,7 @@ Test Case 16: POST Empty User     --- OK
 
 Test Case 17: POST User With Blank Spaces On Email
 
-Test Case 18: PUT Update User Does Not Exists
+Test Case 18: PUT Update User Nonexistent
 
 Test Case 19: PUT Update User With Same Email As Another
 
