@@ -4,7 +4,7 @@ Resource         ../../support/base/base.robot
 
 *** Keywords ***
 POST Create New User
-    ${response}        POST On Session        fakeshop        /users
+    ${response}        POST On Session        fakeshop        /users    json=&{payload}     expected_status=anything
     Set Global Variable         ${response}
 
 # The ID is not necessary in the tests
@@ -101,4 +101,10 @@ Register New User With Empty Data
     ${json}     Import Static Json        ./json_user.json
     ${payload}          Set Variable                   ${json["empty_user"]}
     Set Global Variable         ${payload}
+    POST Create New User
+
+# Keyword using dynamic mass
+
+Create and Register Valid Dynamic User
+    ${payload}    Create Valid User Data
     POST Create New User

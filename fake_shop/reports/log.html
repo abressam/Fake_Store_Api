@@ -1803,25 +1803,25 @@ function stopPropagation(event) {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,4,[],[1,0,851],[],[[5,0,0,[6],[1,153,694],[[0,7,8,0,0,0,9,0,[1,153,684],[[837,2,10],[837,2,11]]],[0,12,13,0,14,15,0,0,[1,842,1],[]],[0,12,13,0,14,16,0,0,[1,844,2],[]]]]],[[1,17,18,0,0,0,0,0,[1,152,0],[[0,19,20,0,21,22,0,0,[1,152,0],[[152,2,23]]]]]],[1,1,0,0]];
+window.output["suite"] = [1,2,3,4,[],[1,0,1450],[],[[5,0,0,[6],[1,527,922],[[0,7,8,0,0,0,0,0,[1,527,918],[[0,9,10,0,11,12,13,0,[1,528,916],[[1444,2,14],[1444,2,15],[1444,2,16]]],[0,17,18,0,19,13,0,0,[1,1444,1],[[1445,2,16]]]]],[0,20,21,0,0,0,0,0,[1,1446,1],[[0,22,18,0,23,24,0,0,[1,1446,1],[]]]],[0,25,21,0,0,0,0,0,[1,1448,1],[[0,22,18,0,23,26,0,0,[1,1448,1],[]]]]]]],[[1,27,28,0,0,0,0,0,[1,526,1],[[0,29,10,0,30,31,0,0,[1,527,0],[[527,2,32]]]]]],[1,1,0,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Invalid User Test","*C:\\Users\\amanda.martins\\OneDrive - COMPASSO TECNOLOGIA LTDA\\Área de Trabalho\\Fake_Store_Api\\fake_shop\\tests\\user\\invalid_user_test.robot","*../tests/user/invalid_user_test.robot","*<p>Creating valid test for the endpoint /user\x3c/p>","*Test Case 3: GET Negative Limit Of Users","*3","*Negative Limit Of Users","*library","*${get_limit}, ${status_code}","*${get_limit} = [{'address': {'geolocation': {'lat': '-37.3159', 'long': '81.1496'}, 'city': 'kilcoole', 'street': 'new road', 'number': 7682, 'zipcode': '12926-3874'}, 'id': 1, 'email': 'john@gmail.com', 'username':...","*${status_code} = \nStatus Code: 200\n","*Log To Console","*BuiltIn","*<p>Logs the given message to the console.\x3c/p>","*${get_limit}","*${status_code}","*Open Session","*base","*Create Session","*RequestsLibrary","*<p>Create Session: create a HTTP session to a server\x3c/p>","*fakeshop, ${BASE_URL}","eNptjD0OwjAMha/iA0SUuZInJEYWTmBat7Ga1lHsIBDi7lDK2Ld97+9UmFyWEa5sJrpAtZVaoCRkONDEFjUHqCVhdM/WNs3Pdf1Osxw6nQNEpp6L4esdYE+d6iS85VQ94kUXDuAys1b/Uy76WEsb3bnI8MQzJeP9055vdcQjfABJuD1e"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Invalid User Test","*C:\\Users\\amanda.martins\\OneDrive - COMPASSO TECNOLOGIA LTDA\\Área de Trabalho\\Fake_Store_Api\\fake_shop\\tests\\user\\invalid_user_test.robot","*../tests/user/invalid_user_test.robot","*<p>Creating valid test for the endpoint /user\x3c/p>","*Test Case 72: DELETE Remove Nonexist User ID","*72","*DELETE Nonexist User ID","*delete_user_keywords","*DELETE On Session","*RequestsLibrary","*<p>Sends a DELETE request on a previously created HTTP Session.\x3c/p>","*fakeshop, /users/${INVALID_VALUE}","*${response}","*DELETE Request : url=https://fakestoreapi.com/users/99999999999 \n path_url=/users/99999999999 \n headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} \n body=None \n ","*DELETE Response : url=https://fakestoreapi.com/users/99999999999 \n status=200, reason=OK \n headers={'Date': 'Tue, 18 Oct 2022 17:33:16 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '4', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/\"4-K+iMpCQsduglOsYkdIUQZQMtaDM\"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{\"endpoints\":[{\"url\":\"https:\\\\/\\\\/a.nel.cloudflare.com\\\\/report\\\\/v3?s=2FS2itdc2s6IhazZdii4jSC3dmxEPqSgyPqRBBXk6tBuoUpx%2FE%2F0H6E6As3R43%2Fd6JdIPDJeNamkMksfJUHHbhNiAUp1%2B7tS2kPIjNIo1v7A%2BTAdUXUmfEYT2Hg2rxuydO%2BY\"}],\"group\":\"cf-nel\",\"max_age\":604800}', 'NEL': '{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}', 'Server': 'cloudflare', 'CF-RAY': '75c3049b5f56a5e0-GRU', 'alt-svc': 'h3=\":443\"; ma=86400, h3-29=\":443\"; ma=86400'} \n body=null \n ","*${response} = &lt;Response [200]&gt;","*Set Global Variable","*BuiltIn","*<p>Makes a variable available globally in all tests and suites.\x3c/p>","*Print Return Status Code","*common","*Log To Console","*<p>Logs the given message to the console.\x3c/p>","*\\nStatus Code: ${response.status_code}","*Print Return Message","*\\nResponse: ${response.content}","*Open Session","*base","*Create Session","*<p>Create Session: create a HTTP session to a server\x3c/p>","*fakeshop, ${BASE_URL}","eNptjD0OwjAMha/iA0SUuZInJEYWTmBat7Ga1lHsIBDi7lDK2Ld97+9UmFyWEa5sJrpAtZVaoCRkONDEFjUHqCVhdM/WNs3Pdf1Osxw6nQNEpp6L4esdYE+d6iS85VQ94kUXDuAys1b/Uy76WEsb3bnI8MQzJeP9055vdcQjfABJuD1e"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:01","fail":0,"label":"All Tests","pass":1,"skip":0}],[{"elapsed":"00:00:01","fail":0,"label":"3","pass":1,"skip":0}],[{"elapsed":"00:00:01","fail":0,"id":"s1","label":"Invalid User Test","name":"Invalid User Test","pass":1,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:01","fail":0,"label":"All Tests","pass":1,"skip":0}],[{"elapsed":"00:00:01","fail":0,"label":"72","pass":1,"skip":0}],[{"elapsed":"00:00:01","fail":0,"id":"s1","label":"Invalid User Test","name":"Invalid User Test","pass":1,"skip":0}]];
 </script>
 <script type="text/javascript">
 window.output["errors"] = [];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1666102648391;
+window.output["baseMillis"] = 1666114394296;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 869;
+window.output["generated"] = 1460;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;

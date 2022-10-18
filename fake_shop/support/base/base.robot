@@ -6,6 +6,7 @@ Library             OperatingSystem
 Library             ../library/library.py
 Resource            ../common/common.robot
 Resource            ../variables/variables.robot
+Resource            ../fixtures/dynamic/dynamic.robot
 
 *** Keywords ***
 Open Session

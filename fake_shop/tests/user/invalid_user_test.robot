@@ -2,6 +2,9 @@
 Documentation    Creating valid test for the endpoint /user
 Resource        ../../keywords/user/get_user_keywords.robot
 Resource        ../../keywords/user/post_user_keywords.robot
+Resource        ../../keywords/user/put_user_keywords.robot
+Resource        ../../keywords/user/patch_user_keywords.robot
+Resource        ../../keywords/user/delete_user_keywords.robot
 
 Suite Setup     Open Session
 
@@ -127,5 +130,13 @@ Test Case 16: POST User Without Phone
 Test Case 17: POST Empty User 
     [Tags]    17
     Register New User With Empty Data
+    Print Return Status Code
+    Print Return Message
+
+# Test return status code 200, but should fail
+# Return Null
+Test Case 72: DELETE Remove Nonexist User ID
+    [Tags]    72
+    DELETE Nonexist User ID
     Print Return Status Code
     Print Return Message

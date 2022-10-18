@@ -16,29 +16,29 @@ Test Case 5: GET Users In Ascending Order     --- OK
 
 Test Case 6: POST Add New User     --- OK
 
-Test Case 7: PUT Update User Email
+Test Case 7: PUT Update User Email     --- OK
 
-Test Case 8: PUT Update User Username
+Test Case 8: PUT Update User Username     --- OK
 
-Test Case 9: PUT Update User Password
+Test Case 9: PUT Update User Password     --- OK
 
-Test Case 10: PUT Update User First Name
+Test Case 10: PUT Update User First Name     --- OK
 
-Test Case 11: PUT Update User Last Name
+Test Case 11: PUT Update User Last Name     --- OK
 
-Test Case 12: PUT Update User City
+Test Case 12: PUT Update User City     --- OK
 
-Test Case 13: PUT Update User Street
+Test Case 13: PUT Update User Street     --- OK
 
-Test Case 14: PUT Update User Number
+Test Case 14: PUT Update User Number     --- OK
 
-Test Case 15: PUT Update User Zipcode
+Test Case 15: PUT Update User Zipcode     --- OK
 
-Test Case 16: PUT Update User Latitude
+Test Case 16: PUT Update User Latitude     --- OK
 
-Test Case 17: PUT Update User Longitude
+Test Case 17: PUT Update User Longitude     --- OK
 
-Test Case 18: PUT Update User Phone
+Test Case 18: PUT Update User Phone     --- OK
 
 Test Case 19: PATCH Update User Email
 
@@ -64,7 +64,7 @@ Test Case 29: PATCH Update User Longitude
 
 Test Case 30: PATCH Update User Phone
 
-Test Case 31: DELETE Remove User
+Test Case 31: DELETE Remove User     --- OK
 
 _______________________________________________________
 _______________________________________________________
@@ -215,4 +215,4 @@ Test Case 70: PUT Update User Removing Phone
 
 Test Case 71: PUT Update User Phone With Blank Spaces
 
-Test Case 72: DELETE Remove Nonexist User ID
+Test Case 72: DELETE Remove Nonexist User ID     --- OK

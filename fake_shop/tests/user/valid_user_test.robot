@@ -2,6 +2,9 @@
 Documentation    Creating valid test for the endpoint /user
 Resource        ../../keywords/user/get_user_keywords.robot
 Resource        ../../keywords/user/post_user_keywords.robot
+Resource        ../../keywords/user/put_user_keywords.robot
+Resource        ../../keywords/user/patch_user_keywords.robot
+Resource        ../../keywords/user/delete_user_keywords.robot
 
 Suite Setup     Open Session
 
@@ -38,6 +41,24 @@ Test Case 5: GET Users In Ascending Order
 
 Test Case 6: POST Add New User
     [Tags]    6
-    Register New User
+    Create and Register Valid Dynamic User
+    Print Return Status Code
+    Print Return Message
+
+Test Case 7: PUT Update All User Fields
+    [Tags]    7
+    PUT Update User All Fields
+    Print Return Status Code
+    Print Return Message
+
+Test Case 8: PATCH Update All User Fields
+    [Tags]    8
+    PATCH Update User All Fields
+    Print Return Status Code
+    Print Return Message
+
+Test Case 9: DELETE Remove User By ID
+    [Tags]    9
+    DELETE User By ID
     Print Return Status Code
     Print Return Message
