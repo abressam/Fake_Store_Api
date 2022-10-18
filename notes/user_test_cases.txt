@@ -40,7 +40,31 @@ Test Case 17: PUT Update User Longitude
 
 Test Case 18: PUT Update User Phone
 
-Test Case 19: DELETE Remove User
+Test Case 19: PATCH Update User Email
+
+Test Case 20: PATCH Update User Username
+
+Test Case 21: PATCH Update User Password
+
+Test Case 22: PATCH Update User First Name
+
+Test Case 23: PATCH Update User Last Name
+
+Test Case 24: PATCH Update User City
+
+Test Case 25: PATCH Update User Street
+
+Test Case 26: PATCH Update User Number
+
+Test Case 27: PATCH Update User Zipcode
+
+Test Case 28: PATCH Update User Latitude
+
+Test Case 29: PATCH Update User Longitude
+
+Test Case 30: PATCH Update User Phone
+
+Test Case 31: DELETE Remove User
 
 _______________________________________________________
 _______________________________________________________
@@ -87,4 +111,108 @@ Test Case 18: PUT Update User Nonexistent
 
 Test Case 19: PUT Update User With Same Email As Another
 
-Test Case 20: PUT Update User With Same Username As Another
+Test Case 20: PUT Update User Removing Email
+
+Test Case 21: PUT Update User Email With Blank Spaces
+
+Test Case 22: PUT Update User With Same Username As Another
+
+Test Case 23: PUT Update User Removing Username
+
+Test Case 24: PUT Update Username With Blank Spaces
+
+Test Case 25: PUT Update User Removing Password
+
+Test Case 26: PUT Update User Removing First Name
+
+Test Case 27: PUT Update User First Name With Blank Spaces
+
+Test Case 28: PUT Update User Removing Last Name
+
+Test Case 29: PUT Update User Last Name With Blank Spaces
+
+Test Case 30: PUT Update User Removing City
+
+Test Case 31: PUT Update User City With Blank Spaces
+
+Test Case 32: PUT Update User Removing Street
+
+Test Case 33: PUT Update User Street With Blank Spaces
+
+Test Case 34: PUT Update User Removing Number
+
+Test Case 35: PUT Update User Number With Blank Spaces
+
+Test Case 36: PUT Update User Number With Negative Value
+
+Test Case 37: PUT Update User Removing Zipcode
+
+Test Case 38: PUT Update User Zipcode With Blank Spaces
+
+Test Case 39: PUT Update User Removing Latitude
+
+Test Case 40: PUT Update User Latitude With Blank Spaces
+
+Test Case 41: PUT Update User Removing Longitude
+
+Test Case 42: PUT Update User Longitude With Blank Spaces
+
+Test Case 43: PUT Update User Removing Phone
+
+Test Case 44: PUT Update User Phone With Blank Spaces
+
+Test Case 45: PATCH Update User Nonexistent
+
+Test Case 46: PATCH Update User With Same Email As Another
+
+Test Case 47: PATCH Update User Removing Email
+
+Test Case 48: PATCH Update User Email With Blank Spaces
+
+Test Case 49: PATCH Update User With Same Username As Another
+
+Test Case 50: PATCH Update User Removing Username
+
+Test Case 51: PATCH Update Username With Blank Spaces
+
+Test Case 52: PATCH Update User Removing Password
+
+Test Case 53: PATCH Update User Removing First Name
+
+Test Case 54: PATCH Update User First Name With Blank Spaces
+
+Test Case 55: PATCH Update User Removing Last Name
+
+Test Case 56: PUT Update User Last Name With Blank Spaces
+
+Test Case 57: PUT Update User Removing City
+
+Test Case 58: PUT Update User City With Blank Spaces
+
+Test Case 59: PUT Update User Removing Street
+
+Test Case 60: PUT Update User Street With Blank Spaces
+
+Test Case 61: PUT Update User Removing Number
+
+Test Case 62: PUT Update User Number With Blank Spaces
+
+Test Case 63: PUT Update User Number With Negative Value
+
+Test Case 64: PUT Update User Removing Zipcode
+
+Test Case 65: PUT Update User Zipcode With Blank Spaces
+
+Test Case 66: PUT Update User Removing Latitude
+
+Test Case 67: PUT Update User Latitude With Blank Spaces
+
+Test Case 68: PUT Update User Removing Longitude
+
+Test Case 69: PUT Update User Longitude With Blank Spaces
+
+Test Case 70: PUT Update User Removing Phone
+
+Test Case 71: PUT Update User Phone With Blank Spaces
+
+Test Case 72: DELETE Remove Nonexist User ID

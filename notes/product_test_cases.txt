@@ -24,13 +24,113 @@ Test Case 9: GET List All Products In Men's Clothing Category
 
 Test Case 10: GET List All Products In Women's Clothing Category
 
-Test Case 11: POST Add New Product
+Test Case 11: POST Add New Product With Absolute Value
 
-* Fazer PUT, PATCH e DELETE
+Test Case 12: POST Add New Product With Decimal Value
+
+Test Case 13: POST Add New Product With Zero Value
+
+Test Case 14: PUT Update Product Title By ID
+
+Test Case 15: PUT Update Product Price By ID
+
+Test Case 16: PUT Update Product Description By ID
+
+Test Case 17: PUT Update Product Image By ID
+
+Test Case 18: PUT Update Product Category By ID
+
+Test Case 19: PATCH Update Product Title By ID
+
+Test Case 20: PATCH Update Product Price By ID
+
+Test Case 21: PATCH Update Product Description By ID
+
+Test Case 22: PATCH Update Product Image By ID
+
+Test Case 23: PATCH Update Product Category By ID
+
+Test Case 24: DELETE Remove Product By ID
 
 _______________________________________________________
 _______________________________________________________
 
 --> Invalid Tests:
 
-Test Case 1: GET User ID Does Not Exists
+Test Case 1: GET Nonexist Product ID
+
+Test Case 2: GET Negative Limit In Product ID
+
+Test Case 3: GET Highest Limit In Product ID
+
+Test Case 4: GET Zero Limit In Product ID
+
+Test Case 5: GET Nonexist Product Category
+
+Test Case 6: POST Product Without Title
+
+Test Case 7: POST Product Title With Blank Spaces
+
+Test Case 8: POST Product Without Price
+
+Test Case 9: POST Product Price With Blank Spaces
+
+Test Case 10: POST Product Price With Negative Value
+
+Test Case 11: POST Product Without Description
+
+Test Case 12: POST Product Description With Blank Spaces
+
+Test Case 13: POST Product Without Image
+
+Test Case 14: POST Product Image With Blank Spaces
+
+Test Case 15: POST Product Without Category
+
+Test Case 16: POST Product Category With Blank Spaces
+
+Test Case 17: PUT Update Product Removing Title
+
+Test Case 18: PUT Update Product Title To Blank Spaces
+
+Test Case 19: PUT Update Product Removing Price
+
+Test Case 20: PUT Update Product Price To Blank Spaces
+
+Test Case 21: PUT Update Product Price To Negative Value
+
+Test Case 22: PUT Update Product Removing Description
+
+Test Case 23: PUT Update Product Description To Blank Spaces
+
+Test Case 24: PUT Update Product Removing Image
+
+Test Case 25: PUT Update Product Image To Blank Spaces
+
+Test Case 26: PUT Update Product Removing Category
+
+Test Case 27: PUT Update Product Category To Blank Spaces
+
+Test Case 28: PATCH Update Product Removing Title
+
+Test Case 29: PATCH Update Product Title To Blank Spaces
+
+Test Case 30: PATCH Update Product Removing Price
+
+Test Case 31: PATCH Update Product Price To Blank Spaces
+
+Test Case 32: PATCH Update Product Price To Negative Value
+
+Test Case 33: PATCH Update Product Removing Description
+
+Test Case 34: PATCH Update Product Description To Blank Spaces
+
+Test Case 35: PATCH Update Product Removing Image
+
+Test Case 36: PATCH Update Product Image To Blank Spaces
+
+Test Case 37: PATCH Update Product Removing Category
+
+Test Case 38: PATCH Update Product Category To Blank Spaces
+
+Test Case 39: DELETE Nonexist Product ID
