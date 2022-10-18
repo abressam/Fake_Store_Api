@@ -24,11 +24,11 @@ Test Case 9: GET List All Products In Men's Clothing Category      --- OK
 
 Test Case 10: GET List All Products In Women's Clothing Category      --- OK
 
-Test Case 11: POST Add New Product With Absolute Value
+Test Case 11: POST Add New Product With Absolute Value      --- OK
 
-Test Case 12: POST Add New Product With Decimal Value
+Test Case 12: POST Add New Product With Decimal Value      --- OK
 
-Test Case 13: POST Add New Product With Zero Value
+Test Case 13: POST Add New Product With Zero Value      --- OK
 
 Test Case 14: PUT Update Product Title By ID
 
@@ -50,7 +50,7 @@ Test Case 22: PATCH Update Product Image By ID
 
 Test Case 23: PATCH Update Product Category By ID
 
-Test Case 24: DELETE Remove Product By ID
+Test Case 24: DELETE Remove Product By ID      --- OK
 
 _______________________________________________________
 _______________________________________________________

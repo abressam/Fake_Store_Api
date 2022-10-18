@@ -1,0 +1,28 @@
+{
+    "product_absolute_price": {
+        "id": 21,
+        "title": "New Fit T-Shirt",
+        "price": 20,
+        "description": "Detailed size information should be reviewed below on the product description",
+        "category": "men's clothing",
+        "image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+    },
+
+    "product_zero_price": {
+        "id": 21,
+        "title": "New Fit T-Shirt",
+        "price": 0,
+        "description": "Detailed size information should be reviewed below on the product description",
+        "category": "men's clothing",
+        "image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+    },
+
+    "product_decimal_price": {
+        "id": 21,
+        "title": "New Fit T-Shirt",
+        "price": 25.80,
+        "description": "Detailed size information should be reviewed below on the product description",
+        "category": "men's clothing",
+        "image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
+    }
+}
