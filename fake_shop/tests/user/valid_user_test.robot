@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation    Creating valid test for the endpoint /user
-Resource        ../../keywords/user_keywords.robot
+Resource        ../../keywords/user/get_user_keywords.robot
+Resource        ../../keywords/user/post_user_keywords.robot
 
 Suite Setup     Open Session
 
@@ -19,21 +20,21 @@ Test Case 2: GET User By ID
 
 Test Case 3: GET Limited List Of User
     [Tags]    3
-    GET Limited Users
-    Print Return Status Code
-    Print Return Message
+    ${get_limit}        ${status_code}        Get Limit Of Users        ${5}
+    Log To Console      ${get_limit}        
+    Log To Console      ${status_code}
 
 Test Case 4: GET Users In Descending Order
     [Tags]    4
-    GET Users In Descending Order
-    Print Return Status Code
-    Print Return Message
+    ${get_order}        ${status_code}        Users In Descending Order
+    Log To Console      ${get_order}        
+    Log To Console      ${status_code}
 
 Test Case 5: GET Users In Ascending Order
     [Tags]    5
-    GET Users In Ascending Order
-    Print Return Status Code
-    Print Return Message
+    ${get_order}        ${status_code}        Users In Ascending Order
+    Log To Console      ${get_order}        
+    Log To Console      ${status_code}
 
 Test Case 6: POST Add New User
     [Tags]    6

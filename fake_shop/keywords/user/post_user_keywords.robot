@@ -1,46 +1,13 @@
 *** Settings ***
 Documentation    Keywords for the endpoint /user
-Resource         ../support/base/base.robot
+Resource         ../../support/base/base.robot
 
 *** Keywords ***
-GET All Users Endpoint /users
-    ${response}        GET On Session        fakeshop        /users
-    Set Global Variable         ${response}
-
-# ID is in hardcode, change later
-GET User By ID /users/id
-    ${response}        GET On Session        fakeshop        /users/1
-    Set Global Variable         ${response}
-
-GET User With Invalid ID
-    ${response}        GET On Session        fakeshop        /users/${INVALID_VALUE}
-    Set Global Variable         ${response}
-
-# Limit number is in hard code, add python library to ask the number to the user
-GET Limited Users 
-    ${response}        GET On Session        fakeshop        /users?       params=limit=2
-    Set Global Variable         ${response}
-
-GET Exceed Number Of Limit Users 
-    ${response}        GET On Session        fakeshop        /users?       params=limit=${INVALID_VALUE}
-    Set Global Variable         ${response}
-
-GET Negative Limit Of Users 
-    ${response}        GET On Session        fakeshop        /users?       params=limit=${NEGATIVE_VALUE}
-    Set Global Variable         ${response}
-
-GET Users In Descending Order
-    ${response}        GET On Session        fakeshop        /users?       params=sort=desc
-    Set Global Variable         ${response}
-
-GET Users In Ascending Order
-    ${response}        GET On Session        fakeshop        /users?       params=sort=asc
-    Set Global Variable         ${response}
-
 POST Create New User
     ${response}        POST On Session        fakeshop        /users
     Set Global Variable         ${response}
 
+# The ID is not necessary in the tests
 Save User ID
     ${user_id}        Set Variable        ${response.json()["id"]}
     Set Global Variable    ${user_id}

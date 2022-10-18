@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation    Creating valid test for the endpoint /user
-Resource        ../../keywords/user_keywords.robot
+Resource        ../../keywords/user/get_user_keywords.robot
+Resource        ../../keywords/user/post_user_keywords.robot
 
 Suite Setup     Open Session
 
@@ -18,17 +19,17 @@ Test Case 1: GET User ID Does Not Exists
 # Return All the 10 users
 Test Case 2: GET Exceed The Number Of Users
     [Tags]    2
-    GET Exceed Number Of Limit Users 
-    Print Return Status Code
-    Print Return Message
+    ${get_limit}        ${status_code}        Exceed Number Of Limit Users 
+    Log To Console      ${get_limit}        
+    Log To Console      ${status_code}
 
 # Test return status code 200 and the users in the limit
 # API can convert the negative number to a positive number
 Test Case 3: GET Negative Limit Of Users
     [Tags]    3
-    GET Negative Limit Of Users 
-    Print Return Status Code
-    Print Return Message
+    ${get_limit}        ${status_code}        Negative Limit Of Users 
+    Log To Console      ${get_limit}        
+    Log To Console      ${status_code}
 
 # Test return status code 200, but should fail
 # Return ID equal to 1, but this user already exists

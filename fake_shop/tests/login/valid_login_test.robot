@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Creating valid test for the endpoint /user
-Resource        ../../keywords/login_keyword.robot
+Resource        ../../keywords/login/login_keywords.robot
 
 Suite Setup     Open Session
 

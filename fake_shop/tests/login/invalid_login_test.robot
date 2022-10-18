@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Creating invalid test for the endpoint /login
-Resource        ../../keywords/login_keyword.robot
+Resource        ../../keywords/login/login_keywords.robot
 
 Suite Setup     Open Session
 

@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Keywords for the endpoint /user
-Resource         ../support/base/base.robot
+Resource         ../../support/base/base.robot
 
 *** Keywords ***
 POST Login User /auth/login
