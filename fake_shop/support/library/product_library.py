@@ -48,9 +48,10 @@ def Products_In_Ascending_Order():
 
     return response
 
-def Get_Product_By_ID(id):
-    request = req.get(url_products + "/", params=id)
+def Get_Product_ID(id):
+    request = req.get(url_products + "/", str(id))
     response = request.json()
+
     status_code = f"\nStatus Code: {request.status_code}\n"
 
     return response, status_code

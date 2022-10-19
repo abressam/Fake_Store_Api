@@ -57,15 +57,15 @@ _______________________________________________________
 
 --> Invalid Tests:
 
-Test Case 1: GET Nonexist Product ID
+Test Case 1: GET Nonexist Product ID      --- OK
 
-Test Case 2: GET Negative Limit In Product ID
+Test Case 2: GET Negative Limit In Product ID      --- OK
 
-Test Case 3: GET Highest Limit In Product ID
+Test Case 3: GET Highest Limit In Product ID      --- OK
 
-Test Case 4: GET Zero Limit In Product ID
+Test Case 4: GET Zero Limit In Product ID      --- OK
 
-Test Case 5: GET Nonexist Product Category
+Test Case 5: GET Nonexist Product Category      --- OK
 
 Test Case 6: POST Product Without Title
 
