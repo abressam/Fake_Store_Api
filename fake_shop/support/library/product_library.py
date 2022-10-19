@@ -45,3 +45,13 @@ def Read_Json(json_object):
     status_code = f"\nStatus Code: {request.status_code}\n"
 
     return response, status_code
+
+def Read_Json_PUT(json_object):
+    with open('./fake_shop/support/fixtures/static/json_product.json', 'r') as product_data_file:
+        json_product_data_file = json.load(product_data_file)
+
+    request = req.put(url='https://fakestoreapi.com/products/5', data=json_product_data_file[json_object])
+    response = request.json()
+    status_code = f"\nStatus Code: {request.status_code}\n"
+
+    return response, status_code

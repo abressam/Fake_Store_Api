@@ -103,3 +103,9 @@ Test Case 16: POST Product Category With Blank Spaces
     ${new_product}    ${status_code}        Read Json    product_blank_spaces_category
     Log To Console      ${new_product}
     Log To Console      ${status_code}
+
+Test Case 17: PUT Update Product Removing Title      
+    [Tags]    17
+    ${new_product}    ${status_code}        Read Json PUT   product_without_title
+    Log To Console      ${new_product}
+    Log To Console      ${status_code}

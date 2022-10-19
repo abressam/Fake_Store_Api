@@ -1,456 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.8.2 on win32)" generated="20221019 14:42:22.910" rpa="false" schemaversion="3">
-<suite id="s1" name="Valid Product Test" source="C:\Users\amanda.martins\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\Fake_Store_Api\fake_shop\tests\product\valid_product_test.robot">
+<robot generator="Robot 5.0.1 (Python 3.8.2 on win32)" generated="20221019 16:58:31.569" rpa="false" schemaversion="3">
+<suite id="s1" name="Invalid Product Test" source="C:\Users\amanda.martins\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\Fake_Store_Api\fake_shop\tests\product\invalid_product_test.robot">
 <kw name="Open Session" library="base" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>fakeshop</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20221019 14:42:23.455" level="INFO">Creating Session using : alias=fakeshop, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20221019 14:42:23.455" endtime="20221019 14:42:23.455"/>
+<msg timestamp="20221019 16:58:32.374" level="INFO">Creating Session using : alias=fakeshop, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221019 16:58:32.374" endtime="20221019 16:58:32.375"/>
 </kw>
-<status status="PASS" starttime="20221019 14:42:23.454" endtime="20221019 14:42:23.455"/>
+<status status="PASS" starttime="20221019 16:58:32.374" endtime="20221019 16:58:32.375"/>
 </kw>
-<test id="s1-t1" name="Test Case 1: GET List All Products" line="9">
-<kw name="GET List All Products" library="product_keywords">
-<kw name="GET On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>fakeshop</arg>
-<arg>/products</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20221019 14:42:24.218" level="INFO">GET Request : url=https://fakestoreapi.com/products 
- path_url=/products 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20221019 14:42:24.218" level="INFO">GET Response : url=https://fakestoreapi.com/products 
- status=200, reason=OK 
- headers={'Date': 'Wed, 19 Oct 2022 17:42:24 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"297c-h+n6NsR3M51S6528jZo3BluzvtU"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=pBMKKUshGg2SqCTb3HnVTzEBRxw9YjKfMGMo8cyNfv52%2FxTLyq75cTmvNS0SlxgFIpp1ud%2FkYZDL%2BwsWKNHobZIuWvn63nZLSi3zXXTAFIeFKvzuf7PLN%2FhNVV2v6%2BWboRKQ"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75cb4f607c69a496-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
- body=[{"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday","category":"men's clothing","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","rating":{"rate":3.9,"count":120}},{"id":2,"title":"Mens Casual Premium Slim Fit T-Shirts ","price":22.3,"description":"Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight &amp; soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.","category":"men's clothing","image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg","rating":{"rate":4.1,"count":259}},{"id":3,"title":"Mens Cotton Jacket","price":55.99,"description":"great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking, camping, mountain/rock climbing, cycling, traveling or other outdoors. Good gift choice for you or your family member. A warm hearted love to Father, husband or son in this thanksgiving or Christmas Day.","category":"men's clothing","image":"https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg","rating":{"rate":4.7,"count":500}},{"id":4,"title":"Mens Casual Slim Fit","price":15.99,"description":"The color could be slightly different between on the screen and in practice. / Please note that body builds vary by person, therefore, detailed size information should be reviewed below on the product description.","category":"men's clothing","image":"https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg","rating":{"rate":2.1,"count":430}},{"id":5,"title":"John Hardy Women's Legends Naga Gold &amp; Silver Dragon Station Chain Bracelet","price":695,"description":"From our Legends Collection, the Naga was inspired by the mythical water dragon that protects the ocean's pearl. Wear facing inward to be bestowed with love and abundance, or outward for protection.","category":"jewelery","image":"https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":4.6,"count":400}},{"id":6,"title":"Solid Gold Petite Micropave ","price":168,"description":"Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.","category":"jewelery","image":"https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":3.9,"count":70}},{"id":7,"title":"White Gold Plated Princess","price":9.99,"description":"Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her. Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day...","category":"jewelery","image":"https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":3,"count":400}},{"id":8,"title":"Pierced Owl Rose Gold Plated Stainless Steel Double","price":10.99,"description":"Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel","category":"jewelery","image":"https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg","rating":{"rate":1.9,"count":100}},{"id":9,"title":"WD 2TB Elements Portable External Hard Drive - USB 3.0 ","price":64,"description":"USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system","category":"electronics","image":"https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg","rating":{"rate":3.3,"count":203}},{"id":10,"title":"SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s","price":109,"description":"Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)","category":"electronics","image":"https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg","rating":{"rate":2.9,"count":470}},{"id":11,"title":"Silicon Power 256GB SSD 3D NAND A55 SLC Cache Performance Boost SATA III 2.5","price":109,"description":"3D NAND flash are applied to deliver high transfer speeds Remarkable transfer speeds that enable faster bootup and improved overall system performance. The advanced SLC Cache Technology allows performance boost and longer lifespan 7mm slim design suitable for Ultrabooks and Ultra-slim notebooks. Supports TRIM command, Garbage Collection technology, RAID, and ECC (Error Checking &amp; Correction) to provide the optimized performance and enhanced reliability.","category":"electronics","image":"https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg","rating":{"rate":4.8,"count":319}},{"id":12,"title":"WD 4TB Gaming Drive Works with Playstation 4 Portable External Hard Drive","price":114,"description":"Expand your PS4 gaming experience, Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty","category":"electronics","image":"https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg","rating":{"rate":4.8,"count":400}},{"id":13,"title":"Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin","price":599,"description":"21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz","category":"electronics","image":"https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg","rating":{"rate":2.9,"count":250}},{"id":14,"title":"Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ","price":999.99,"description":"49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag","category":"electronics","image":"https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg","rating":{"rate":2.2,"count":140}},{"id":15,"title":"BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats","price":56.99,"description":"Note:The Jackets is US standard size, Please choose size as your usual wear Material: 100% Polyester; Detachable Liner Fabric: Warm Fleece. Detachable Functional Liner: Skin Friendly, Lightweigt and Warm.Stand Collar Liner jacket, keep you warm in cold weather. Zippered Pockets: 2 Zippered Hand Pockets, 2 Zippered Pockets on Chest (enough to keep cards or keys)and 1 Hidden Pocket Inside.Zippered Hand Pockets and Hidden Pocket keep your things secure. Humanized Design: Adjustable and Detachable Hood and Adjustable cuff to prevent the wind and water,for a comfortable fit. 3 in 1 Detachable Design provide more convenience, you can separate the coat and inner as needed, or wear it together. It is suitable for different season and help you adapt to different climates","category":"women's clothing","image":"https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg","rating":{"rate":2.6,"count":235}},{"id":16,"title":"Lock and Love Women's Removable Hooded Faux Leather Moto Biker Jacket","price":29.95,"description":"100% POLYURETHANE(shell) 100% POLYESTER(lining) 75% POLYESTER 25% COTTON (SWEATER), Faux leather material for style and comfort / 2 pockets of front, 2-For-One Hooded denim style faux leather jacket, Button detail on waist / Detail stitching at sides, HAND WASH ONLY / DO NOT BLEACH / LINE DRY / DO NOT IRON","category":"women's clothing","image":"https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg","rating":{"rate":2.9,"count":340}},{"id":17,"title":"Rain Jacket Women Windbreaker Striped Climbing Raincoats","price":39.99,"description":"Lightweight perfet for trip or casual wear---Long sleeve with hooded, adjustable drawstring waist design. Button and zipper front closure raincoat, fully stripes Lined and The Raincoat has 2 side pockets are a good size to hold all kinds of things, it covers the hips, and the hood is generous but doesn't overdo it.Attached Cotton Lined Hood with Adjustable Drawstrings give it a real styled look.","category":"women's clothing","image":"https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg","rating":{"rate":3.8,"count":679}},{"id":18,"title":"MBJ Women's Solid Short Sleeve Boat Neck V ","price":9.85,"description":"95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem","category":"women's clothing","image":"https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg","rating":{"rate":4.7,"count":130}},{"id":19,"title":"Opna Women's Short Sleeve Moisture","price":7.95,"description":"100% Polyester, Machine wash, 100% cationic polyester interlock, Machine Wash &amp; Pre Shrunk for a Great Fit, Lightweight, roomy and highly breathable with moisture wicking fabric which helps to keep moisture away, Soft Lightweight Fabric with comfortable V-neck collar and a slimmer fit, delivers a sleek, ... (set the log level to DEBUG or TRACE to see the full content) 
- </msg>
-<msg timestamp="20221019 14:42:24.218" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221019 14:42:23.457" endtime="20221019 14:42:24.218"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221019 14:42:24.219" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221019 14:42:24.219" endtime="20221019 14:42:24.219"/>
-</kw>
-<status status="PASS" starttime="20221019 14:42:23.456" endtime="20221019 14:42:24.219"/>
-</kw>
-<kw name="Print Return Status Code" library="common">
-<kw name="Log To Console" library="BuiltIn">
-<arg>\nStatus Code: ${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:24.220" endtime="20221019 14:42:24.221"/>
-</kw>
-<status status="PASS" starttime="20221019 14:42:24.220" endtime="20221019 14:42:24.221"/>
-</kw>
-<kw name="Print Return Message" library="common">
-<kw name="Log To Console" library="BuiltIn">
-<arg>\nResponse: ${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:24.222" endtime="20221019 14:42:24.231"/>
-</kw>
-<status status="PASS" starttime="20221019 14:42:24.222" endtime="20221019 14:42:24.231"/>
-</kw>
-<tag>1</tag>
-<status status="PASS" starttime="20221019 14:42:23.456" endtime="20221019 14:42:24.232"/>
-</test>
-<test id="s1-t2" name="Test Case 2: GET Product By ID" line="15">
-<kw name="GET Product By ID" library="product_keywords">
-<kw name="GET On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>fakeshop</arg>
-<arg>/products/1</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20221019 14:42:24.567" level="INFO">GET Request : url=https://fakestoreapi.com/products/1 
- path_url=/products/1 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20221019 14:42:24.567" level="INFO">GET Response : url=https://fakestoreapi.com/products/1 
- status=200, reason=OK 
- headers={'Date': 'Wed, 19 Oct 2022 17:42:25 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"16c-MMdrqY6N0sTiefLdsgtBej9eunY"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=y0W5xKht0Il25k7Ptksk8ZSRXpDFE7ow3lovDRp8jQqtoFya%2FS66GmgMA14u%2BuTzAMc912TDbVYK6SLtpJVa1m%2BMqPtj7hLLUNisqld8h4OhaFwueybANBiIO%2B00b5NjMTb6"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75cb4f64cc92a496-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
- body={"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday","category":"men's clothing","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","rating":{"rate":3.9,"count":120}} 
- </msg>
-<msg timestamp="20221019 14:42:24.568" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221019 14:42:24.235" endtime="20221019 14:42:24.568"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221019 14:42:24.570" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221019 14:42:24.569" endtime="20221019 14:42:24.570"/>
-</kw>
-<status status="PASS" starttime="20221019 14:42:24.234" endtime="20221019 14:42:24.570"/>
-</kw>
-<kw name="Print Return Status Code" library="common">
-<kw name="Log To Console" library="BuiltIn">
-<arg>\nStatus Code: ${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:24.573" endtime="20221019 14:42:24.576"/>
-</kw>
-<status status="PASS" starttime="20221019 14:42:24.572" endtime="20221019 14:42:24.576"/>
-</kw>
-<kw name="Print Return Message" library="common">
-<kw name="Log To Console" library="BuiltIn">
-<arg>\nResponse: ${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:24.578" endtime="20221019 14:42:24.580"/>
-</kw>
-<status status="PASS" starttime="20221019 14:42:24.577" endtime="20221019 14:42:24.581"/>
-</kw>
-<tag>2</tag>
-<status status="PASS" starttime="20221019 14:42:24.233" endtime="20221019 14:42:24.582"/>
-</test>
-<test id="s1-t3" name="Test Case 3: GET Limit Of Products" line="21">
-<kw name="Get Limit Of Products" library="product_library">
-<var>${get_category}</var>
-<var>${status_code}</var>
-<arg>${5}</arg>
-<msg timestamp="20221019 14:42:25.293" level="INFO">${get_category} = [{'id': 1, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': 109.95, 'description': 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 in...</msg>
-<msg timestamp="20221019 14:42:25.294" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221019 14:42:24.586" endtime="20221019 14:42:25.294"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${get_category}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:25.296" endtime="20221019 14:42:25.304"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:25.305" endtime="20221019 14:42:25.307"/>
-</kw>
-<tag>3</tag>
-<status status="PASS" starttime="20221019 14:42:24.584" endtime="20221019 14:42:25.308"/>
-</test>
-<test id="s1-t4" name="Test Case 4: GET Products In Descending Order" line="27">
-<kw name="Products In Descending Order" library="product_library">
-<var>${get_category}</var>
-<var>${status_code}</var>
-<msg timestamp="20221019 14:42:25.990" level="INFO">${get_category} = [{'id': 20, 'title': 'DANVOUY Womens T Shirt Casual Cotton Short', 'price': 12.99, 'description': '95%Cotton,5%Spandex, Features: Casual, Short Sleeve, Letter Print,V-Neck,Fashion Tees, The fabric is ...</msg>
-<msg timestamp="20221019 14:42:25.990" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221019 14:42:25.312" endtime="20221019 14:42:25.991"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${get_category}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:25.993" endtime="20221019 14:42:26.008"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:26.009" endtime="20221019 14:42:26.010"/>
-</kw>
-<tag>4</tag>
-<status status="PASS" starttime="20221019 14:42:25.310" endtime="20221019 14:42:26.010"/>
-</test>
-<test id="s1-t5" name="Test Case 5: GET Products In Ascending Order" line="33">
-<kw name="Products In Ascending Order" library="product_library">
-<var>${get_category}</var>
-<var>${status_code}</var>
-<msg timestamp="20221019 14:42:26.711" level="INFO">${get_category} = [{'id': 1, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': 109.95, 'description': 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 in...</msg>
-<msg timestamp="20221019 14:42:26.711" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221019 14:42:26.012" endtime="20221019 14:42:26.711"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${get_category}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:26.713" endtime="20221019 14:42:26.727"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:26.728" endtime="20221019 14:42:26.729"/>
-</kw>
-<tag>5</tag>
-<status status="PASS" starttime="20221019 14:42:26.012" endtime="20221019 14:42:26.730"/>
-</test>
-<test id="s1-t6" name="Test Case 6: GET List Products Category" line="39">
-<kw name="GET All Products Categories" library="product_keywords">
-<kw name="GET On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>fakeshop</arg>
-<arg>/products/categories</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20221019 14:42:27.063" level="INFO">GET Request : url=https://fakestoreapi.com/products/categories 
- path_url=/products/categories 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
- </msg>
-<msg timestamp="20221019 14:42:27.064" level="INFO">GET Response : url=https://fakestoreapi.com/products/categories 
- status=200, reason=OK 
- headers={'Date': 'Wed, 19 Oct 2022 17:42:27 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3e-cdq81BKoKIRIQmboBVN84Vj+vkM"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=L68BF0XNdqmLzyvW1yzRvB1t3WKEcVU8mYkIFbzx%2FEUcVOt%2FcNUzveoFeb38sPCHK4s%2Fmi5KSkU7PJeDL%2F34TvD56t5PjCxVJodfnNzv0xoqxxePw4rzFqZsj1RSH85nDZ%2FM"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75cb4f746e20a496-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
- body=["electronics","jewelery","men's clothing","women's clothing"] 
- </msg>
-<msg timestamp="20221019 14:42:27.064" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221019 14:42:26.733" endtime="20221019 14:42:27.065"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221019 14:42:27.067" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221019 14:42:27.065" endtime="20221019 14:42:27.067"/>
-</kw>
-<status status="PASS" starttime="20221019 14:42:26.733" endtime="20221019 14:42:27.067"/>
-</kw>
-<kw name="Print Return Status Code" library="common">
-<kw name="Log To Console" library="BuiltIn">
-<arg>\nStatus Code: ${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:27.071" endtime="20221019 14:42:27.075"/>
-</kw>
-<status status="PASS" starttime="20221019 14:42:27.069" endtime="20221019 14:42:27.076"/>
-</kw>
-<kw name="Print Return Message" library="common">
-<kw name="Log To Console" library="BuiltIn">
-<arg>\nResponse: ${response.content}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:27.079" endtime="20221019 14:42:27.081"/>
-</kw>
-<status status="PASS" starttime="20221019 14:42:27.077" endtime="20221019 14:42:27.082"/>
-</kw>
-<tag>6</tag>
-<status status="PASS" starttime="20221019 14:42:26.732" endtime="20221019 14:42:27.083"/>
-</test>
-<test id="s1-t7" name="Test Case 7: GET List All Products In Electronics Category" line="45">
-<kw name="Get Category" library="product_library">
-<var>${get_category}</var>
-<var>${status_code}</var>
-<arg>electronics</arg>
-<msg timestamp="20221019 14:42:27.648" level="INFO">${get_category} = [{'id': 9, 'title': 'WD 2TB Elements Portable External Hard Drive - USB 3.0 ', 'price': 64, 'description': 'USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; ...</msg>
-<msg timestamp="20221019 14:42:27.648" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221019 14:42:27.088" endtime="20221019 14:42:27.648"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${get_category}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:27.650" endtime="20221019 14:42:27.663"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:27.664" endtime="20221019 14:42:27.666"/>
-</kw>
-<tag>7</tag>
-<status status="PASS" starttime="20221019 14:42:27.087" endtime="20221019 14:42:27.667"/>
-</test>
-<test id="s1-t8" name="Test Case 8: GET List All Products In Jewelery Category" line="51">
-<kw name="Get Category" library="product_library">
-<var>${get_category}</var>
-<var>${status_code}</var>
-<arg>jewelery</arg>
-<msg timestamp="20221019 14:42:28.222" level="INFO">${get_category} = [{'id': 5, 'title': "John Hardy Women's Legends Naga Gold &amp; Silver Dragon Station Chain Bracelet", 'price': 695, 'description': "From our Legends Collection, the Naga was inspired by the mythical wate...</msg>
-<msg timestamp="20221019 14:42:28.222" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221019 14:42:27.671" endtime="20221019 14:42:28.222"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${get_category}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:28.223" endtime="20221019 14:42:28.227"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:28.228" endtime="20221019 14:42:28.230"/>
-</kw>
-<tag>7</tag>
-<status status="PASS" starttime="20221019 14:42:27.669" endtime="20221019 14:42:28.231"/>
-</test>
-<test id="s1-t9" name="Test Case 9: GET List All Products In Men's Clothing Category" line="57">
-<kw name="Get Category" library="product_library">
-<var>${get_category}</var>
-<var>${status_code}</var>
-<arg>men's clothing</arg>
-<msg timestamp="20221019 14:42:29.092" level="INFO">${get_category} = [{'id': 1, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': 109.95, 'description': 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 in...</msg>
-<msg timestamp="20221019 14:42:29.093" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221019 14:42:28.234" endtime="20221019 14:42:29.093"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${get_category}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:29.094" endtime="20221019 14:42:29.099"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:29.100" endtime="20221019 14:42:29.102"/>
-</kw>
-<tag>7</tag>
-<status status="PASS" starttime="20221019 14:42:28.233" endtime="20221019 14:42:29.102"/>
-</test>
-<test id="s1-t10" name="Test Case 10: GET List All Products In Women's Clothing Category" line="63">
-<kw name="Get Category" library="product_library">
-<var>${get_category}</var>
-<var>${status_code}</var>
-<arg>women's clothing</arg>
-<msg timestamp="20221019 14:42:29.648" level="INFO">${get_category} = [{'id': 15, 'title': "BIYLACLESEN Women's 3-in-1 Snowboard Jacket Winter Coats", 'price': 56.99, 'description': 'Note:The Jackets is US standard size, Please choose size as your usual wear Material: 1...</msg>
-<msg timestamp="20221019 14:42:29.649" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221019 14:42:29.106" endtime="20221019 14:42:29.649"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${get_category}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:29.651" endtime="20221019 14:42:29.658"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:29.659" endtime="20221019 14:42:29.660"/>
-</kw>
-<tag>7</tag>
-<status status="PASS" starttime="20221019 14:42:29.105" endtime="20221019 14:42:29.661"/>
-</test>
-<test id="s1-t11" name="Test Case 11: POST Add New Product With Absolute Value" line="69">
-<kw name="Read Json" library="product_library">
+<test id="s1-t1" name="Test Case 17: PUT Update Product Removing Title" line="107">
+<kw name="Read Json PUT" library="product_library">
 <var>${new_product}</var>
 <var>${status_code}</var>
-<arg>product_absolute_price</arg>
-<msg timestamp="20221019 14:42:30.063" level="INFO">${new_product} = {'id': 21, 'title': 'New Fit T-Shirt', 'price': '20', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL...</msg>
-<msg timestamp="20221019 14:42:30.064" level="INFO">${status_code} = 
+<arg>product_without_title</arg>
+<msg timestamp="20221019 16:58:33.042" level="INFO">${new_product} = {'id': 5, 'title': '', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX...</msg>
+<msg timestamp="20221019 16:58:33.042" level="INFO">${status_code} = 
 Status Code: 200
 </msg>
-<status status="PASS" starttime="20221019 14:42:29.664" endtime="20221019 14:42:30.064"/>
+<status status="PASS" starttime="20221019 16:58:32.376" endtime="20221019 16:58:33.042"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${new_product}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:30.066" endtime="20221019 14:42:30.069"/>
+<status status="PASS" starttime="20221019 16:58:33.043" endtime="20221019 16:58:33.043"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:30.071" endtime="20221019 14:42:30.073"/>
+<status status="PASS" starttime="20221019 16:58:33.044" endtime="20221019 16:58:33.045"/>
 </kw>
-<tag>11</tag>
-<status status="PASS" starttime="20221019 14:42:29.663" endtime="20221019 14:42:30.074"/>
-</test>
-<test id="s1-t12" name="Test Case 12: POST Add New Product With Decimal Value" line="75">
-<kw name="Read Json" library="product_library">
-<var>${new_product}</var>
-<var>${status_code}</var>
-<arg>product_decimal_price</arg>
-<msg timestamp="20221019 14:42:30.455" level="INFO">${new_product} = {'id': 21, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGND...</msg>
-<msg timestamp="20221019 14:42:30.455" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221019 14:42:30.079" endtime="20221019 14:42:30.455"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${new_product}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:30.456" endtime="20221019 14:42:30.459"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:30.460" endtime="20221019 14:42:30.462"/>
-</kw>
-<tag>12</tag>
-<status status="PASS" starttime="20221019 14:42:30.077" endtime="20221019 14:42:30.462"/>
-</test>
-<test id="s1-t13" name="Test Case 13: POST Add New Product With Zero Value" line="81">
-<kw name="Read Json" library="product_library">
-<var>${new_product}</var>
-<var>${status_code}</var>
-<arg>product_zero_price</arg>
-<msg timestamp="20221019 14:42:30.862" level="INFO">${new_product} = {'id': 21, 'title': 'New Fit T-Shirt', 'price': '0', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL....</msg>
-<msg timestamp="20221019 14:42:30.862" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221019 14:42:30.467" endtime="20221019 14:42:30.862"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${new_product}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:30.865" endtime="20221019 14:42:30.868"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:30.870" endtime="20221019 14:42:30.873"/>
-</kw>
-<tag>13</tag>
-<status status="PASS" starttime="20221019 14:42:30.465" endtime="20221019 14:42:30.874"/>
-</test>
-<test id="s1-t14" name="Test Case 24: DELETE Remove Product By ID" line="87">
-<kw name="DELETE Remove Product By ID" library="product_keywords">
-<kw name="DELETE On Session" library="RequestsLibrary">
-<var>${response}</var>
-<arg>fakeshop</arg>
-<arg>/products/1</arg>
-<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<msg timestamp="20221019 14:42:31.382" level="INFO">DELETE Request : url=https://fakestoreapi.com/products/1 
- path_url=/products/1 
- headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
- body=None 
- </msg>
-<msg timestamp="20221019 14:42:31.383" level="INFO">DELETE Response : url=https://fakestoreapi.com/products/1 
- status=200, reason=OK 
- headers={'Date': 'Wed, 19 Oct 2022 17:42:31 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"16c-MMdrqY6N0sTiefLdsgtBej9eunY"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=7BmNzcW72PI%2FGLplw8OEeF45Eg16e1A5Aexvf28DUi%2BlkL9xNfFapChGPmVhhwwTV32aUVas%2BZZ8R6jqGWyBoNSY4NU4%2FX%2FEkdqputeWSUXOQQz3eY7XwgKag7yhFCxQva9d"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75cb4f8e594ca496-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
- body={"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday","category":"men's clothing","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","rating":{"rate":3.9,"count":120}} 
- </msg>
-<msg timestamp="20221019 14:42:31.383" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221019 14:42:30.881" endtime="20221019 14:42:31.383"/>
-</kw>
-<kw name="Set Global Variable" library="BuiltIn">
-<arg>${response}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221019 14:42:31.385" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221019 14:42:31.384" endtime="20221019 14:42:31.386"/>
-</kw>
-<status status="PASS" starttime="20221019 14:42:30.880" endtime="20221019 14:42:31.386"/>
-</kw>
-<kw name="Print Return Status Code" library="common">
-<kw name="Log To Console" library="BuiltIn">
-<arg>\nStatus Code: ${response.status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221019 14:42:31.389" endtime="20221019 14:42:31.393"/>
-</kw>
-<status status="PASS" starttime="20221019 14:42:31.388" endtime="20221019 14:42:31.395"/>
-</kw>
-<tag>24</tag>
-<status status="PASS" starttime="20221019 14:42:30.878" endtime="20221019 14:42:31.396"/>
+<tag>17</tag>
+<status status="PASS" starttime="20221019 16:58:32.375" endtime="20221019 16:58:33.046"/>
 </test>
 <doc>Creating valid test for the endpoint /products</doc>
-<status status="PASS" starttime="20221019 14:42:22.912" endtime="20221019 14:42:31.401"/>
+<status status="PASS" starttime="20221019 16:58:31.571" endtime="20221019 16:58:33.047"/>
 </suite>
 <statistics>
 <total>
-<stat pass="14" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">1</stat>
-<stat pass="1" fail="0" skip="0">11</stat>
-<stat pass="1" fail="0" skip="0">12</stat>
-<stat pass="1" fail="0" skip="0">13</stat>
-<stat pass="1" fail="0" skip="0">2</stat>
-<stat pass="1" fail="0" skip="0">24</stat>
-<stat pass="1" fail="0" skip="0">3</stat>
-<stat pass="1" fail="0" skip="0">4</stat>
-<stat pass="1" fail="0" skip="0">5</stat>
-<stat pass="1" fail="0" skip="0">6</stat>
-<stat pass="4" fail="0" skip="0">7</stat>
+<stat pass="1" fail="0" skip="0">17</stat>
 </tag>
 <suite>
-<stat pass="14" fail="0" skip="0" id="s1" name="Valid Product Test">Valid Product Test</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Invalid Product Test">Invalid Product Test</stat>
 </suite>
 </statistics>
 <errors>

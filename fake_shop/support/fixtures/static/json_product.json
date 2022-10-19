@@ -1,6 +1,5 @@
 {
     "product_absolute_price": {
-        "id": 21,
         "title": "New Fit T-Shirt",
         "price": 20,
         "description": "Detailed size information should be reviewed below on the product description",
@@ -9,7 +8,6 @@
     },
 
     "product_zero_price": {
-        "id": 21,
         "title": "New Fit T-Shirt",
         "price": 0,
         "description": "Detailed size information should be reviewed below on the product description",
@@ -18,7 +16,6 @@
     },
 
     "product_decimal_price": {
-        "id": 21,
         "title": "New Fit T-Shirt",
         "price": 25.80,
         "description": "Detailed size information should be reviewed below on the product description",
