@@ -43,25 +43,25 @@ Test Case 6: GET List Products Category
 
 Test Case 7: GET List All Products In Electronics Category
     [Tags]    7
-    ${get_category}     ${status_code}        Get Eletronic Category
+    ${get_category}     ${status_code}        Get Category    electronics
     Log To Console      ${get_category}        
     Log To Console      ${status_code}
 
 Test Case 8: GET List All Products In Jewelery Category
-    [Tags]    8
-    ${get_category}     ${status_code}        Get Jewelery Category
+    [Tags]    7
+    ${get_category}     ${status_code}        Get Category    jewelery
     Log To Console      ${get_category}        
     Log To Console      ${status_code}
 
 Test Case 9: GET List All Products In Men's Clothing Category
-    [Tags]    9
-    ${get_category}     ${status_code}        Get Men Clothes Category
+    [Tags]    7
+    ${get_category}     ${status_code}        Get Category    men's clothing
     Log To Console      ${get_category}        
     Log To Console      ${status_code}
 
 Test Case 10: GET List All Products In Women's Clothing Category
-    [Tags]    10
-    ${get_category}     ${status_code}        Get Women Clothes Category
+    [Tags]    7
+    ${get_category}     ${status_code}        Get Category    women's clothing
     Log To Console      ${get_category}        
     Log To Console      ${status_code}
 

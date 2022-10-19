@@ -2,9 +2,9 @@ import requests as req
 import json
 
 url_category = "https://fakestoreapi.com/products/category/"
-url_limit_sort = "https://fakestoreapi.com/products?"
+url_products = "https://fakestoreapi.com/products"
 
-def Get_Request(category):
+def Get_Category(category):
     request = req.get(url_category + category)
     response = request.json()
     status_code = f"\nStatus Code: {request.status_code}\n"
@@ -12,35 +12,11 @@ def Get_Request(category):
     return response, status_code
 
 def Get_Limit_Sort(params):
-    request = req.get(url_limit_sort, params=params)
+    request = req.get(url_products + "?", params=params)
     response = request.json()
     status_code = f"\nStatus Code: {request.status_code}\n"
 
     return response, status_code
-
-def Get_Eletronic_Category():
-    category = "electronics"
-    response = Get_Request(category)
-
-    return response
-
-def Get_Jewelery_Category():
-    category = "jewelery"
-    response = Get_Request(category)
-
-    return response
-
-def Get_Men_Clothes_Category():
-    category = "men's clothing"
-    response = Get_Request(category)
-
-    return response
-
-def Get_Women_Clothes_Category():
-    category = "women's clothing"
-    response = Get_Request(category)
-
-    return response
 
 def Get_Limit_Of_Products(limit):
     params = {"limit": limit}
@@ -71,3 +47,11 @@ def Products_In_Ascending_Order():
     response = Get_Limit_Sort(params)
 
     return response
+
+def Get_Product_By_ID(id):
+    request = req.get(url_products + "/", params=id)
+    response = request.json()
+    status_code = f"\nStatus Code: {request.status_code}\n"
+
+    return response, status_code
+
