@@ -24,18 +24,6 @@ def Get_Limit_Of_Products(limit):
 
     return response
 
-def Exceed_Number_Of_Limit_Products():
-    params = {"limit": 999999}
-    response = Get_Limit_Sort(params)
-
-    return response
-
-def Negative_Limit_Of_Products():
-    params = {"limit": -1}
-    response = Get_Limit_Sort(params)
-
-    return response
-
 def Products_In_Descending_Order():
     params = {"sort": "desc"}
     response = Get_Limit_Sort(params)
@@ -47,12 +35,4 @@ def Products_In_Ascending_Order():
     response = Get_Limit_Sort(params)
 
     return response
-
-def Get_Product_ID(id):
-    request = req.get(url_products + "/", str(id))
-    response = request.json()
-
-    status_code = f"\nStatus Code: {request.status_code}\n"
-
-    return response, status_code
 

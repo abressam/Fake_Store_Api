@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation    Creating valid test for the endpoint /products
 Resource        ../../keywords/product/product_keywords.robot
+Resource        ../../keywords/product/post_product_keywords.robot
 
 Suite Setup     Open Session
 
