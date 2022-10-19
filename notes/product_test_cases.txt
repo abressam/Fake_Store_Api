@@ -69,29 +69,29 @@ Test Case 5: GET Nonexist Product Category      --- OK
 
 Test Case 6: POST Product Without Title      --- OK
 
-Test Case 7: POST Product Title With Blank Spaces
+Test Case 7: POST Product Title With Blank Spaces      --- OK
 
-Test Case 8: POST Product Without Price
+Test Case 8: POST Product Without Price      --- OK
 
-Test Case 9: POST Product Price With Blank Spaces
+Test Case 9: POST Product Price With Blank Spaces      --- OK
 
-Test Case 10: POST Product Price With Negative Value
+Test Case 10: POST Product Price With Negative Value      --- OK
 
-Test Case 11: POST Product Without Description
+Test Case 11: POST Product Without Description      --- OK
 
-Test Case 12: POST Product Description With Blank Spaces
+Test Case 12: POST Product Description With Blank Spaces      --- OK
 
-Test Case 13: POST Product Without Image
+Test Case 13: POST Product Without Image      --- OK
 
-Test Case 14: POST Product Image With Blank Spaces
+Test Case 14: POST Product Image With Blank Spaces      --- OK
 
-Test Case 15: POST Product Without Category
+Test Case 15: POST Product Without Category      --- OK
 
-Test Case 16: POST Product Category With Blank Spaces
+Test Case 16: POST Product Category With Blank Spaces      --- OK
 
-Test Case 17: PUT Update Product Removing Title
+Test Case 17: PUT Update Product Removing Title      
 
-Test Case 18: PUT Update Product Title To Blank Spaces
+Test Case 18: PUT Update Product Title To Blank Spaces 
 
 Test Case 19: PUT Update Product Removing Price
 

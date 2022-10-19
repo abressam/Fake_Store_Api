@@ -68,21 +68,21 @@ Test Case 10: GET List All Products In Women's Clothing Category
 
 Test Case 11: POST Add New Product With Absolute Value
     [Tags]    11
-    Register Product With Absolute Price
-    Print Return Status Code
-    Print Return Message
+    ${new_product}    ${status_code}        Read Json    product_absolute_price
+    Log To Console      ${new_product}
+    Log To Console      ${status_code}
 
 Test Case 12: POST Add New Product With Decimal Value
     [Tags]    12
-    Register Product With Decimal Price
-    Print Return Status Code
-    Print Return Message
+    ${new_product}    ${status_code}        Read Json    product_decimal_price
+    Log To Console      ${new_product}
+    Log To Console      ${status_code}
 
 Test Case 13: POST Add New Product With Zero Value
     [Tags]    13
-    Register Product With Zero Price
-    Print Return Status Code
-    Print Return Message
+    ${new_product}    ${status_code}        Read Json    product_zero_price
+    Log To Console      ${new_product}
+    Log To Console      ${status_code}
 
 Test Case 24: DELETE Remove Product By ID
     [Tags]    24
