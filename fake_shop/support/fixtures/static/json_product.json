@@ -26,7 +26,7 @@
         "image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
     },
 
-    "producy_without_title": {
+    "product_without_title": {
         "title": "",
         "price": 25.80,
         "description": "Detailed size information should be reviewed below on the product description",
@@ -34,7 +34,7 @@
         "image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
     },
 
-    "producy_blank_spaces_title": {
+    "product_blank_spaces_title": {
         "title": "      ",
         "price": 25.80,
         "description": "Detailed size information should be reviewed below on the product description",
@@ -42,7 +42,7 @@
         "image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
     },
 
-    "producy_without_price": {
+    "product_without_price": {
         "title": "New Fit T-Shirt",
         "price": "",
         "description": "Detailed size information should be reviewed below on the product description",
@@ -50,7 +50,7 @@
         "image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
     },
 
-    "producy_blank_spaces_price": {
+    "product_blank_spaces_price": {
         "title": "New Fit T-Shirt",
         "price": "     ",
         "description": "Detailed size information should be reviewed below on the product description",
@@ -58,7 +58,7 @@
         "image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
     },
 
-    "producy_negative_price": {
+    "product_negative_price": {
         "title": "New Fit T-Shirt",
         "price": -10,
         "description": "Detailed size information should be reviewed below on the product description",
@@ -66,7 +66,7 @@
         "image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
     },
 
-    "producy_without_description": {
+    "product_without_description": {
         "title": "New Fit T-Shirt",
         "price": 25.80,
         "description": "",
@@ -74,7 +74,7 @@
         "image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
     },
 
-    "producy_blank_spaces_description": {
+    "product_blank_spaces_description": {
         "title": "New Fit T-Shirt",
         "price": 25.80,
         "description": "       ",
@@ -82,7 +82,7 @@
         "image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
     },
 
-    "producy_without_category": {
+    "product_without_category": {
         "title": "New Fit T-Shirt",
         "price": 25.80,
         "description": "Detailed size information should be reviewed below on the product description",
@@ -90,7 +90,7 @@
         "image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
     },
 
-    "producy_blank_spaces_category": {
+    "product_blank_spaces_category": {
         "title": "New Fit T-Shirt",
         "price": 25.80,
         "description": "Detailed size information should be reviewed below on the product description",
@@ -98,7 +98,7 @@
         "image":"https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg"
     },
 
-    "producy_without_image": {
+    "product_without_image": {
         "title": "New Fit T-Shirt",
         "price": 25.80,
         "description": "Detailed size information should be reviewed below on the product description",
@@ -106,7 +106,7 @@
         "image":""
     },
 
-    "producy_blank_spaces_image": {
+    "product_blank_spaces_image": {
         "title": "New Fit T-Shirt",
         "price": 25.80,
         "description": "Detailed size information should be reviewed below on the product description",

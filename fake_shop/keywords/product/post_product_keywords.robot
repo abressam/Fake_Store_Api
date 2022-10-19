@@ -23,9 +23,3 @@ Register Product With Zero Price
     ${payload}          Set Variable                   ${json["product_zero_price"]}
     Set Global Variable         ${payload}
     POST Create New Product
-
-Register Product Without Title
-    ${json}     Import Static Json        ./json_product.json
-    ${payload}          Set Variable                   ${json["producy_without_title"]}
-    Set Global Variable         ${payload}
-    POST Create New Product
