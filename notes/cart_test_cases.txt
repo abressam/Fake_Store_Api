@@ -36,72 +36,74 @@ Test Case 14: PATCH Update Cart Product ID
 
 Test Case 15: PATCH Update Cart Product Quantity
 
-Test Case 16: DELETE Remove Cart By ID
+Test Case 16: DELETE Remove Cart By ID     --- OK
 
 _______________________________________________________
 _______________________________________________________
 
 --> Invalid Tests:
 
-Test Case 1: GET Cart With Invalid ID
+Test Case 1: GET Cart With Invalid ID     --- OK
 
-Test Case 2: GET Exceed Limit Of Carts
+Test Case 2: GET Exceed Limit Of Carts     --- OK
 
-Test Case 3: GET Use Negative Range In Limit Of Carts
+Test Case 3: GET Use Negative Range In Limit Of Carts     --- OK
 
-Test Case 4: GET Cart Using Invalid Date Format
+Test Case 4: GET Cart Using Invalid Date Format     --- OK
 
-Test Case 5: GET Cart Using Invalid Start Year
+Test Case 5: GET Cart Using Invalid Start Year     --- OK
 
-Test Case 6: GET Cart Using Invalid End Year
+Test Case 6: GET Cart Using Invalid End Year     --- OK
 
-Test Case 7: POST Add New Cart With Invalid User ID
+Test Case 7: POST Add New Cart With Invalid User ID     --- OK
 
-Test Case 8: POST Add New Cart Without User ID
+Test Case 8: POST Add New Cart Without User ID     --- OK
 
-Test Case 9: POST Add New Cart With Blank Spaces User ID
+Test Case 9: POST Add New Cart With Nonexist User ID     --- OK
 
-Test Case 10: POST Add New Cart With Invalid Date
+Test Case 9: POST Add New Cart With Blank Spaces User ID     --- OK
 
-Test Case 11: POST Add New Cart Without Date
+Test Case 10: POST Add New Cart With Invalid Date     --- OK
 
-Test Case 12: POST Add New Cart With Blank Spaces Date
+Test Case 11: POST Add New Cart Without Date     --- OK
 
-Test Case 13: POST Add New Cart With Invalid ID Product
+Test Case 12: POST Add New Cart With Blank Spaces Date     --- OK
 
-Test Case 14: POST Add New Cart Without ID Product
+Test Case 13: POST Add New Cart With Invalid ID Product     --- OK
 
-Test Case 15: POST Add New Cart With Blank Spaces ID Product
+Test Case 14: POST Add New Cart Without ID Product     --- OK
 
-Test Case 16: POST Add New Cart With Zero Quantity Of Product
+Test Case 15: POST Add New Cart With Blank Spaces ID Product     --- OK
 
-Test Case 17: POST Add New Cart With Negative Quantity Of Product
+Test Case 16: POST Add New Cart With Zero Quantity Of Product     --- OK
 
-Test Case 18: POST Add New Cart With Decimal Quantity Of Product
+Test Case 17: POST Add New Cart With Negative Quantity Of Product     --- OK
 
-Test Case 19: POST Add New Cart With Higher Quantity Of Product
+Test Case 18: POST Add New Cart With Decimal Quantity Of Product     --- OK
 
-Test Case 20: POST Add New Cart With No Product
+Test Case 19: POST Add New Cart With Higher Quantity Of Product     --- OK
 
-Test Case 21: PUT Update Cart With Invalid User ID
+Test Case 20: POST Add New Cart With No Product     --- OK
 
-Test Case 22: PUT Update Cart With No User ID
+Test Case 22: PUT Update Cart With Invalid User ID     --- OK
 
-Test Case 23: PUT Update Cart With Blank Space User ID
+Test Case 23: PUT Update Cart With No User ID
 
-Test Case 24: PUT Update Cart With Invalid Date Format
+Test Case 24: PUT Update Cart With Blank Space User ID
 
-Test Case 25: PUT Update Cart With No Date
+Test Case 25: PUT Update Cart With Invalid Date Format
 
-Test Case 26: PUT Update Cart With Blank Space Date
+Test Case 26: PUT Update Cart With No Date
 
-Test Case 27: PUT Update Cart With Future Date
+Test Case 27: PUT Update Cart With Blank Space Date
 
-Test Case 28: PUT Update Cart With Invalid Product ID
+Test Case 28: PUT Update Cart With Future Date
 
-Test Case 29: PUT Update Cart With No Product ID
+Test Case 29: PUT Update Cart With Invalid Product ID
 
-Test Case 30: PUT Update Cart With Blank Space Product ID
+Test Case 30: PUT Update Cart With No Product ID
+
+Test Case 31: PUT Update Cart With Blank Space Product ID
 
 Test Case 31: PATCH Update Cart With Invalid User ID
 

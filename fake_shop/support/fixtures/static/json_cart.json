@@ -44,6 +44,15 @@
         ]
     },
 
+    "future_date_cart": {
+        "userId": 2,
+        "date": "2300-10-20",
+        "products": [
+            {"productId": 1, "quantity": 5},
+            {"productId": 3, "quantity": 10}
+        ]
+    },
+
     "without_date_cart": {
         "userId": 2,
         "date": "",
