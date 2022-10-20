@@ -1,0 +1,10 @@
+{
+    "valid_cart": {
+        "userId": 2,
+        "date": "2020-10-20",
+        "products": [
+            {"id": 1, "quantity": 5},
+            {"productId": 3, "quantity": 10}
+        ]
+    }
+}

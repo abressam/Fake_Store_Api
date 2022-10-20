@@ -36,3 +36,23 @@ def GET_Range_Date(start_year, start_month, start_day, end_year, end_month, end_
 
     return response, status_code
 
+def GET_User_Cart(user_id):
+    request = req.get(url=f'{url_cart}/user/{user_id}')
+    response = request.json()
+    status_code = f"\nStatus Code: {request.status_code}\n"
+
+    return response, status_code
+
+def Read_Json():
+    with open('./fake_shop/support/fixtures/static/json_cart.json', 'r') as cart_data_file:
+        json_cart_data_file = json.load(cart_data_file)
+
+    return json_cart_data_file
+
+def POST_Cart_Static_Data(json_object):
+    json_data = Read_Json()
+    request = req.post(url=url_cart, data=json_data[json_object])
+    response = request.json()
+    status_code = f"\nStatus Code: {request.status_code}\n"
+
+    return response, status_code
