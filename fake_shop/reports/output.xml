@@ -1,1137 +1,590 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.8.2 on win32)" generated="20221020 16:16:33.362" rpa="false" schemaversion="3">
-<suite id="s1" name="Invalid Cart Test" source="C:\Users\amanda.martins\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\Fake_Store_Api\fake_shop\tests\cart\invalid_cart_test.robot">
+<robot generator="Robot 5.0.1 (Python 3.8.2 on win32)" generated="20221020 16:28:35.370" rpa="false" schemaversion="3">
+<suite id="s1" name="Invalid User Test" source="C:\Users\amanda.martins\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\Fake_Store_Api\fake_shop\tests\user\invalid_user_test.robot">
 <kw name="Open Session" library="base" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>fakeshop</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20221020 16:16:33.929" level="INFO">Creating Session using : alias=fakeshop, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20221020 16:16:33.928" endtime="20221020 16:16:33.929"/>
+<msg timestamp="20221020 16:28:35.949" level="INFO">Creating Session using : alias=fakeshop, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221020 16:28:35.948" endtime="20221020 16:28:35.949"/>
 </kw>
-<status status="PASS" starttime="20221020 16:16:33.928" endtime="20221020 16:16:33.929"/>
+<status status="PASS" starttime="20221020 16:28:35.948" endtime="20221020 16:28:35.949"/>
 </kw>
-<test id="s1-t1" name="Test Case 1: GET Cart With Invalid ID" line="8">
-<kw name="GET Cart ID" library="cart_library">
-<var>${get_cart}</var>
-<var>${status_code}</var>
-<arg>40</arg>
-<msg timestamp="20221020 16:16:34.855" level="INFO">${get_cart} = None</msg>
-<msg timestamp="20221020 16:16:34.856" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:33.930" endtime="20221020 16:16:34.856"/>
+<test id="s1-t1" name="Test Case 1: GET User ID Does Not Exists" line="15">
+<kw name="GET User With Invalid ID" library="get_user_keywords">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>fakeshop</arg>
+<arg>/users/${INVALID_VALUE}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221020 16:28:36.817" level="INFO">GET Request : url=https://fakestoreapi.com/users/99999999999 
+ path_url=/users/99999999999 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221020 16:28:36.818" level="INFO">GET Response : url=https://fakestoreapi.com/users/99999999999 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 20 Oct 2022 19:28:37 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '4', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"4-K+iMpCQsduglOsYkdIUQZQMtaDM"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=pwSN22AztpzkftaRxynmrIxcbaA9Pf46IDfR2DdO4TmoVO%2Fr90OzOo7foXh9vz%2FtGNwJhVo9EIsiewqhMC0%2BRRTAfvupvolVzDx0pn3DgQI4K0LZqnl4eYTlrKLSeXj7uqFN"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75d428565924601e-GRU', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body=null 
+ </msg>
+<msg timestamp="20221020 16:28:36.818" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221020 16:28:35.950" endtime="20221020 16:28:36.819"/>
 </kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221020 16:28:36.821" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221020 16:28:36.819" endtime="20221020 16:28:36.821"/>
+</kw>
+<status status="PASS" starttime="20221020 16:28:35.950" endtime="20221020 16:28:36.822"/>
+</kw>
+<kw name="Print Return Status Code" library="common">
 <kw name="Log To Console" library="BuiltIn">
-<arg>${get_cart}</arg>
+<arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:34.858" endtime="20221020 16:16:34.859"/>
+<status status="PASS" starttime="20221020 16:28:36.825" endtime="20221020 16:28:36.830"/>
 </kw>
+<status status="PASS" starttime="20221020 16:28:36.824" endtime="20221020 16:28:36.830"/>
+</kw>
+<kw name="Print Return Message" library="common">
 <kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
+<arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:34.861" endtime="20221020 16:16:34.862"/>
+<status status="PASS" starttime="20221020 16:28:36.834" endtime="20221020 16:28:36.838"/>
+</kw>
+<status status="PASS" starttime="20221020 16:28:36.832" endtime="20221020 16:28:36.839"/>
 </kw>
 <tag>1</tag>
-<status status="PASS" starttime="20221020 16:16:33.929" endtime="20221020 16:16:34.864"/>
+<status status="PASS" starttime="20221020 16:28:35.949" endtime="20221020 16:28:36.839"/>
 </test>
-<test id="s1-t2" name="Test Case 2: GET Exceed Limit Of Carts" line="14">
-<kw name="GET Limit" library="cart_library">
-<var>${get_cart}</var>
+<test id="s1-t2" name="Test Case 2: GET Exceed The Number Of Users" line="23">
+<kw name="Exceed Number Of Limit Users" library="user_library">
+<var>${get_limit}</var>
 <var>${status_code}</var>
-<arg>9999</arg>
-<msg timestamp="20221020 16:16:35.760" level="INFO">${get_cart} = [{'id': 1, 'userId': 1, 'date': '2020-03-02T00:00:02.000Z', 'products': [{'productId': 1, 'quantity': 4}, {'productId': 2, 'quantity': 1}, {'productId': 3, 'quantity': 6}], '__v': 0}, {'id': 2, 'userI...</msg>
-<msg timestamp="20221020 16:16:35.760" level="INFO">${status_code} = 
+<msg timestamp="20221020 16:28:37.709" level="INFO">${get_limit} = [{'address': {'geolocation': {'lat': '-37.3159', 'long': '81.1496'}, 'city': 'kilcoole', 'street': 'new road', 'number': 7682, 'zipcode': '12926-3874'}, 'id': 1, 'email': 'john@gmail.com', 'username':...</msg>
+<msg timestamp="20221020 16:28:37.709" level="INFO">${status_code} = 
 Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 16:16:34.870" endtime="20221020 16:16:35.760"/>
+<status status="PASS" starttime="20221020 16:28:36.844" endtime="20221020 16:28:37.709"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${get_cart}</arg>
+<arg>${get_limit}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:35.761" endtime="20221020 16:16:35.762"/>
+<status status="PASS" starttime="20221020 16:28:37.711" endtime="20221020 16:28:37.719"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:35.762" endtime="20221020 16:16:35.763"/>
+<status status="PASS" starttime="20221020 16:28:37.720" endtime="20221020 16:28:37.722"/>
 </kw>
 <tag>2</tag>
-<status status="PASS" starttime="20221020 16:16:34.868" endtime="20221020 16:16:35.764"/>
+<status status="PASS" starttime="20221020 16:28:36.843" endtime="20221020 16:28:37.723"/>
 </test>
-<test id="s1-t3" name="Test Case 3: GET Use Negative Range In Limit Of Carts" line="20">
-<kw name="GET Limit" library="cart_library">
-<var>${get_cart}</var>
+<test id="s1-t3" name="Test Case 3: GET Negative Limit Of Users" line="31">
+<kw name="Negative Limit Of Users" library="user_library">
+<var>${get_limit}</var>
 <var>${status_code}</var>
-<arg>-3</arg>
-<msg timestamp="20221020 16:16:36.652" level="INFO">${get_cart} = [{'id': 1, 'userId': 1, 'date': '2020-03-02T00:00:02.000Z', 'products': [{'productId': 1, 'quantity': 4}, {'productId': 2, 'quantity': 1}, {'productId': 3, 'quantity': 6}], '__v': 0}, {'id': 2, 'userI...</msg>
-<msg timestamp="20221020 16:16:36.652" level="INFO">${status_code} = 
+<msg timestamp="20221020 16:28:38.276" level="INFO">${get_limit} = [{'address': {'geolocation': {'lat': '-37.3159', 'long': '81.1496'}, 'city': 'kilcoole', 'street': 'new road', 'number': 7682, 'zipcode': '12926-3874'}, 'id': 1, 'email': 'john@gmail.com', 'username':...</msg>
+<msg timestamp="20221020 16:28:38.276" level="INFO">${status_code} = 
 Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 16:16:35.767" endtime="20221020 16:16:36.652"/>
+<status status="PASS" starttime="20221020 16:28:37.727" endtime="20221020 16:28:38.276"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${get_cart}</arg>
+<arg>${get_limit}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:36.652" endtime="20221020 16:16:36.655"/>
+<status status="PASS" starttime="20221020 16:28:38.278" endtime="20221020 16:28:38.281"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:36.658" endtime="20221020 16:16:36.665"/>
+<status status="PASS" starttime="20221020 16:28:38.283" endtime="20221020 16:28:38.286"/>
 </kw>
 <tag>3</tag>
-<status status="PASS" starttime="20221020 16:16:35.766" endtime="20221020 16:16:36.666"/>
+<status status="PASS" starttime="20221020 16:28:37.726" endtime="20221020 16:28:38.287"/>
 </test>
-<test id="s1-t4" name="Test Case 4: GET Cart Using Invalid Date Format" line="26">
-<kw name="GET Range Date" library="cart_library">
-<var>${get_order}</var>
+<test id="s1-t4" name="Test Case 4: POST User With Invalid Email" line="39">
+<kw name="POST User Static Data" library="user_library">
+<var>${new_user}</var>
 <var>${status_code}</var>
-<arg>2</arg>
-<arg>10</arg>
-<arg>2019</arg>
-<arg>16</arg>
-<arg>8</arg>
-<arg>2020</arg>
-<msg timestamp="20221020 16:16:37.331" level="INFO">${get_order} = {'status': 'error', 'message': 'cart id should be provided'}</msg>
-<msg timestamp="20221020 16:16:37.332" level="INFO">${status_code} = 
-Status Code: 400
+<arg>user_invalid_email</arg>
+<msg timestamp="20221020 16:28:39.168" level="INFO">${new_user} = {'id': 1}</msg>
+<msg timestamp="20221020 16:28:39.168" level="INFO">${status_code} = 
+Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 16:16:36.672" endtime="20221020 16:16:37.332"/>
+<status status="PASS" starttime="20221020 16:28:38.292" endtime="20221020 16:28:39.168"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${get_order}</arg>
+<arg>${new_user}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:37.333" endtime="20221020 16:16:37.335"/>
+<status status="PASS" starttime="20221020 16:28:39.170" endtime="20221020 16:28:39.172"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:37.336" endtime="20221020 16:16:37.338"/>
+<status status="PASS" starttime="20221020 16:28:39.173" endtime="20221020 16:28:39.175"/>
 </kw>
 <tag>4</tag>
-<status status="PASS" starttime="20221020 16:16:36.670" endtime="20221020 16:16:37.339"/>
+<status status="PASS" starttime="20221020 16:28:38.290" endtime="20221020 16:28:39.176"/>
 </test>
-<test id="s1-t5" name="Test Case 5: GET Cart Using Invalid Start Year" line="32">
-<kw name="GET Range Date" library="cart_library">
-<var>${get_order}</var>
+<test id="s1-t5" name="Test Case 5: POST User Without Email" line="46">
+<kw name="POST User Static Data" library="user_library">
+<var>${new_user}</var>
 <var>${status_code}</var>
-<arg>1800</arg>
-<arg>10</arg>
-<arg>2</arg>
-<arg>2022</arg>
-<arg>10</arg>
-<arg>5</arg>
-<msg timestamp="20221020 16:16:38.863" level="INFO">${get_order} = {'status': 'error', 'message': 'cart id should be provided'}</msg>
-<msg timestamp="20221020 16:16:38.863" level="INFO">${status_code} = 
-Status Code: 400
+<arg>user_without_email</arg>
+<msg timestamp="20221020 16:28:40.422" level="INFO">${new_user} = {'id': 1}</msg>
+<msg timestamp="20221020 16:28:40.423" level="INFO">${status_code} = 
+Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 16:16:37.345" endtime="20221020 16:16:38.863"/>
+<status status="PASS" starttime="20221020 16:28:39.181" endtime="20221020 16:28:40.423"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${get_order}</arg>
+<arg>${new_user}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:38.865" endtime="20221020 16:16:38.866"/>
+<status status="PASS" starttime="20221020 16:28:40.424" endtime="20221020 16:28:40.426"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:38.867" endtime="20221020 16:16:38.869"/>
+<status status="PASS" starttime="20221020 16:28:40.427" endtime="20221020 16:28:40.430"/>
 </kw>
 <tag>5</tag>
-<status status="PASS" starttime="20221020 16:16:37.343" endtime="20221020 16:16:38.870"/>
+<status status="PASS" starttime="20221020 16:28:39.179" endtime="20221020 16:28:40.431"/>
 </test>
-<test id="s1-t6" name="Test Case 6: GET Cart Using Invalid End Year" line="38">
-<kw name="GET Range Date" library="cart_library">
-<var>${get_order}</var>
+<test id="s1-t6" name="Test Case 6: POST User Without Username" line="53">
+<kw name="POST User Static Data" library="user_library">
+<var>${new_user}</var>
 <var>${status_code}</var>
-<arg>2019</arg>
-<arg>10</arg>
-<arg>2</arg>
-<arg>2100</arg>
-<arg>10</arg>
-<arg>5</arg>
-<msg timestamp="20221020 16:16:39.627" level="INFO">${get_order} = {'status': 'error', 'message': 'cart id should be provided'}</msg>
-<msg timestamp="20221020 16:16:39.628" level="INFO">${status_code} = 
-Status Code: 400
+<arg>user_without_username</arg>
+<msg timestamp="20221020 16:28:41.317" level="INFO">${new_user} = {'id': 1}</msg>
+<msg timestamp="20221020 16:28:41.317" level="INFO">${status_code} = 
+Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 16:16:38.875" endtime="20221020 16:16:39.628"/>
+<status status="PASS" starttime="20221020 16:28:40.435" endtime="20221020 16:28:41.317"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${get_order}</arg>
+<arg>${new_user}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:39.630" endtime="20221020 16:16:39.633"/>
+<status status="PASS" starttime="20221020 16:28:41.318" endtime="20221020 16:28:41.319"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:39.634" endtime="20221020 16:16:39.638"/>
+<status status="PASS" starttime="20221020 16:28:41.320" endtime="20221020 16:28:41.321"/>
 </kw>
 <tag>6</tag>
-<status status="PASS" starttime="20221020 16:16:38.874" endtime="20221020 16:16:39.639"/>
+<status status="PASS" starttime="20221020 16:28:40.433" endtime="20221020 16:28:41.321"/>
 </test>
-<test id="s1-t7" name="Test Case 7: POST Add New Cart Without User ID" line="44">
-<kw name="POST Cart Static Data" library="cart_library">
-<var>${new_cart}</var>
+<test id="s1-t7" name="Test Case 7: POST User Without Password" line="60">
+<kw name="POST User Static Data" library="user_library">
+<var>${new_user}</var>
 <var>${status_code}</var>
-<arg>no_user_ID_cart</arg>
-<msg timestamp="20221020 16:16:40.078" level="INFO">${new_cart} = {'id': 11, 'userId': '', 'date': '2020-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:40.079" level="INFO">${status_code} = 
+<arg>user_without_password</arg>
+<msg timestamp="20221020 16:28:42.102" level="INFO">${new_user} = {'id': 11}</msg>
+<msg timestamp="20221020 16:28:42.102" level="INFO">${status_code} = 
 Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 16:16:39.645" endtime="20221020 16:16:40.079"/>
+<status status="PASS" starttime="20221020 16:28:41.324" endtime="20221020 16:28:42.102"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${new_cart}</arg>
+<arg>${new_user}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:40.082" endtime="20221020 16:16:40.083"/>
+<status status="PASS" starttime="20221020 16:28:42.105" endtime="20221020 16:28:42.107"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:40.085" endtime="20221020 16:16:40.087"/>
+<status status="PASS" starttime="20221020 16:28:42.108" endtime="20221020 16:28:42.110"/>
 </kw>
 <tag>7</tag>
-<status status="PASS" starttime="20221020 16:16:39.643" endtime="20221020 16:16:40.088"/>
+<status status="PASS" starttime="20221020 16:28:41.323" endtime="20221020 16:28:42.112"/>
 </test>
-<test id="s1-t8" name="Test Case 8: POST Add New Cart With Nonexist User ID" line="50">
-<kw name="POST Cart Static Data" library="cart_library">
-<var>${new_cart}</var>
+<test id="s1-t8" name="Test Case 8: POST User Without First Name" line="67">
+<kw name="POST User Static Data" library="user_library">
+<var>${new_user}</var>
 <var>${status_code}</var>
-<arg>invalid_user_ID_cart</arg>
-<msg timestamp="20221020 16:16:40.807" level="INFO">${new_cart} = {'id': 11, 'userId': '40', 'date': '2020-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:40.807" level="INFO">${status_code} = 
+<arg>user_without_firstname</arg>
+<msg timestamp="20221020 16:28:42.963" level="INFO">${new_user} = {'id': 11}</msg>
+<msg timestamp="20221020 16:28:42.963" level="INFO">${status_code} = 
 Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 16:16:40.092" endtime="20221020 16:16:40.807"/>
+<status status="PASS" starttime="20221020 16:28:42.116" endtime="20221020 16:28:42.964"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${new_cart}</arg>
+<arg>${new_user}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:40.808" endtime="20221020 16:16:40.808"/>
+<status status="PASS" starttime="20221020 16:28:42.966" endtime="20221020 16:28:42.969"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:40.809" endtime="20221020 16:16:40.810"/>
+<status status="PASS" starttime="20221020 16:28:42.971" endtime="20221020 16:28:42.974"/>
 </kw>
 <tag>8</tag>
-<status status="PASS" starttime="20221020 16:16:40.090" endtime="20221020 16:16:40.810"/>
+<status status="PASS" starttime="20221020 16:28:42.114" endtime="20221020 16:28:42.975"/>
 </test>
-<test id="s1-t9" name="Test Case 9: POST Add New Cart With Blank Spaces User ID" line="56">
-<kw name="POST Cart Static Data" library="cart_library">
-<var>${new_cart}</var>
+<test id="s1-t9" name="Test Case 9: POST User Without Last Name" line="74">
+<kw name="POST User Static Data" library="user_library">
+<var>${new_user}</var>
 <var>${status_code}</var>
-<arg>blank_spaces_user_ID_cart</arg>
-<msg timestamp="20221020 16:16:41.468" level="INFO">${new_cart} = {'id': 11, 'userId': '      ', 'date': '2020-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:41.468" level="INFO">${status_code} = 
+<arg>user_without_lastname</arg>
+<msg timestamp="20221020 16:28:43.820" level="INFO">${new_user} = {'id': 11}</msg>
+<msg timestamp="20221020 16:28:43.820" level="INFO">${status_code} = 
 Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 16:16:40.812" endtime="20221020 16:16:41.468"/>
+<status status="PASS" starttime="20221020 16:28:42.977" endtime="20221020 16:28:43.820"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${new_cart}</arg>
+<arg>${new_user}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:41.470" endtime="20221020 16:16:41.473"/>
+<status status="PASS" starttime="20221020 16:28:43.822" endtime="20221020 16:28:43.823"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:41.475" endtime="20221020 16:16:41.477"/>
+<status status="PASS" starttime="20221020 16:28:43.824" endtime="20221020 16:28:43.826"/>
 </kw>
 <tag>9</tag>
-<status status="PASS" starttime="20221020 16:16:40.812" endtime="20221020 16:16:41.477"/>
+<status status="PASS" starttime="20221020 16:28:42.976" endtime="20221020 16:28:43.828"/>
 </test>
-<test id="s1-t10" name="Test Case 10: POST Add New Cart With Invalid Date" line="62">
-<kw name="POST Cart Static Data" library="cart_library">
-<var>${new_cart}</var>
+<test id="s1-t10" name="Test Case 10: POST User Without City" line="82">
+<kw name="POST User Static Data" library="user_library">
+<var>${new_user}</var>
 <var>${status_code}</var>
-<arg>invalid_date_cart</arg>
-<msg timestamp="20221020 16:16:41.900" level="INFO">${new_cart} = {'id': 11, 'userId': '2', 'date': '1800-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:41.900" level="INFO">${status_code} = 
+<arg>user_without_city</arg>
+<msg timestamp="20221020 16:28:44.714" level="INFO">${new_user} = {'id': 11}</msg>
+<msg timestamp="20221020 16:28:44.714" level="INFO">${status_code} = 
 Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 16:16:41.479" endtime="20221020 16:16:41.900"/>
+<status status="PASS" starttime="20221020 16:28:43.832" endtime="20221020 16:28:44.715"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${new_cart}</arg>
+<arg>${new_user}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:41.901" endtime="20221020 16:16:41.902"/>
+<status status="PASS" starttime="20221020 16:28:44.716" endtime="20221020 16:28:44.718"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:41.903" endtime="20221020 16:16:41.904"/>
+<status status="PASS" starttime="20221020 16:28:44.720" endtime="20221020 16:28:44.722"/>
 </kw>
 <tag>10</tag>
-<status status="PASS" starttime="20221020 16:16:41.478" endtime="20221020 16:16:41.905"/>
+<status status="PASS" starttime="20221020 16:28:43.830" endtime="20221020 16:28:44.723"/>
 </test>
-<test id="s1-t11" name="Test Case 11: POST Add New Cart Without Date" line="68">
-<kw name="POST Cart Static Data" library="cart_library">
-<var>${new_cart}</var>
+<test id="s1-t11" name="Test Case 11: POST User Without Street" line="90">
+<kw name="POST User Static Data" library="user_library">
+<var>${new_user}</var>
 <var>${status_code}</var>
-<arg>without_date_cart</arg>
-<msg timestamp="20221020 16:16:42.660" level="INFO">${new_cart} = {'id': 11, 'userId': '2', 'date': '', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:42.660" level="INFO">${status_code} = 
+<arg>user_without_street</arg>
+<msg timestamp="20221020 16:28:45.271" level="INFO">${new_user} = {'id': 1}</msg>
+<msg timestamp="20221020 16:28:45.271" level="INFO">${status_code} = 
 Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 16:16:41.908" endtime="20221020 16:16:42.660"/>
+<status status="PASS" starttime="20221020 16:28:44.728" endtime="20221020 16:28:45.271"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${new_cart}</arg>
+<arg>${new_user}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:42.661" endtime="20221020 16:16:42.662"/>
+<status status="PASS" starttime="20221020 16:28:45.273" endtime="20221020 16:28:45.275"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:42.663" endtime="20221020 16:16:42.664"/>
+<status status="PASS" starttime="20221020 16:28:45.277" endtime="20221020 16:28:45.280"/>
 </kw>
 <tag>11</tag>
-<status status="PASS" starttime="20221020 16:16:41.907" endtime="20221020 16:16:42.665"/>
+<status status="PASS" starttime="20221020 16:28:44.727" endtime="20221020 16:28:45.281"/>
 </test>
-<test id="s1-t12" name="Test Case 12: POST Add New Cart With Blank Spaces Date" line="74">
-<kw name="POST Cart Static Data" library="cart_library">
-<var>${new_cart}</var>
+<test id="s1-t12" name="Test Case 12: POST User Without Number" line="98">
+<kw name="POST User Static Data" library="user_library">
+<var>${new_user}</var>
 <var>${status_code}</var>
-<arg>blank_spaces_date_cart</arg>
-<msg timestamp="20221020 16:16:43.070" level="INFO">${new_cart} = {'id': 11, 'userId': '2', 'date': '            ', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:43.070" level="INFO">${status_code} = 
+<arg>user_without_number</arg>
+<msg timestamp="20221020 16:28:45.848" level="INFO">${new_user} = {'id': 11}</msg>
+<msg timestamp="20221020 16:28:45.848" level="INFO">${status_code} = 
 Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 16:16:42.668" endtime="20221020 16:16:43.070"/>
+<status status="PASS" starttime="20221020 16:28:45.283" endtime="20221020 16:28:45.848"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${new_cart}</arg>
+<arg>${new_user}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:43.073" endtime="20221020 16:16:43.075"/>
+<status status="PASS" starttime="20221020 16:28:45.850" endtime="20221020 16:28:45.853"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:43.076" endtime="20221020 16:16:43.079"/>
+<status status="PASS" starttime="20221020 16:28:45.854" endtime="20221020 16:28:45.857"/>
 </kw>
 <tag>12</tag>
-<status status="PASS" starttime="20221020 16:16:42.667" endtime="20221020 16:16:43.081"/>
+<status status="PASS" starttime="20221020 16:28:45.283" endtime="20221020 16:28:45.859"/>
 </test>
-<test id="s1-t13" name="Test Case 13: POST Add New Cart With Invalid ID Product" line="80">
-<kw name="POST Cart Static Data" library="cart_library">
-<var>${new_cart}</var>
+<test id="s1-t13" name="Test Case 13: POST User Without Zipcode" line="105">
+<kw name="POST User Static Data" library="user_library">
+<var>${new_user}</var>
 <var>${status_code}</var>
-<arg>invalid_product_ID_cart</arg>
-<msg timestamp="20221020 16:16:43.461" level="INFO">${new_cart} = {'id': 11, 'userId': '2', 'date': '1800-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:43.461" level="INFO">${status_code} = 
+<arg>user_without_zipcode</arg>
+<msg timestamp="20221020 16:28:46.403" level="INFO">${new_user} = {'id': 1}</msg>
+<msg timestamp="20221020 16:28:46.403" level="INFO">${status_code} = 
 Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 16:16:43.086" endtime="20221020 16:16:43.462"/>
+<status status="PASS" starttime="20221020 16:28:45.866" endtime="20221020 16:28:46.404"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${new_cart}</arg>
+<arg>${new_user}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:43.463" endtime="20221020 16:16:43.465"/>
+<status status="PASS" starttime="20221020 16:28:46.406" endtime="20221020 16:28:46.408"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:43.466" endtime="20221020 16:16:43.468"/>
-</kw>
-<tag>13</tag>
-<status status="PASS" starttime="20221020 16:16:43.085" endtime="20221020 16:16:43.469"/>
-</test>
-<test id="s1-t14" name="Test Case 14: POST Add New Cart Without ID Product" line="86">
-<kw name="POST Cart Static Data" library="cart_library">
-<var>${new_cart}</var>
-<var>${status_code}</var>
-<arg>without_product_ID_cart</arg>
-<msg timestamp="20221020 16:16:44.143" level="INFO">${new_cart} = {'id': 11, 'userId': '2', 'date': '', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:44.144" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:43.474" endtime="20221020 16:16:44.144"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${new_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:44.144" endtime="20221020 16:16:44.145"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:44.146" endtime="20221020 16:16:44.146"/>
+<status status="PASS" starttime="20221020 16:28:46.410" endtime="20221020 16:28:46.412"/>
 </kw>
 <tag>14</tag>
-<status status="PASS" starttime="20221020 16:16:43.472" endtime="20221020 16:16:44.147"/>
+<status status="PASS" starttime="20221020 16:28:45.864" endtime="20221020 16:28:46.413"/>
 </test>
-<test id="s1-t15" name="Test Case 15: POST Add New Cart With Blank Spaces ID Product" line="92">
-<kw name="POST Cart Static Data" library="cart_library">
-<var>${new_cart}</var>
+<test id="s1-t14" name="Test Case 14: POST User Without Latitude" line="112">
+<kw name="POST User Static Data" library="user_library">
+<var>${new_user}</var>
 <var>${status_code}</var>
-<arg>blank_spaces_product_ID_cart</arg>
-<msg timestamp="20221020 16:16:44.524" level="INFO">${new_cart} = {'id': 11, 'userId': '2', 'date': '            ', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:44.524" level="INFO">${status_code} = 
+<arg>user_without_lat</arg>
+<msg timestamp="20221020 16:28:46.963" level="INFO">${new_user} = {'id': 11}</msg>
+<msg timestamp="20221020 16:28:46.963" level="INFO">${status_code} = 
 Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 16:16:44.150" endtime="20221020 16:16:44.524"/>
+<status status="PASS" starttime="20221020 16:28:46.418" endtime="20221020 16:28:46.963"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${new_cart}</arg>
+<arg>${new_user}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:44.526" endtime="20221020 16:16:44.527"/>
+<status status="PASS" starttime="20221020 16:28:46.965" endtime="20221020 16:28:46.966"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:44.528" endtime="20221020 16:16:44.530"/>
+<status status="PASS" starttime="20221020 16:28:46.968" endtime="20221020 16:28:46.970"/>
+</kw>
+<tag>14</tag>
+<status status="PASS" starttime="20221020 16:28:46.416" endtime="20221020 16:28:46.971"/>
+</test>
+<test id="s1-t15" name="Test Case 15: POST User Without Longitude" line="119">
+<kw name="POST User Static Data" library="user_library">
+<var>${new_user}</var>
+<var>${status_code}</var>
+<arg>user_without_long</arg>
+<msg timestamp="20221020 16:28:47.843" level="INFO">${new_user} = {'id': 11}</msg>
+<msg timestamp="20221020 16:28:47.844" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 16:28:46.975" endtime="20221020 16:28:47.844"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_user}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 16:28:47.846" endtime="20221020 16:28:47.847"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 16:28:47.848" endtime="20221020 16:28:47.850"/>
 </kw>
 <tag>15</tag>
-<status status="PASS" starttime="20221020 16:16:44.149" endtime="20221020 16:16:44.531"/>
+<status status="PASS" starttime="20221020 16:28:46.973" endtime="20221020 16:28:47.851"/>
 </test>
-<test id="s1-t16" name="Test Case 16: POST Add New Cart With Zero Quantity Of Product" line="98">
-<kw name="POST Cart Static Data" library="cart_library">
-<var>${new_cart}</var>
+<test id="s1-t16" name="Test Case 16: POST User Without Phone" line="126">
+<kw name="POST User Static Data" library="user_library">
+<var>${new_user}</var>
 <var>${status_code}</var>
-<arg>zero_product_quantity_cart</arg>
-<msg timestamp="20221020 16:16:44.941" level="INFO">${new_cart} = {'id': 11, 'userId': '2', 'date': '2020-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:44.941" level="INFO">${status_code} = 
+<arg>user_without_phone</arg>
+<msg timestamp="20221020 16:28:48.753" level="INFO">${new_user} = {'id': 1}</msg>
+<msg timestamp="20221020 16:28:48.753" level="INFO">${status_code} = 
 Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 16:16:44.534" endtime="20221020 16:16:44.941"/>
+<status status="PASS" starttime="20221020 16:28:47.855" endtime="20221020 16:28:48.753"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
-<arg>${new_cart}</arg>
+<arg>${new_user}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:44.942" endtime="20221020 16:16:44.943"/>
+<status status="PASS" starttime="20221020 16:28:48.756" endtime="20221020 16:28:48.757"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:44.944" endtime="20221020 16:16:44.945"/>
+<status status="PASS" starttime="20221020 16:28:48.759" endtime="20221020 16:28:48.762"/>
 </kw>
 <tag>16</tag>
-<status status="PASS" starttime="20221020 16:16:44.533" endtime="20221020 16:16:44.946"/>
+<status status="PASS" starttime="20221020 16:28:47.854" endtime="20221020 16:28:48.763"/>
 </test>
-<test id="s1-t17" name="Test Case 17: POST Add New Cart With Negative Quantity Of Product" line="104">
-<kw name="POST Cart Static Data" library="cart_library">
-<var>${new_cart}</var>
-<var>${status_code}</var>
-<arg>negative_product_quantity_cart</arg>
-<msg timestamp="20221020 16:16:45.314" level="INFO">${new_cart} = {'id': 11, 'userId': '2', 'date': '2020-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:45.315" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:44.950" endtime="20221020 16:16:45.315"/>
+<test id="s1-t17" name="Test Case 17: POST Empty User" line="133">
+<kw name="Register New User With Empty Data" library="post_user_keywords">
+<kw name="Import Static Json" library="common">
+<var>${json}</var>
+<arg>./json_user.json</arg>
+<kw name="Get File" library="OperatingSystem">
+<var>${file}</var>
+<arg>${EXECDIR}/fake_shop/support/fixtures/static${file_name}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<msg timestamp="20221020 16:28:48.771" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\amanda.martins\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\Fake_Store_Api\fake_shop\support\fixtures\static\json_user.json"&gt;C:\Users\amanda.martins\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\Fake_Store_Api\fake_shop\support\fixtures\static\json_user.json&lt;/a&gt;'.</msg>
+<msg timestamp="20221020 16:28:48.772" level="INFO">${file} = {
+    "valid_user": {
+        "email": "gooduser@qa.com",
+        "username": "gooduser",
+        "password": "teste123",
+        "name": {
+            "firstname": "Good",
+            "lastname": "Us...</msg>
+<status status="PASS" starttime="20221020 16:28:48.769" endtime="20221020 16:28:48.772"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${new_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:45.317" endtime="20221020 16:16:45.320"/>
+<kw name="Evaluate" library="BuiltIn">
+<var>${data}</var>
+<arg>json.loads('''${file}''')</arg>
+<arg>json</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20221020 16:28:48.774" level="INFO">${data} = {'valid_user': {'email': 'gooduser@qa.com', 'username': 'gooduser', 'password': 'teste123', 'name': {'firstname': 'Good', 'lastname': 'User'}, 'address': {'city': 'São Paulo', 'street': 'Avenida Princ...</msg>
+<status status="PASS" starttime="20221020 16:28:48.772" endtime="20221020 16:28:48.774"/>
 </kw>
+<msg timestamp="20221020 16:28:48.774" level="INFO">${json} = {'valid_user': {'email': 'gooduser@qa.com', 'username': 'gooduser', 'password': 'teste123', 'name': {'firstname': 'Good', 'lastname': 'User'}, 'address': {'city': 'São Paulo', 'street': 'Avenida Princ...</msg>
+<status status="PASS" starttime="20221020 16:28:48.768" endtime="20221020 16:28:48.774"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${payload}</var>
+<arg>${json["empty_user"]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20221020 16:28:48.775" level="INFO">${payload} = {'email': '', 'username': '', 'password': '', 'name': {'firstname': '', 'lastname': ''}, 'address': {'city': '', 'street': '', 'number': '', 'zipcode': '', 'geolocation': {'lat': '', 'long': ''}}, 'ph...</msg>
+<status status="PASS" starttime="20221020 16:28:48.775" endtime="20221020 16:28:48.775"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${payload}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221020 16:28:48.777" level="INFO">${payload} = {'email': '', 'username': '', 'password': '', 'name': {'firstname': '', 'lastname': ''}, 'address': {'city': '', 'street': '', 'number': '', 'zipcode': '', 'geolocation': {'lat': '', 'long': ''}}, 'ph...</msg>
+<status status="PASS" starttime="20221020 16:28:48.776" endtime="20221020 16:28:48.777"/>
+</kw>
+<kw name="POST Create New User" library="post_user_keywords">
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>fakeshop</arg>
+<arg>/users</arg>
+<arg>json=&amp;{payload}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20221020 16:28:49.272" level="INFO">POST Request : url=https://fakestoreapi.com/users 
+ path_url=/users 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '209', 'Content-Type': 'application/json'} 
+ body=b'{"email": "", "username": "", "password": "", "name": {"firstname": "", "lastname": ""}, "address": {"city": "", "street": "", "number": "", "zipcode": "", "geolocation": {"lat": "", "long": ""}}, "phone": ""}' 
+ </msg>
+<msg timestamp="20221020 16:28:49.272" level="INFO">POST Response : url=https://fakestoreapi.com/users 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 20 Oct 2022 19:28:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '9', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"9-hVv0cNJophUD7CGn+ZqXp8tVGo0"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=XHw9dtICcfkSUw6FldJgI5r2h%2F8Ld6tX%2Bz%2F50KGpRAImR2RRgH4RCZbJN5XOwTuMQOM%2Bg5WPrXArLF0CIrXT9NgdKwkfu4L%2B4rw86Zep%2B6vqwDFC5Y7fXT9i5VWHositre5E"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75d428a61edc601e-GRU', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body={"id":11} 
+ </msg>
+<msg timestamp="20221020 16:28:49.273" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221020 16:28:48.777" endtime="20221020 16:28:49.273"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221020 16:28:49.275" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221020 16:28:49.274" endtime="20221020 16:28:49.276"/>
+</kw>
+<status status="PASS" starttime="20221020 16:28:48.777" endtime="20221020 16:28:49.276"/>
+</kw>
+<status status="PASS" starttime="20221020 16:28:48.768" endtime="20221020 16:28:49.276"/>
+</kw>
+<kw name="Print Return Status Code" library="common">
 <kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
+<arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:45.322" endtime="20221020 16:16:45.326"/>
+<status status="PASS" starttime="20221020 16:28:49.280" endtime="20221020 16:28:49.284"/>
+</kw>
+<status status="PASS" starttime="20221020 16:28:49.279" endtime="20221020 16:28:49.284"/>
+</kw>
+<kw name="Print Return Message" library="common">
+<kw name="Log To Console" library="BuiltIn">
+<arg>\nResponse: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 16:28:49.287" endtime="20221020 16:28:49.290"/>
+</kw>
+<status status="PASS" starttime="20221020 16:28:49.285" endtime="20221020 16:28:49.290"/>
 </kw>
 <tag>17</tag>
-<status status="PASS" starttime="20221020 16:16:44.949" endtime="20221020 16:16:45.327"/>
+<status status="PASS" starttime="20221020 16:28:48.767" endtime="20221020 16:28:49.291"/>
 </test>
-<test id="s1-t18" name="Test Case 18: POST Add New Cart With Decimal Quantity Of Product" line="110">
-<kw name="POST Cart Static Data" library="cart_library">
-<var>${new_cart}</var>
-<var>${status_code}</var>
-<arg>decimal_product_quantity_cart</arg>
-<msg timestamp="20221020 16:16:45.704" level="INFO">${new_cart} = {'id': 11, 'userId': '2', 'date': '2020-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:45.704" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:45.332" endtime="20221020 16:16:45.704"/>
+<test id="s1-t18" name="Test Case 72: DELETE Remove Nonexist User ID" line="141">
+<kw name="DELETE Nonexist User ID" library="delete_user_keywords">
+<kw name="DELETE On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>fakeshop</arg>
+<arg>/users/${INVALID_VALUE}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<msg timestamp="20221020 16:28:49.783" level="INFO">DELETE Request : url=https://fakestoreapi.com/users/99999999999 
+ path_url=/users/99999999999 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20221020 16:28:49.784" level="INFO">DELETE Response : url=https://fakestoreapi.com/users/99999999999 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 20 Oct 2022 19:28:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '4', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"4-K+iMpCQsduglOsYkdIUQZQMtaDM"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=OjT9F4Ln2wozBh6fRS0U%2FdnsAxEkyLv5wSR0zqQJfx5J7kmbmhzxoXjkPj56vnaSVwAaPjLvRzr5GMs3WTBsTvfqdAh6GIaJdZ05xBfXXdtnKMvyoNQxH%2Bcho1IQ6xhEJ2L2"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75d428a95b62601e-GRU', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body=null 
+ </msg>
+<msg timestamp="20221020 16:28:49.784" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221020 16:28:49.296" endtime="20221020 16:28:49.784"/>
 </kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221020 16:28:49.787" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221020 16:28:49.785" endtime="20221020 16:28:49.787"/>
+</kw>
+<status status="PASS" starttime="20221020 16:28:49.296" endtime="20221020 16:28:49.787"/>
+</kw>
+<kw name="Print Return Status Code" library="common">
 <kw name="Log To Console" library="BuiltIn">
-<arg>${new_cart}</arg>
+<arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:45.707" endtime="20221020 16:16:45.710"/>
+<status status="PASS" starttime="20221020 16:28:49.791" endtime="20221020 16:28:49.794"/>
 </kw>
+<status status="PASS" starttime="20221020 16:28:49.789" endtime="20221020 16:28:49.795"/>
+</kw>
+<kw name="Print Return Message" library="common">
 <kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
+<arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:45.711" endtime="20221020 16:16:45.715"/>
+<status status="PASS" starttime="20221020 16:28:49.798" endtime="20221020 16:28:49.802"/>
 </kw>
-<tag>18</tag>
-<status status="PASS" starttime="20221020 16:16:45.331" endtime="20221020 16:16:45.717"/>
-</test>
-<test id="s1-t19" name="Test Case 19: POST Add New Cart With Higher Quantity Of Product" line="116">
-<kw name="POST Cart Static Data" library="cart_library">
-<var>${new_cart}</var>
-<var>${status_code}</var>
-<arg>higher_product_quantity_cart</arg>
-<msg timestamp="20221020 16:16:46.140" level="INFO">${new_cart} = {'id': 11, 'userId': '2', 'date': '2020-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:46.140" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:45.724" endtime="20221020 16:16:46.140"/>
+<status status="PASS" starttime="20221020 16:28:49.796" endtime="20221020 16:28:49.803"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${new_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:46.143" endtime="20221020 16:16:46.144"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:46.145" endtime="20221020 16:16:46.148"/>
-</kw>
-<tag>19</tag>
-<status status="PASS" starttime="20221020 16:16:45.722" endtime="20221020 16:16:46.149"/>
-</test>
-<test id="s1-t20" name="Test Case 20: POST Add New Cart With No Product" line="122">
-<kw name="POST Cart Static Data" library="cart_library">
-<var>${new_cart}</var>
-<var>${status_code}</var>
-<arg>no_product_cart</arg>
-<msg timestamp="20221020 16:16:46.827" level="INFO">${new_cart} = {'id': 11, 'userId': '2', 'date': '2020-10-20'}</msg>
-<msg timestamp="20221020 16:16:46.827" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:46.155" endtime="20221020 16:16:46.827"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${new_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:46.829" endtime="20221020 16:16:46.830"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:46.831" endtime="20221020 16:16:46.832"/>
-</kw>
-<tag>20</tag>
-<status status="PASS" starttime="20221020 16:16:46.153" endtime="20221020 16:16:46.833"/>
-</test>
-<test id="s1-t21" name="Test Case 21: PUT Update Cart With Invalid User ID" line="128">
-<kw name="PUT Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>invalid_user_ID_cart</arg>
-<msg timestamp="20221020 16:16:47.249" level="INFO">${update_cart} = {'id': 2, 'userId': '40', 'date': '2020-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:47.249" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:46.836" endtime="20221020 16:16:47.249"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:47.250" endtime="20221020 16:16:47.251"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:47.252" endtime="20221020 16:16:47.253"/>
-</kw>
-<tag>21</tag>
-<status status="PASS" starttime="20221020 16:16:46.835" endtime="20221020 16:16:47.253"/>
-</test>
-<test id="s1-t22" name="Test Case 22: PUT Update Cart With No User ID" line="134">
-<kw name="PUT Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>no_user_ID_cart</arg>
-<msg timestamp="20221020 16:16:47.981" level="INFO">${update_cart} = {'id': 2, 'userId': '', 'date': '2020-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:47.982" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:47.257" endtime="20221020 16:16:47.982"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:47.983" endtime="20221020 16:16:47.984"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:47.984" endtime="20221020 16:16:47.986"/>
-</kw>
-<tag>22</tag>
-<status status="PASS" starttime="20221020 16:16:47.255" endtime="20221020 16:16:47.986"/>
-</test>
-<test id="s1-t23" name="Test Case 23: PUT Update Cart With Blank Space User ID" line="140">
-<kw name="PUT Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>blank_spaces_user_ID_cart</arg>
-<msg timestamp="20221020 16:16:48.349" level="INFO">${update_cart} = {'id': 2, 'userId': '      ', 'date': '2020-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:48.349" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:47.989" endtime="20221020 16:16:48.349"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:48.350" endtime="20221020 16:16:48.351"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:48.351" endtime="20221020 16:16:48.352"/>
-</kw>
-<tag>23</tag>
-<status status="PASS" starttime="20221020 16:16:47.988" endtime="20221020 16:16:48.352"/>
-</test>
-<test id="s1-t24" name="Test Case 24: PUT Update Cart With Invalid Date Format" line="146">
-<kw name="PUT Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>invalid_date_cart</arg>
-<msg timestamp="20221020 16:16:48.781" level="INFO">${update_cart} = {'id': 2, 'userId': '2', 'date': '1800-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:48.781" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:48.354" endtime="20221020 16:16:48.781"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:48.782" endtime="20221020 16:16:48.784"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:48.784" endtime="20221020 16:16:48.786"/>
-</kw>
-<tag>24</tag>
-<status status="PASS" starttime="20221020 16:16:48.354" endtime="20221020 16:16:48.787"/>
-</test>
-<test id="s1-t25" name="Test Case 25: PUT Update Cart With No Date" line="152">
-<kw name="PUT Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>without_date_cart</arg>
-<msg timestamp="20221020 16:16:49.456" level="INFO">${update_cart} = {'id': 2, 'userId': '2', 'date': '', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:49.457" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:48.790" endtime="20221020 16:16:49.457"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:49.457" endtime="20221020 16:16:49.458"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:49.459" endtime="20221020 16:16:49.459"/>
-</kw>
-<tag>25</tag>
-<status status="PASS" starttime="20221020 16:16:48.789" endtime="20221020 16:16:49.460"/>
-</test>
-<test id="s1-t26" name="Test Case 26: PUT Update Cart With Blank Space Date" line="158">
-<kw name="PUT Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>blank_spaces_date_cart</arg>
-<msg timestamp="20221020 16:16:49.828" level="INFO">${update_cart} = {'id': 2, 'userId': '2', 'date': '            ', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:49.828" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:49.463" endtime="20221020 16:16:49.828"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:49.830" endtime="20221020 16:16:49.832"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:49.833" endtime="20221020 16:16:49.835"/>
-</kw>
-<tag>26</tag>
-<status status="PASS" starttime="20221020 16:16:49.462" endtime="20221020 16:16:49.837"/>
-</test>
-<test id="s1-t27" name="Test Case 27: PUT Update Cart With Future Date" line="164">
-<kw name="PUT Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>future_date_cart</arg>
-<msg timestamp="20221020 16:16:50.221" level="INFO">${update_cart} = {'id': 2, 'userId': '2', 'date': '2300-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:50.221" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:49.842" endtime="20221020 16:16:50.221"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:50.222" endtime="20221020 16:16:50.222"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:50.223" endtime="20221020 16:16:50.224"/>
-</kw>
-<tag>27</tag>
-<status status="PASS" starttime="20221020 16:16:49.840" endtime="20221020 16:16:50.224"/>
-</test>
-<test id="s1-t28" name="Test Case 28: PUT Update Cart With Invalid Product ID" line="170">
-<kw name="PUT Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>invalid_product_ID_cart</arg>
-<msg timestamp="20221020 16:16:50.974" level="INFO">${update_cart} = {'id': 2, 'userId': '2', 'date': '1800-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:50.975" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:50.227" endtime="20221020 16:16:50.975"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:50.977" endtime="20221020 16:16:50.978"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:50.979" endtime="20221020 16:16:50.981"/>
-</kw>
-<tag>28</tag>
-<status status="PASS" starttime="20221020 16:16:50.226" endtime="20221020 16:16:50.982"/>
-</test>
-<test id="s1-t29" name="Test Case 29: PUT Update Cart With No Product ID" line="176">
-<kw name="PUT Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>without_product_ID_cart</arg>
-<msg timestamp="20221020 16:16:51.374" level="INFO">${update_cart} = {'id': 2, 'userId': '2', 'date': '', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:51.374" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:50.986" endtime="20221020 16:16:51.374"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:51.376" endtime="20221020 16:16:51.377"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:51.379" endtime="20221020 16:16:51.381"/>
-</kw>
-<tag>29</tag>
-<status status="PASS" starttime="20221020 16:16:50.985" endtime="20221020 16:16:51.382"/>
-</test>
-<test id="s1-t30" name="Test Case 30: PUT Update Cart With Blank Space Product ID" line="182">
-<kw name="PUT Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>blank_spaces_product_ID_cart</arg>
-<msg timestamp="20221020 16:16:52.041" level="INFO">${update_cart} = {'id': 2, 'userId': '2', 'date': '            ', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:52.041" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:51.387" endtime="20221020 16:16:52.041"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:52.042" endtime="20221020 16:16:52.043"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:52.043" endtime="20221020 16:16:52.044"/>
-</kw>
-<tag>30</tag>
-<status status="PASS" starttime="20221020 16:16:51.385" endtime="20221020 16:16:52.044"/>
-</test>
-<test id="s1-t31" name="Test Case 31: PATCH Update Cart With Invalid User ID" line="188">
-<kw name="PATCH Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>invalid_user_ID_cart</arg>
-<msg timestamp="20221020 16:16:52.424" level="INFO">${update_cart} = {'id': 2, 'userId': '40', 'date': '2020-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:52.424" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:52.047" endtime="20221020 16:16:52.424"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:52.425" endtime="20221020 16:16:52.426"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:52.427" endtime="20221020 16:16:52.428"/>
-</kw>
-<tag>31</tag>
-<status status="PASS" starttime="20221020 16:16:52.046" endtime="20221020 16:16:52.429"/>
-</test>
-<test id="s1-t32" name="Test Case 32: PATCH Update Cart With No User ID" line="194">
-<kw name="PATCH Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>no_user_ID_cart</arg>
-<msg timestamp="20221020 16:16:52.790" level="INFO">${update_cart} = {'id': 2, 'userId': '', 'date': '2020-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:52.790" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:52.432" endtime="20221020 16:16:52.790"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:52.791" endtime="20221020 16:16:52.792"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:52.792" endtime="20221020 16:16:52.793"/>
-</kw>
-<tag>32</tag>
-<status status="PASS" starttime="20221020 16:16:52.431" endtime="20221020 16:16:52.794"/>
-</test>
-<test id="s1-t33" name="Test Case 33: PATCH Update Cart With Blank Space User ID" line="200">
-<kw name="PATCH Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>blank_spaces_user_ID_cart</arg>
-<msg timestamp="20221020 16:16:53.533" level="INFO">${update_cart} = {'id': 2, 'userId': '      ', 'date': '2020-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:53.533" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:52.797" endtime="20221020 16:16:53.534"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:53.536" endtime="20221020 16:16:53.538"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:53.540" endtime="20221020 16:16:53.543"/>
-</kw>
-<tag>33</tag>
-<status status="PASS" starttime="20221020 16:16:52.796" endtime="20221020 16:16:53.544"/>
-</test>
-<test id="s1-t34" name="Test Case 34: PATCH Update Cart With Invalid Date Format" line="206">
-<kw name="PATCH Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>invalid_date_cart</arg>
-<msg timestamp="20221020 16:16:53.930" level="INFO">${update_cart} = {'id': 2, 'userId': '2', 'date': '1800-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:53.930" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:53.550" endtime="20221020 16:16:53.930"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:53.933" endtime="20221020 16:16:53.936"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:53.937" endtime="20221020 16:16:53.939"/>
-</kw>
-<tag>34</tag>
-<status status="PASS" starttime="20221020 16:16:53.548" endtime="20221020 16:16:53.940"/>
-</test>
-<test id="s1-t35" name="Test Case 35: PATCH Update Cart With No Date" line="212">
-<kw name="PATCH Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>without_date_cart</arg>
-<msg timestamp="20221020 16:16:54.619" level="INFO">${update_cart} = {'id': 2, 'userId': '2', 'date': '', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:54.620" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:53.945" endtime="20221020 16:16:54.620"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:54.621" endtime="20221020 16:16:54.622"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:54.623" endtime="20221020 16:16:54.625"/>
-</kw>
-<tag>35</tag>
-<status status="PASS" starttime="20221020 16:16:53.943" endtime="20221020 16:16:54.626"/>
-</test>
-<test id="s1-t36" name="Test Case 36: PATCH Update Cart With Blank Space Date" line="218">
-<kw name="PATCH Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>blank_spaces_date_cart</arg>
-<msg timestamp="20221020 16:16:55.010" level="INFO">${update_cart} = {'id': 2, 'userId': '2', 'date': '            ', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:55.010" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:54.630" endtime="20221020 16:16:55.010"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:55.013" endtime="20221020 16:16:55.015"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:55.017" endtime="20221020 16:16:55.021"/>
-</kw>
-<tag>36</tag>
-<status status="PASS" starttime="20221020 16:16:54.629" endtime="20221020 16:16:55.023"/>
-</test>
-<test id="s1-t37" name="Test Case 37: PATCH Update Cart With Future Date" line="224">
-<kw name="PATCH Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>future_date_cart</arg>
-<msg timestamp="20221020 16:16:55.402" level="INFO">${update_cart} = {'id': 2, 'userId': '2', 'date': '2300-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:55.402" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:55.028" endtime="20221020 16:16:55.402"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:55.404" endtime="20221020 16:16:55.406"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:55.407" endtime="20221020 16:16:55.408"/>
-</kw>
-<tag>37</tag>
-<status status="PASS" starttime="20221020 16:16:55.026" endtime="20221020 16:16:55.409"/>
-</test>
-<test id="s1-t38" name="Test Case 38: PATCH Update Cart With Invalid Product ID" line="230">
-<kw name="PATCH Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>invalid_product_ID_cart</arg>
-<msg timestamp="20221020 16:16:55.806" level="INFO">${update_cart} = {'id': 2, 'userId': '2', 'date': '1800-10-20', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:55.806" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:55.413" endtime="20221020 16:16:55.806"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:55.807" endtime="20221020 16:16:55.807"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:55.808" endtime="20221020 16:16:55.808"/>
-</kw>
-<tag>38</tag>
-<status status="PASS" starttime="20221020 16:16:55.412" endtime="20221020 16:16:55.809"/>
-</test>
-<test id="s1-t39" name="Test Case 39: PATCH Update Cart With No Product ID" line="236">
-<kw name="PATCH Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>without_product_ID_cart</arg>
-<msg timestamp="20221020 16:16:56.199" level="INFO">${update_cart} = {'id': 2, 'userId': '2', 'date': '', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:56.199" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:55.811" endtime="20221020 16:16:56.199"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:56.200" endtime="20221020 16:16:56.200"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:56.200" endtime="20221020 16:16:56.201"/>
-</kw>
-<tag>39</tag>
-<status status="PASS" starttime="20221020 16:16:55.810" endtime="20221020 16:16:56.202"/>
-</test>
-<test id="s1-t40" name="Test Case 40: PATCH Update Cart With Blank Space Product ID" line="242">
-<kw name="PATCH Cart Static Data" library="cart_library">
-<var>${update_cart}</var>
-<var>${status_code}</var>
-<arg>2</arg>
-<arg>blank_spaces_product_ID_cart</arg>
-<msg timestamp="20221020 16:16:56.894" level="INFO">${update_cart} = {'id': 2, 'userId': '2', 'date': '            ', 'products': ['productId', 'quantity', 'productId', 'quantity']}</msg>
-<msg timestamp="20221020 16:16:56.894" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:56.204" endtime="20221020 16:16:56.894"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${update_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:56.896" endtime="20221020 16:16:56.897"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:56.898" endtime="20221020 16:16:56.900"/>
-</kw>
-<tag>40</tag>
-<status status="PASS" starttime="20221020 16:16:56.203" endtime="20221020 16:16:56.902"/>
-</test>
-<test id="s1-t41" name="Test Case 41: DELETE Remove Cart Without ID" line="248">
-<kw name="DELETE Cart" library="cart_library">
-<var>${remove_cart}</var>
-<var>${status_code}</var>
-<arg>""</arg>
-<msg timestamp="20221020 16:16:57.275" level="INFO">${remove_cart} = {'status': 'error', 'message': 'cart id should be provided'}</msg>
-<msg timestamp="20221020 16:16:57.275" level="INFO">${status_code} = 
-Status Code: 400
-</msg>
-<status status="PASS" starttime="20221020 16:16:56.906" endtime="20221020 16:16:57.276"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${remove_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:57.277" endtime="20221020 16:16:57.279"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:57.282" endtime="20221020 16:16:57.285"/>
-</kw>
-<tag>41</tag>
-<status status="PASS" starttime="20221020 16:16:56.905" endtime="20221020 16:16:57.287"/>
-</test>
-<test id="s1-t42" name="Test Case 42: DELETE Remove Cart With Negative ID" line="254">
-<kw name="DELETE Cart" library="cart_library">
-<var>${remove_cart}</var>
-<var>${status_code}</var>
-<arg>-2</arg>
-<msg timestamp="20221020 16:16:57.853" level="INFO">${remove_cart} = None</msg>
-<msg timestamp="20221020 16:16:57.854" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:57.293" endtime="20221020 16:16:57.854"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${remove_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:57.856" endtime="20221020 16:16:57.857"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:57.858" endtime="20221020 16:16:57.860"/>
-</kw>
-<tag>42</tag>
-<status status="PASS" starttime="20221020 16:16:57.290" endtime="20221020 16:16:57.861"/>
-</test>
-<test id="s1-t43" name="Test Case 43: DELETE Remove Cart With Nonexistent ID" line="260">
-<kw name="DELETE Cart" library="cart_library">
-<var>${remove_cart}</var>
-<var>${status_code}</var>
-<arg>36</arg>
-<msg timestamp="20221020 16:16:58.406" level="INFO">${remove_cart} = None</msg>
-<msg timestamp="20221020 16:16:58.407" level="INFO">${status_code} = 
-Status Code: 200
-</msg>
-<status status="PASS" starttime="20221020 16:16:57.865" endtime="20221020 16:16:58.407"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${remove_cart}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:58.409" endtime="20221020 16:16:58.411"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${status_code}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 16:16:58.413" endtime="20221020 16:16:58.416"/>
-</kw>
-<tag>43</tag>
-<status status="PASS" starttime="20221020 16:16:57.864" endtime="20221020 16:16:58.417"/>
+<tag>72</tag>
+<status status="PASS" starttime="20221020 16:28:49.294" endtime="20221020 16:28:49.805"/>
 </test>
 <doc>Creating valid test for the endpoint /user</doc>
-<status status="PASS" starttime="20221020 16:16:33.364" endtime="20221020 16:16:58.423"/>
+<status status="PASS" starttime="20221020 16:28:35.373" endtime="20221020 16:28:49.810"/>
 </suite>
 <statistics>
 <total>
-<stat pass="43" fail="0" skip="0">All Tests</stat>
+<stat pass="18" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="1" fail="0" skip="0">1</stat>
 <stat pass="1" fail="0" skip="0">10</stat>
 <stat pass="1" fail="0" skip="0">11</stat>
 <stat pass="1" fail="0" skip="0">12</stat>
-<stat pass="1" fail="0" skip="0">13</stat>
-<stat pass="1" fail="0" skip="0">14</stat>
+<stat pass="2" fail="0" skip="0">14</stat>
 <stat pass="1" fail="0" skip="0">15</stat>
 <stat pass="1" fail="0" skip="0">16</stat>
 <stat pass="1" fail="0" skip="0">17</stat>
-<stat pass="1" fail="0" skip="0">18</stat>
-<stat pass="1" fail="0" skip="0">19</stat>
 <stat pass="1" fail="0" skip="0">2</stat>
-<stat pass="1" fail="0" skip="0">20</stat>
-<stat pass="1" fail="0" skip="0">21</stat>
-<stat pass="1" fail="0" skip="0">22</stat>
-<stat pass="1" fail="0" skip="0">23</stat>
-<stat pass="1" fail="0" skip="0">24</stat>
-<stat pass="1" fail="0" skip="0">25</stat>
-<stat pass="1" fail="0" skip="0">26</stat>
-<stat pass="1" fail="0" skip="0">27</stat>
-<stat pass="1" fail="0" skip="0">28</stat>
-<stat pass="1" fail="0" skip="0">29</stat>
 <stat pass="1" fail="0" skip="0">3</stat>
-<stat pass="1" fail="0" skip="0">30</stat>
-<stat pass="1" fail="0" skip="0">31</stat>
-<stat pass="1" fail="0" skip="0">32</stat>
-<stat pass="1" fail="0" skip="0">33</stat>
-<stat pass="1" fail="0" skip="0">34</stat>
-<stat pass="1" fail="0" skip="0">35</stat>
-<stat pass="1" fail="0" skip="0">36</stat>
-<stat pass="1" fail="0" skip="0">37</stat>
-<stat pass="1" fail="0" skip="0">38</stat>
-<stat pass="1" fail="0" skip="0">39</stat>
 <stat pass="1" fail="0" skip="0">4</stat>
-<stat pass="1" fail="0" skip="0">40</stat>
-<stat pass="1" fail="0" skip="0">41</stat>
-<stat pass="1" fail="0" skip="0">42</stat>
-<stat pass="1" fail="0" skip="0">43</stat>
 <stat pass="1" fail="0" skip="0">5</stat>
 <stat pass="1" fail="0" skip="0">6</stat>
 <stat pass="1" fail="0" skip="0">7</stat>
+<stat pass="1" fail="0" skip="0">72</stat>
 <stat pass="1" fail="0" skip="0">8</stat>
 <stat pass="1" fail="0" skip="0">9</stat>
 </tag>
 <suite>
-<stat pass="43" fail="0" skip="0" id="s1" name="Invalid Cart Test">Invalid Cart Test</stat>
+<stat pass="18" fail="0" skip="0" id="s1" name="Invalid User Test">Invalid User Test</stat>
 </suite>
 </statistics>
 <errors>
