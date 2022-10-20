@@ -5,6 +5,7 @@ Library             Collections
 Library             OperatingSystem
 Library             ../library/user_library.py
 Library             ../library/product_library.py
+Library             ../library/cart_library.py
 Resource            ../common/common.robot
 Resource            ../variables/variables.robot
 Resource            ../fixtures/dynamic/dynamic.robot

@@ -4,17 +4,17 @@
 
 --> Valid Tests:
 
-Test Case 1: GET List All Carts
+Test Case 1: GET List All Carts     --- OK
 
-Test Case 2: GET Cart By ID
+Test Case 2: GET Cart By ID     --- OK
 
-Test Case 3: GET Limited List Of Carts
+Test Case 3: GET Limited List Of Carts     --- OK
 
-Test Case 4: GET Carts In Descending Order
+Test Case 4: GET Carts In Descending Order     --- OK
 
-Test Case 5: GET Carts In Ascending Order
+Test Case 5: GET Carts In Ascending Order     --- OK
 
-Test Case 6: GET Carts In Range Date
+Test Case 6: GET Carts In Range Date     --- OK
 
 Test Case 7: POST Add New Cart
 

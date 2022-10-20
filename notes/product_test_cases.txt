@@ -111,26 +111,26 @@ Test Case 26: PUT Update Product Removing Category      --- OK
 
 Test Case 27: PUT Update Product Category To Blank Spaces      --- OK 
 
-Test Case 28: PATCH Update Product Removing Title
+Test Case 28: PATCH Update Product Removing Title      --- OK
 
-Test Case 29: PATCH Update Product Title To Blank Spaces 
+Test Case 29: PATCH Update Product Title To Blank Spaces      --- OK 
 
-Test Case 30: PATCH Update Product Removing Price
+Test Case 30: PATCH Update Product Removing Price      --- OK
 
-Test Case 31: PATCH Update Product Price To Blank Spaces
+Test Case 31: PATCH Update Product Price To Blank Spaces      --- OK
 
-Test Case 32: PATCH Update Product Price To Negative Value
+Test Case 32: PATCH Update Product Price To Negative Value      --- OK
 
-Test Case 33: PATCH Update Product Removing Description
+Test Case 33: PATCH Update Product Removing Description      --- OK
 
-Test Case 34: PATCH Update Product Description To Blank Spaces
+Test Case 34: PATCH Update Product Description To Blank Spaces      --- OK
 
-Test Case 35: PATCH Update Product Removing Image
+Test Case 35: PATCH Update Product Removing Image      --- OK
 
-Test Case 36: PATCH Update Product Image To Blank Spaces
+Test Case 36: PATCH Update Product Image To Blank Spaces      --- OK
 
-Test Case 37: PATCH Update Product Removing Category
+Test Case 37: PATCH Update Product Removing Category      --- OK
 
-Test Case 38: PATCH Update Product Category To Blank Spaces
+Test Case 38: PATCH Update Product Category To Blank Spaces      --- OK
 
-Test Case 39: DELETE Nonexist Product ID
+Test Case 39: DELETE Nonexist Product ID      --- OK
