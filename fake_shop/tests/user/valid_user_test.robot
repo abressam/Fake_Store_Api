@@ -23,19 +23,19 @@ Test Case 2: GET User By ID
 
 Test Case 3: GET Limited List Of User
     [Tags]    3
-    ${get_limit}        ${status_code}        Get Limit Of Users        ${5}
+    ${get_limit}        ${status_code}        GET Limit User        5
     Log To Console      ${get_limit}        
     Log To Console      ${status_code}
 
 Test Case 4: GET Users In Descending Order
     [Tags]    4
-    ${get_order}        ${status_code}        Users In Descending Order
+    ${get_order}        ${status_code}        GET Order User        desc
     Log To Console      ${get_order}        
     Log To Console      ${status_code}
 
 Test Case 5: GET Users In Ascending Order
     [Tags]    5
-    ${get_order}        ${status_code}        Users In Ascending Order
+    ${get_order}        ${status_code}        GET Order User        asc
     Log To Console      ${get_order}        
     Log To Console      ${status_code}
 
@@ -59,6 +59,6 @@ Test Case 8: PATCH Update All User Fields
 
 Test Case 9: DELETE Remove User By ID
     [Tags]    9
-    DELETE User By ID
-    Print Return Status Code
-    Print Return Message
+    ${delete_user}       ${status_code}        DELETE User        3
+    Log To Console      ${delete_user}        
+    Log To Console      ${status_code}

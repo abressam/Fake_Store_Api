@@ -22,7 +22,7 @@ Test Case 1: GET User ID Does Not Exists
 # Return All the 10 users
 Test Case 2: GET Exceed The Number Of Users
     [Tags]    2
-    ${get_limit}        ${status_code}        Exceed Number Of Limit Users 
+    ${get_limit}        ${status_code}        GET Limit User    9999999
     Log To Console      ${get_limit}        
     Log To Console      ${status_code}
 
@@ -30,7 +30,7 @@ Test Case 2: GET Exceed The Number Of Users
 # API can convert the negative number to a positive number
 Test Case 3: GET Negative Limit Of Users
     [Tags]    3
-    ${get_limit}        ${status_code}        Negative Limit Of Users 
+    ${get_limit}        ${status_code}        GET Limit User    -3
     Log To Console      ${get_limit}        
     Log To Console      ${status_code}
 
