@@ -56,3 +56,10 @@ def POST_Cart_Static_Data(json_object):
     status_code = f"\nStatus Code: {request.status_code}\n"
 
     return response, status_code
+
+def DELETE_Cart(cart_id):
+    request = req.delete(url=f'{url_cart}/{cart_id}')
+    response = request.json()
+    status_code = f"\nStatus Code: {request.status_code}\n"
+
+    return response, status_code

@@ -3,8 +3,131 @@
         "userId": 2,
         "date": "2020-10-20",
         "products": [
-            {"id": 1, "quantity": 5},
+            {"productId": 1, "quantity": 5},
             {"productId": 3, "quantity": 10}
         ]
+    },
+
+    "invalid_user_ID_cart": {
+        "userId": 40,
+        "date": "2020-10-20",
+        "products": [
+            {"productId": 1, "quantity": 5},
+            {"productId": 3, "quantity": 10}
+        ]
+    },
+
+    "no_user_ID_cart": {
+        "userId": "",
+        "date": "2020-10-20",
+        "products": [
+            {"productId": 1, "quantity": 5},
+            {"productId": 3, "quantity": 10}
+        ]
+    },
+
+    "blank_spaces_user_ID_cart": {
+        "userId": "      ",
+        "date": "2020-10-20",
+        "products": [
+            {"productId": 1, "quantity": 5},
+            {"productId": 3, "quantity": 10}
+        ]
+    },
+
+    "invalid_date_cart": {
+        "userId": 2,
+        "date": "1800-10-20",
+        "products": [
+            {"productId": 1, "quantity": 5},
+            {"productId": 3, "quantity": 10}
+        ]
+    },
+
+    "without_date_cart": {
+        "userId": 2,
+        "date": "",
+        "products": [
+            {"productId": 1, "quantity": 5},
+            {"productId": 3, "quantity": 10}
+        ]
+    },
+
+    "blank_spaces_date_cart": {
+        "userId": 2,
+        "date": "            ",
+        "products": [
+            {"productId": 1, "quantity": 5},
+            {"productId": 3, "quantity": 10}
+        ]
+    },
+
+    "invalid_product_ID_cart": {
+        "userId": 2,
+        "date": "1800-10-20",
+        "products": [
+            {"productId": 50, "quantity": 5},
+            {"productId": 39, "quantity": 10}
+        ]
+    },
+
+    "without_product_ID_cart": {
+        "userId": 2,
+        "date": "",
+        "products": [
+            {"productId": "", "quantity": 5},
+            {"productId": "", "quantity": 10}
+        ]
+    },
+
+    "blank_spaces_product_ID_cart": {
+        "userId": 2,
+        "date": "            ",
+        "products": [
+            {"productId": "     ", "quantity": 5},
+            {"productId": "     ", "quantity": 10}
+        ]
+    },
+
+    "zero_product_quantity_cart": {
+        "userId": 2,
+        "date": "2020-10-20",
+        "products": [
+            {"productId": 1, "quantity": 0},
+            {"productId": 3, "quantity": 0}
+        ]
+    },
+
+    "negative_product_quantity_cart": {
+        "userId": 2,
+        "date": "2020-10-20",
+        "products": [
+            {"productId": 1, "quantity": -10},
+            {"productId": 3, "quantity": -90}
+        ]
+    },
+
+    "decimal_product_quantity_cart": {
+        "userId": 2,
+        "date": "2020-10-20",
+        "products": [
+            {"productId": 1, "quantity": 10.6},
+            {"productId": 3, "quantity": 2.7}
+        ]
+    },
+
+    "higher_product_quantity_cart": {
+        "userId": 2,
+        "date": "2020-10-20",
+        "products": [
+            {"productId": 1, "quantity": 99999999999999},
+            {"productId": 3, "quantity": 99999999999999}
+        ]
+    },
+
+    "no_product_cart": {
+        "userId": 2,
+        "date": "2020-10-20",
+        "products": []
     }
 }

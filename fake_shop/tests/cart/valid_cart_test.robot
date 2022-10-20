@@ -43,13 +43,19 @@ Test Case 6: GET Carts In Range Date
 
 Test Case 7: GET User Cart
     [Tags]    7
-    ${get_order}        ${status_code}        GET User Cart   2
-    Log To Console      ${get_order}
+    ${get_cart}        ${status_code}        GET User Cart   2
+    Log To Console      ${get_cart}
     Log To Console      ${status_code}
 
 # Producs Have no id and quantity, but status is 200
 Test Case 8: POST Add New Cart
     [Tags]    8
-    ${get_order}        ${status_code}        POST Cart Static Data    valid_cart
-    Log To Console      ${get_order}
+    ${new_cart}        ${status_code}        POST Cart Static Data    valid_cart
+    Log To Console      ${new_cart}
+    Log To Console      ${status_code}
+
+Test Case 16: DELETE Remove Cart By ID
+    [Tags]    16
+    ${remove_cart}        ${status_code}        DELETE Cart    1
+    Log To Console      ${remove_cart}
     Log To Console      ${status_code}

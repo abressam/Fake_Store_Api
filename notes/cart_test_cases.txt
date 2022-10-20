@@ -16,9 +16,9 @@ Test Case 5: GET Carts In Ascending Order     --- OK
 
 Test Case 6: GET Carts In Range Date     --- OK
 
-Test Case 7: GET User Cart
+Test Case 7: GET User Cart     --- OK
 
-Test Case 8: POST Add New Cart
+Test Case 8: POST Add New Cart     --- OK
 
 Test Case 8: PUT Update Cart User ID
 
