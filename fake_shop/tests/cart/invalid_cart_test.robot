@@ -184,3 +184,81 @@ Test Case 30: PUT Update Cart With Blank Space Product ID
     ${update_cart}      ${status_code}        PUT Cart Static Data    2    blank_spaces_product_ID_cart
     Log To Console      ${update_cart}
     Log To Console      ${status_code}
+
+Test Case 31: PATCH Update Cart With Invalid User ID
+    [Tags]    31
+    ${update_cart}      ${status_code}        PATCH Cart Static Data    2    invalid_user_ID_cart
+    Log To Console      ${update_cart}
+    Log To Console      ${status_code}
+
+Test Case 32: PATCH Update Cart With No User ID
+    [Tags]    32
+    ${update_cart}      ${status_code}        PATCH Cart Static Data    2    no_user_ID_cart
+    Log To Console      ${update_cart}
+    Log To Console      ${status_code}
+
+Test Case 33: PATCH Update Cart With Blank Space User ID
+    [Tags]    33
+    ${update_cart}      ${status_code}        PATCH Cart Static Data    2    blank_spaces_user_ID_cart
+    Log To Console      ${update_cart}
+    Log To Console      ${status_code}
+
+Test Case 34: PATCH Update Cart With Invalid Date Format
+    [Tags]    34
+    ${update_cart}      ${status_code}        PATCH Cart Static Data    2    invalid_date_cart
+    Log To Console      ${update_cart}
+    Log To Console      ${status_code}
+
+Test Case 35: PATCH Update Cart With No Date
+    [Tags]    35
+    ${update_cart}      ${status_code}        PATCH Cart Static Data    2    without_date_cart
+    Log To Console      ${update_cart}
+    Log To Console      ${status_code}
+
+Test Case 36: PATCH Update Cart With Blank Space Date
+    [Tags]    36
+    ${update_cart}      ${status_code}        PATCH Cart Static Data    2    blank_spaces_date_cart
+    Log To Console      ${update_cart}
+    Log To Console      ${status_code}
+
+Test Case 37: PATCH Update Cart With Future Date
+    [Tags]    37
+    ${update_cart}      ${status_code}        PATCH Cart Static Data    2    future_date_cart
+    Log To Console      ${update_cart}
+    Log To Console      ${status_code}
+
+Test Case 38: PATCH Update Cart With Invalid Product ID
+    [Tags]    38
+    ${update_cart}      ${status_code}        PATCH Cart Static Data    2    invalid_product_ID_cart
+    Log To Console      ${update_cart}
+    Log To Console      ${status_code}
+
+Test Case 39: PATCH Update Cart With No Product ID
+    [Tags]    39
+    ${update_cart}      ${status_code}        PATCH Cart Static Data    2    without_product_ID_cart
+    Log To Console      ${update_cart}
+    Log To Console      ${status_code}
+
+Test Case 40: PATCH Update Cart With Blank Space Product ID
+    [Tags]    40
+    ${update_cart}      ${status_code}        PATCH Cart Static Data    2    blank_spaces_product_ID_cart
+    Log To Console      ${update_cart}
+    Log To Console      ${status_code}
+
+Test Case 41: DELETE Remove Cart Without ID
+    [Tags]    41
+    ${remove_cart}      ${status_code}        DELETE Cart    ""
+    Log To Console      ${remove_cart}
+    Log To Console      ${status_code}
+
+Test Case 42: DELETE Remove Cart With Negative ID
+    [Tags]    42
+    ${remove_cart}      ${status_code}        DELETE Cart    -2
+    Log To Console      ${remove_cart}
+    Log To Console      ${status_code}
+
+Test Case 43: DELETE Remove Cart With Nonexistent ID
+    [Tags]    43
+    ${remove_cart}      ${status_code}        DELETE Cart    36
+    Log To Console      ${remove_cart}
+    Log To Console      ${status_code}
