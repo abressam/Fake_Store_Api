@@ -1,53 +1,1037 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.8.2 on win32)" generated="20221020 09:50:03.554" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.8.2 on win32)" generated="20221020 09:55:28.283" rpa="false" schemaversion="3">
 <suite id="s1" name="Invalid Product Test" source="C:\Users\amanda.martins\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\Fake_Store_Api\fake_shop\tests\product\invalid_product_test.robot">
 <kw name="Open Session" library="base" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>fakeshop</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20221020 09:50:04.102" level="INFO">Creating Session using : alias=fakeshop, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20221020 09:50:04.102" endtime="20221020 09:50:04.103"/>
+<msg timestamp="20221020 09:55:28.907" level="INFO">Creating Session using : alias=fakeshop, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221020 09:55:28.907" endtime="20221020 09:55:28.907"/>
 </kw>
-<status status="PASS" starttime="20221020 09:50:04.102" endtime="20221020 09:50:04.103"/>
+<status status="PASS" starttime="20221020 09:55:28.907" endtime="20221020 09:55:28.907"/>
 </kw>
-<test id="s1-t1" name="Test Case 28: PATCH Update Product Removing Title" line="172">
+<test id="s1-t1" name="Test Case 1: GET Nonexist Product ID" line="11">
+<kw name="GET Nonexist Product ID" library="product_keywords">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>fakeshop</arg>
+<arg>/products/${INVALID_VALUE}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221020 09:55:29.698" level="INFO">GET Request : url=https://fakestoreapi.com/products/99999999999 
+ path_url=/products/99999999999 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221020 09:55:29.698" level="INFO">GET Response : url=https://fakestoreapi.com/products/99999999999 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 20 Oct 2022 12:55:30 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '0', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=sPmSmnPrghx1b6b8LDydKeTCBvEIQHNXO%2BN5%2F2%2FQCxm3DACd6HpaCFYKy%2BuQf3OmVmp5UhaCmyrIEiQNU%2FYJaQlDrB8m%2Fkzv%2F9tYMJrdtH%2FDMZ7BEUgUeqPBbvalba2OY5pI"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75d1e87a7e7e00e9-GRU', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body=None 
+ </msg>
+<msg timestamp="20221020 09:55:29.698" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221020 09:55:28.907" endtime="20221020 09:55:29.698"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221020 09:55:29.699" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221020 09:55:29.698" endtime="20221020 09:55:29.699"/>
+</kw>
+<status status="PASS" starttime="20221020 09:55:28.907" endtime="20221020 09:55:29.699"/>
+</kw>
+<kw name="Print Return Status Code" library="common">
+<kw name="Log To Console" library="BuiltIn">
+<arg>\nStatus Code: ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:29.700" endtime="20221020 09:55:29.701"/>
+</kw>
+<status status="PASS" starttime="20221020 09:55:29.699" endtime="20221020 09:55:29.702"/>
+</kw>
+<kw name="Print Return Message" library="common">
+<kw name="Log To Console" library="BuiltIn">
+<arg>\nResponse: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:29.702" endtime="20221020 09:55:29.703"/>
+</kw>
+<status status="PASS" starttime="20221020 09:55:29.702" endtime="20221020 09:55:29.703"/>
+</kw>
+<tag>1</tag>
+<status status="PASS" starttime="20221020 09:55:28.907" endtime="20221020 09:55:29.703"/>
+</test>
+<test id="s1-t2" name="Test Case 2: GET Negative Limit In Product ID" line="17">
+<kw name="Get Limit Of Products" library="product_library">
+<var>${get_limit}</var>
+<var>${status_code}</var>
+<arg>${-18}</arg>
+<msg timestamp="20221020 09:55:30.520" level="INFO">${get_limit} = [{'id': 1, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': 109.95, 'description': 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 in...</msg>
+<msg timestamp="20221020 09:55:30.520" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:55:29.705" endtime="20221020 09:55:30.520"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${get_limit}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:30.520" endtime="20221020 09:55:30.521"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:30.522" endtime="20221020 09:55:30.522"/>
+</kw>
+<tag>2</tag>
+<status status="PASS" starttime="20221020 09:55:29.704" endtime="20221020 09:55:30.523"/>
+</test>
+<test id="s1-t3" name="Test Case 3: GET Highest Limit In Product ID" line="23">
+<kw name="Get Limit Of Products" library="product_library">
+<var>${get_limit}</var>
+<var>${status_code}</var>
+<arg>${120}</arg>
+<msg timestamp="20221020 09:55:31.278" level="INFO">${get_limit} = [{'id': 1, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': 109.95, 'description': 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 in...</msg>
+<msg timestamp="20221020 09:55:31.278" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:55:30.526" endtime="20221020 09:55:31.278"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${get_limit}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:31.286" endtime="20221020 09:55:31.298"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:31.299" endtime="20221020 09:55:31.300"/>
+</kw>
+<tag>3</tag>
+<status status="PASS" starttime="20221020 09:55:30.525" endtime="20221020 09:55:31.301"/>
+</test>
+<test id="s1-t4" name="Test Case 4: GET Zero Limit In Product ID" line="29">
+<kw name="Get Limit Of Products" library="product_library">
+<var>${get_limit}</var>
+<var>${status_code}</var>
+<arg>${0}</arg>
+<msg timestamp="20221020 09:55:32.157" level="INFO">${get_limit} = [{'id': 1, 'title': 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops', 'price': 109.95, 'description': 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 in...</msg>
+<msg timestamp="20221020 09:55:32.157" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:55:31.303" endtime="20221020 09:55:32.157"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${get_limit}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:32.164" endtime="20221020 09:55:32.177"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:32.178" endtime="20221020 09:55:32.178"/>
+</kw>
+<tag>4</tag>
+<status status="PASS" starttime="20221020 09:55:31.302" endtime="20221020 09:55:32.179"/>
+</test>
+<test id="s1-t5" name="Test Case 5: GET Nonexist Product Category" line="35">
+<kw name="Get Category" library="product_library">
+<var>${get_category}</var>
+<var>${status_code}</var>
+<arg>shoes</arg>
+<msg timestamp="20221020 09:55:33.184" level="INFO">${get_category} = []</msg>
+<msg timestamp="20221020 09:55:33.184" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:55:32.182" endtime="20221020 09:55:33.184"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${get_category}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:33.186" endtime="20221020 09:55:33.187"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:33.188" endtime="20221020 09:55:33.189"/>
+</kw>
+<tag>5</tag>
+<status status="PASS" starttime="20221020 09:55:32.181" endtime="20221020 09:55:33.190"/>
+</test>
+<test id="s1-t6" name="Test Case 6: POST Product Without Title" line="41">
+<kw name="POST Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>product_without_title</arg>
+<msg timestamp="20221020 09:55:54.788" level="INFO">${new_product} = {'id': 21, 'title': '', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._S...</msg>
+<msg timestamp="20221020 09:55:54.790" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:55:33.193" endtime="20221020 09:55:54.790"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:54.792" endtime="20221020 09:55:54.795"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:54.796" endtime="20221020 09:55:54.798"/>
+</kw>
+<tag>6</tag>
+<status status="PASS" starttime="20221020 09:55:33.192" endtime="20221020 09:55:54.800"/>
+</test>
+<test id="s1-t7" name="Test Case 7: POST Product Title With Blank Spaces" line="47">
+<kw name="POST Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>product_blank_spaces_title</arg>
+<msg timestamp="20221020 09:55:55.709" level="INFO">${new_product} = {'id': 21, 'title': '      ', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY...</msg>
+<msg timestamp="20221020 09:55:55.709" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:55:54.809" endtime="20221020 09:55:55.709"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:55.714" endtime="20221020 09:55:55.715"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:55.716" endtime="20221020 09:55:55.718"/>
+</kw>
+<tag>7</tag>
+<status status="PASS" starttime="20221020 09:55:54.805" endtime="20221020 09:55:55.719"/>
+</test>
+<test id="s1-t8" name="Test Case 8: POST Product Without Price" line="53">
+<kw name="POST Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>product_without_price</arg>
+<msg timestamp="20221020 09:55:56.455" level="INFO">${new_product} = {'id': 21, 'title': 'New Fit T-Shirt', 'price': '', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._...</msg>
+<msg timestamp="20221020 09:55:56.455" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:55:55.724" endtime="20221020 09:55:56.455"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:56.463" endtime="20221020 09:55:56.465"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:56.467" endtime="20221020 09:55:56.470"/>
+</kw>
+<tag>8</tag>
+<status status="PASS" starttime="20221020 09:55:55.723" endtime="20221020 09:55:56.471"/>
+</test>
+<test id="s1-t9" name="Test Case 9: POST Product Price With Blank Spaces" line="59">
+<kw name="POST Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>product_blank_spaces_price</arg>
+<msg timestamp="20221020 09:55:57.348" level="INFO">${new_product} = {'id': 21, 'title': 'New Fit T-Shirt', 'price': '     ', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGN...</msg>
+<msg timestamp="20221020 09:55:57.348" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:55:56.473" endtime="20221020 09:55:57.348"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:57.355" endtime="20221020 09:55:57.358"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:57.359" endtime="20221020 09:55:57.361"/>
+</kw>
+<tag>9</tag>
+<status status="PASS" starttime="20221020 09:55:56.473" endtime="20221020 09:55:57.363"/>
+</test>
+<test id="s1-t10" name="Test Case 10: POST Product Price With Negative Value" line="65">
+<kw name="POST Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>product_negative_price</arg>
+<msg timestamp="20221020 09:55:58.167" level="INFO">${new_product} = {'id': 21, 'title': 'New Fit T-Shirt', 'price': '-10', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDU...</msg>
+<msg timestamp="20221020 09:55:58.167" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:55:57.371" endtime="20221020 09:55:58.167"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:58.172" endtime="20221020 09:55:58.174"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:58.175" endtime="20221020 09:55:58.177"/>
+</kw>
+<tag>10</tag>
+<status status="PASS" starttime="20221020 09:55:57.369" endtime="20221020 09:55:58.179"/>
+</test>
+<test id="s1-t11" name="Test Case 11: POST Product Without Description" line="71">
+<kw name="POST Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>product_without_description</arg>
+<msg timestamp="20221020 09:55:58.884" level="INFO">${new_product} = {'id': 21, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': '', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg', 'category': "men's clothing"}</msg>
+<msg timestamp="20221020 09:55:58.884" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:55:58.186" endtime="20221020 09:55:58.884"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:58.889" endtime="20221020 09:55:58.891"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:58.891" endtime="20221020 09:55:58.893"/>
+</kw>
+<tag>11</tag>
+<status status="PASS" starttime="20221020 09:55:58.183" endtime="20221020 09:55:58.894"/>
+</test>
+<test id="s1-t12" name="Test Case 12: POST Product Description With Blank Spaces" line="77">
+<kw name="POST Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>product_blank_spaces_description</arg>
+<msg timestamp="20221020 09:55:59.395" level="INFO">${new_product} = {'id': 21, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': '       ', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg', 'category': "men's clothing"}</msg>
+<msg timestamp="20221020 09:55:59.395" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:55:58.897" endtime="20221020 09:55:59.395"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:59.400" endtime="20221020 09:55:59.401"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:55:59.402" endtime="20221020 09:55:59.403"/>
+</kw>
+<tag>12</tag>
+<status status="PASS" starttime="20221020 09:55:58.896" endtime="20221020 09:55:59.404"/>
+</test>
+<test id="s1-t13" name="Test Case 13: POST Product Without Image" line="83">
+<kw name="POST Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>product_without_image</arg>
+<msg timestamp="20221020 09:56:00.215" level="INFO">${new_product} = {'id': 21, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': '', 'category': "men's clothing"}</msg>
+<msg timestamp="20221020 09:56:00.215" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:55:59.407" endtime="20221020 09:56:00.215"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:00.222" endtime="20221020 09:56:00.224"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:00.226" endtime="20221020 09:56:00.228"/>
+</kw>
+<tag>13</tag>
+<status status="PASS" starttime="20221020 09:55:59.406" endtime="20221020 09:56:00.230"/>
+</test>
+<test id="s1-t14" name="Test Case 14: POST Product Image With Blank Spaces" line="89">
+<kw name="POST Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>product_blank_spaces_image</arg>
+<msg timestamp="20221020 09:56:01.038" level="INFO">${new_product} = {'id': 21, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': '    ', 'category': "men's clothing"}</msg>
+<msg timestamp="20221020 09:56:01.038" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:00.239" endtime="20221020 09:56:01.038"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:01.043" endtime="20221020 09:56:01.045"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:01.046" endtime="20221020 09:56:01.049"/>
+</kw>
+<tag>14</tag>
+<status status="PASS" starttime="20221020 09:56:00.236" endtime="20221020 09:56:01.053"/>
+</test>
+<test id="s1-t15" name="Test Case 15: POST Product Without Category" line="95">
+<kw name="POST Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>product_without_category</arg>
+<msg timestamp="20221020 09:56:01.957" level="INFO">${new_product} = {'id': 21, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGND...</msg>
+<msg timestamp="20221020 09:56:01.957" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:01.060" endtime="20221020 09:56:01.957"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:01.960" endtime="20221020 09:56:01.962"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:01.963" endtime="20221020 09:56:01.966"/>
+</kw>
+<tag>15</tag>
+<status status="PASS" starttime="20221020 09:56:01.058" endtime="20221020 09:56:01.967"/>
+</test>
+<test id="s1-t16" name="Test Case 16: POST Product Category With Blank Spaces" line="101">
+<kw name="POST Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>product_blank_spaces_category</arg>
+<msg timestamp="20221020 09:56:03.186" level="INFO">${new_product} = {'id': 21, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGND...</msg>
+<msg timestamp="20221020 09:56:03.186" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:01.972" endtime="20221020 09:56:03.186"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:03.190" endtime="20221020 09:56:03.192"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:03.193" endtime="20221020 09:56:03.195"/>
+</kw>
+<tag>16</tag>
+<status status="PASS" starttime="20221020 09:56:01.971" endtime="20221020 09:56:03.196"/>
+</test>
+<test id="s1-t17" name="Test Case 17: PUT Update Product Removing Title" line="107">
+<kw name="PUT Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_without_title</arg>
+<msg timestamp="20221020 09:56:03.787" level="INFO">${new_product} = {'id': 5, 'title': '', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX...</msg>
+<msg timestamp="20221020 09:56:03.787" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:03.200" endtime="20221020 09:56:03.787"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:03.795" endtime="20221020 09:56:03.799"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:03.800" endtime="20221020 09:56:03.804"/>
+</kw>
+<tag>17</tag>
+<status status="PASS" starttime="20221020 09:56:03.199" endtime="20221020 09:56:03.805"/>
+</test>
+<test id="s1-t18" name="Test Case 18: PUT Update Product Title To Blank Spaces" line="113">
+<kw name="PUT Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_blank_spaces_title</arg>
+<msg timestamp="20221020 09:56:04.319" level="INFO">${new_product} = {'id': 5, 'title': '      ', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY8...</msg>
+<msg timestamp="20221020 09:56:04.319" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:03.814" endtime="20221020 09:56:04.319"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:04.321" endtime="20221020 09:56:04.324"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:04.326" endtime="20221020 09:56:04.329"/>
+</kw>
+<tag>18</tag>
+<status status="PASS" starttime="20221020 09:56:03.812" endtime="20221020 09:56:04.331"/>
+</test>
+<test id="s1-t19" name="Test Case 19: PUT Update Product Removing Price" line="119">
+<kw name="PUT Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_without_price</arg>
+<msg timestamp="20221020 09:56:04.823" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._A...</msg>
+<msg timestamp="20221020 09:56:04.823" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:04.340" endtime="20221020 09:56:04.823"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:04.829" endtime="20221020 09:56:04.830"/>
+</kw>
+<tag>19</tag>
+<status status="PASS" starttime="20221020 09:56:04.337" endtime="20221020 09:56:04.831"/>
+</test>
+<test id="s1-t20" name="Test Case 20: PUT Update Product Price To Blank Spaces" line="124">
+<kw name="PUT Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_blank_spaces_price</arg>
+<msg timestamp="20221020 09:56:05.439" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '     ', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGND...</msg>
+<msg timestamp="20221020 09:56:05.439" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:04.835" endtime="20221020 09:56:05.439"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:05.448" endtime="20221020 09:56:05.450"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:05.452" endtime="20221020 09:56:05.455"/>
+</kw>
+<tag>20</tag>
+<status status="PASS" starttime="20221020 09:56:04.834" endtime="20221020 09:56:05.457"/>
+</test>
+<test id="s1-t21" name="Test Case 21: PUT Update Product Price To Negative Value" line="130">
+<kw name="PUT Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_negative_price</arg>
+<msg timestamp="20221020 09:56:05.952" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '-10', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL...</msg>
+<msg timestamp="20221020 09:56:05.952" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:05.466" endtime="20221020 09:56:05.952"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:05.954" endtime="20221020 09:56:05.956"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:05.957" endtime="20221020 09:56:05.958"/>
+</kw>
+<tag>21</tag>
+<status status="PASS" starttime="20221020 09:56:05.463" endtime="20221020 09:56:05.959"/>
+</test>
+<test id="s1-t22" name="Test Case 22: PUT Update Product Removing Description" line="136">
+<kw name="PUT Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_without_description</arg>
+<msg timestamp="20221020 09:56:06.461" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': '', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg', 'category': "men's clothing"}</msg>
+<msg timestamp="20221020 09:56:06.461" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:05.963" endtime="20221020 09:56:06.461"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:06.468" endtime="20221020 09:56:06.470"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:06.472" endtime="20221020 09:56:06.475"/>
+</kw>
+<tag>22</tag>
+<status status="PASS" starttime="20221020 09:56:05.962" endtime="20221020 09:56:06.475"/>
+</test>
+<test id="s1-t23" name="Test Case 23: PUT Update Product Description To Blank Spaces" line="142">
+<kw name="PUT Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_blank_spaces_description</arg>
+<msg timestamp="20221020 09:56:22.161" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': '       ', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg', 'category': "men's clothing"}</msg>
+<msg timestamp="20221020 09:56:22.161" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:06.478" endtime="20221020 09:56:22.161"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:22.163" endtime="20221020 09:56:22.164"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:22.165" endtime="20221020 09:56:22.166"/>
+</kw>
+<tag>23</tag>
+<status status="PASS" starttime="20221020 09:56:06.477" endtime="20221020 09:56:22.167"/>
+</test>
+<test id="s1-t24" name="Test Case 24: PUT Update Product Removing Image" line="148">
+<kw name="PUT Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_without_image</arg>
+<msg timestamp="20221020 09:56:22.643" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': '', 'category': "men's clothing"}</msg>
+<msg timestamp="20221020 09:56:22.643" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:22.174" endtime="20221020 09:56:22.643"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:22.645" endtime="20221020 09:56:22.646"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:22.647" endtime="20221020 09:56:22.648"/>
+</kw>
+<tag>24</tag>
+<status status="PASS" starttime="20221020 09:56:22.172" endtime="20221020 09:56:22.649"/>
+</test>
+<test id="s1-t25" name="Test Case 25: PUT Update Product Image To Blank Spaces" line="154">
+<kw name="PUT Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_blank_spaces_image</arg>
+<msg timestamp="20221020 09:56:23.054" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': '    ', 'category': "men's clothing"}</msg>
+<msg timestamp="20221020 09:56:23.054" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:22.652" endtime="20221020 09:56:23.054"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:23.057" endtime="20221020 09:56:23.060"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:23.061" endtime="20221020 09:56:23.064"/>
+</kw>
+<tag>25</tag>
+<status status="PASS" starttime="20221020 09:56:22.651" endtime="20221020 09:56:23.065"/>
+</test>
+<test id="s1-t26" name="Test Case 26: PUT Update Product Removing Category" line="160">
+<kw name="PUT Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_without_category</arg>
+<msg timestamp="20221020 09:56:23.666" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDU...</msg>
+<msg timestamp="20221020 09:56:23.666" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:23.072" endtime="20221020 09:56:23.666"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:23.671" endtime="20221020 09:56:23.672"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:23.673" endtime="20221020 09:56:23.674"/>
+</kw>
+<tag>26</tag>
+<status status="PASS" starttime="20221020 09:56:23.070" endtime="20221020 09:56:23.676"/>
+</test>
+<test id="s1-t27" name="Test Case 27: PUT Update Product Category To Blank Spaces" line="166">
+<kw name="PUT Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_blank_spaces_category</arg>
+<msg timestamp="20221020 09:56:24.284" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDU...</msg>
+<msg timestamp="20221020 09:56:24.284" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:23.680" endtime="20221020 09:56:24.284"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:24.286" endtime="20221020 09:56:24.287"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:24.288" endtime="20221020 09:56:24.289"/>
+</kw>
+<tag>27</tag>
+<status status="PASS" starttime="20221020 09:56:23.679" endtime="20221020 09:56:24.289"/>
+</test>
+<test id="s1-t28" name="Test Case 28: PATCH Update Product Removing Title" line="172">
 <kw name="PATCH Static Data" library="product_library">
 <var>${new_product}</var>
 <var>${status_code}</var>
 <arg>6</arg>
 <arg>product_without_title</arg>
-<msg timestamp="20221020 09:50:04.985" level="INFO">${new_product} = {'id': 6, 'title': '', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX...</msg>
-<msg timestamp="20221020 09:50:04.985" level="INFO">${status_code} = 
+<msg timestamp="20221020 09:56:45.786" level="INFO">${new_product} = {'id': 6, 'title': '', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX...</msg>
+<msg timestamp="20221020 09:56:45.786" level="INFO">${status_code} = 
 Status Code: 200
 </msg>
-<status status="PASS" starttime="20221020 09:50:04.103" endtime="20221020 09:50:04.986"/>
+<status status="PASS" starttime="20221020 09:56:24.293" endtime="20221020 09:56:45.786"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${new_product}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 09:50:04.986" endtime="20221020 09:50:04.987"/>
+<status status="PASS" starttime="20221020 09:56:45.788" endtime="20221020 09:56:45.790"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>${status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221020 09:50:04.988" endtime="20221020 09:50:04.988"/>
+<status status="PASS" starttime="20221020 09:56:45.792" endtime="20221020 09:56:45.794"/>
 </kw>
 <tag>28</tag>
-<status status="PASS" starttime="20221020 09:50:04.103" endtime="20221020 09:50:04.988"/>
+<status status="PASS" starttime="20221020 09:56:24.292" endtime="20221020 09:56:45.796"/>
+</test>
+<test id="s1-t29" name="Test Case 29: PATCH Update Product Title To Blank Spaces" line="178">
+<kw name="PATCH Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_blank_spaces_title</arg>
+<msg timestamp="20221020 09:56:46.399" level="INFO">${new_product} = {'id': 5, 'title': '      ', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY8...</msg>
+<msg timestamp="20221020 09:56:46.399" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:45.799" endtime="20221020 09:56:46.399"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:46.406" endtime="20221020 09:56:46.408"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:46.409" endtime="20221020 09:56:46.411"/>
+</kw>
+<tag>29</tag>
+<status status="PASS" starttime="20221020 09:56:45.798" endtime="20221020 09:56:46.413"/>
+</test>
+<test id="s1-t30" name="Test Case 30: PATCH Update Product Removing Price" line="184">
+<kw name="PATCH Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_without_price</arg>
+<msg timestamp="20221020 09:56:46.915" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._A...</msg>
+<msg timestamp="20221020 09:56:46.915" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:46.421" endtime="20221020 09:56:46.915"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:56:46.917" endtime="20221020 09:56:46.918"/>
+</kw>
+<tag>30</tag>
+<status status="PASS" starttime="20221020 09:56:46.418" endtime="20221020 09:56:46.919"/>
+</test>
+<test id="s1-t31" name="Test Case 31: PATCH Update Product Price To Blank Spaces" line="189">
+<kw name="PATCH Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_blank_spaces_price</arg>
+<msg timestamp="20221020 09:57:02.374" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '     ', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGND...</msg>
+<msg timestamp="20221020 09:57:02.374" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:56:46.925" endtime="20221020 09:57:02.374"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:02.379" endtime="20221020 09:57:02.381"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:02.382" endtime="20221020 09:57:02.383"/>
+</kw>
+<tag>31</tag>
+<status status="PASS" starttime="20221020 09:56:46.923" endtime="20221020 09:57:02.384"/>
+</test>
+<test id="s1-t32" name="Test Case 32: PATCH Update Product Price To Negative Value" line="195">
+<kw name="PATCH Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_negative_price</arg>
+<msg timestamp="20221020 09:57:02.888" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '-10', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL...</msg>
+<msg timestamp="20221020 09:57:02.888" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:57:02.387" endtime="20221020 09:57:02.888"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:02.890" endtime="20221020 09:57:02.891"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:02.892" endtime="20221020 09:57:02.893"/>
+</kw>
+<tag>32</tag>
+<status status="PASS" starttime="20221020 09:57:02.386" endtime="20221020 09:57:02.894"/>
+</test>
+<test id="s1-t33" name="Test Case 33: PATCH Update Product Removing Description" line="201">
+<kw name="PATCH Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_without_description</arg>
+<msg timestamp="20221020 09:57:03.501" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': '', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg', 'category': "men's clothing"}</msg>
+<msg timestamp="20221020 09:57:03.501" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:57:02.898" endtime="20221020 09:57:03.501"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:03.504" endtime="20221020 09:57:03.506"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:03.507" endtime="20221020 09:57:03.509"/>
+</kw>
+<tag>33</tag>
+<status status="PASS" starttime="20221020 09:57:02.896" endtime="20221020 09:57:03.510"/>
+</test>
+<test id="s1-t34" name="Test Case 34: PATCH Update Product Description To Blank Spaces" line="207">
+<kw name="PATCH Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_blank_spaces_description</arg>
+<msg timestamp="20221020 09:57:04.422" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': '       ', 'image': 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg', 'category': "men's clothing"}</msg>
+<msg timestamp="20221020 09:57:04.422" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:57:03.514" endtime="20221020 09:57:04.422"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:04.426" endtime="20221020 09:57:04.427"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:04.428" endtime="20221020 09:57:04.429"/>
+</kw>
+<tag>34</tag>
+<status status="PASS" starttime="20221020 09:57:03.513" endtime="20221020 09:57:04.430"/>
+</test>
+<test id="s1-t35" name="Test Case 35: PATCH Update Product Removing Image" line="213">
+<kw name="PATCH Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_without_image</arg>
+<msg timestamp="20221020 09:57:04.938" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': '', 'category': "men's clothing"}</msg>
+<msg timestamp="20221020 09:57:04.938" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:57:04.434" endtime="20221020 09:57:04.938"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:04.940" endtime="20221020 09:57:04.941"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:04.941" endtime="20221020 09:57:04.943"/>
+</kw>
+<tag>35</tag>
+<status status="PASS" starttime="20221020 09:57:04.432" endtime="20221020 09:57:04.944"/>
+</test>
+<test id="s1-t36" name="Test Case 36: PATCH Update Product Image To Blank Spaces" line="219">
+<kw name="PATCH Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_blank_spaces_image</arg>
+<msg timestamp="20221020 09:57:05.449" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': '    ', 'category': "men's clothing"}</msg>
+<msg timestamp="20221020 09:57:05.449" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:57:04.947" endtime="20221020 09:57:05.449"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:05.453" endtime="20221020 09:57:05.457"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:05.459" endtime="20221020 09:57:05.463"/>
+</kw>
+<tag>36</tag>
+<status status="PASS" starttime="20221020 09:57:04.946" endtime="20221020 09:57:05.465"/>
+</test>
+<test id="s1-t37" name="Test Case 37: PATCH Update Product Removing Category" line="225">
+<kw name="PATCH Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_without_category</arg>
+<msg timestamp="20221020 09:57:05.893" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDU...</msg>
+<msg timestamp="20221020 09:57:05.893" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:57:05.473" endtime="20221020 09:57:05.893"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:05.902" endtime="20221020 09:57:05.905"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:05.907" endtime="20221020 09:57:05.911"/>
+</kw>
+<tag>37</tag>
+<status status="PASS" starttime="20221020 09:57:05.470" endtime="20221020 09:57:05.912"/>
+</test>
+<test id="s1-t38" name="Test Case 38: PATCH Update Product Category To Blank Spaces" line="231">
+<kw name="PATCH Static Data" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>product_blank_spaces_category</arg>
+<msg timestamp="20221020 09:57:06.475" level="INFO">${new_product} = {'id': 5, 'title': 'New Fit T-Shirt', 'price': '25.8', 'description': 'Detailed size information should be reviewed below on the product description', 'image': 'https://fakestoreapi.com/img/71-3HjGNDU...</msg>
+<msg timestamp="20221020 09:57:06.475" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:57:05.922" endtime="20221020 09:57:06.475"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:06.478" endtime="20221020 09:57:06.479"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:06.480" endtime="20221020 09:57:06.481"/>
+</kw>
+<tag>38</tag>
+<status status="PASS" starttime="20221020 09:57:05.919" endtime="20221020 09:57:06.482"/>
+</test>
+<test id="s1-t39" name="Test Case 39: DELETE Nonexist Product ID" line="237">
+<kw name="DELETE Product" library="product_library">
+<var>${new_product}</var>
+<var>${status_code}</var>
+<arg>23</arg>
+<msg timestamp="20221020 09:57:07.494" level="INFO">${new_product} = None</msg>
+<msg timestamp="20221020 09:57:07.494" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221020 09:57:06.485" endtime="20221020 09:57:07.494"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${new_product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:07.500" endtime="20221020 09:57:07.502"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221020 09:57:07.503" endtime="20221020 09:57:07.506"/>
+</kw>
+<tag>39</tag>
+<status status="PASS" starttime="20221020 09:57:06.484" endtime="20221020 09:57:07.507"/>
 </test>
 <doc>Creating valid test for the endpoint /products</doc>
-<status status="PASS" starttime="20221020 09:50:03.557" endtime="20221020 09:50:04.990"/>
+<status status="PASS" starttime="20221020 09:55:28.285" endtime="20221020 09:57:07.516"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="39" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="1" fail="0" skip="0">1</stat>
+<stat pass="1" fail="0" skip="0">10</stat>
+<stat pass="1" fail="0" skip="0">11</stat>
+<stat pass="1" fail="0" skip="0">12</stat>
+<stat pass="1" fail="0" skip="0">13</stat>
+<stat pass="1" fail="0" skip="0">14</stat>
+<stat pass="1" fail="0" skip="0">15</stat>
+<stat pass="1" fail="0" skip="0">16</stat>
+<stat pass="1" fail="0" skip="0">17</stat>
+<stat pass="1" fail="0" skip="0">18</stat>
+<stat pass="1" fail="0" skip="0">19</stat>
+<stat pass="1" fail="0" skip="0">2</stat>
+<stat pass="1" fail="0" skip="0">20</stat>
+<stat pass="1" fail="0" skip="0">21</stat>
+<stat pass="1" fail="0" skip="0">22</stat>
+<stat pass="1" fail="0" skip="0">23</stat>
+<stat pass="1" fail="0" skip="0">24</stat>
+<stat pass="1" fail="0" skip="0">25</stat>
+<stat pass="1" fail="0" skip="0">26</stat>
+<stat pass="1" fail="0" skip="0">27</stat>
 <stat pass="1" fail="0" skip="0">28</stat>
+<stat pass="1" fail="0" skip="0">29</stat>
+<stat pass="1" fail="0" skip="0">3</stat>
+<stat pass="1" fail="0" skip="0">30</stat>
+<stat pass="1" fail="0" skip="0">31</stat>
+<stat pass="1" fail="0" skip="0">32</stat>
+<stat pass="1" fail="0" skip="0">33</stat>
+<stat pass="1" fail="0" skip="0">34</stat>
+<stat pass="1" fail="0" skip="0">35</stat>
+<stat pass="1" fail="0" skip="0">36</stat>
+<stat pass="1" fail="0" skip="0">37</stat>
+<stat pass="1" fail="0" skip="0">38</stat>
+<stat pass="1" fail="0" skip="0">39</stat>
+<stat pass="1" fail="0" skip="0">4</stat>
+<stat pass="1" fail="0" skip="0">5</stat>
+<stat pass="1" fail="0" skip="0">6</stat>
+<stat pass="1" fail="0" skip="0">7</stat>
+<stat pass="1" fail="0" skip="0">8</stat>
+<stat pass="1" fail="0" skip="0">9</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Invalid Product Test">Invalid Product Test</stat>
+<stat pass="39" fail="0" skip="0" id="s1" name="Invalid Product Test">Invalid Product Test</stat>
 </suite>
 </statistics>
 <errors>

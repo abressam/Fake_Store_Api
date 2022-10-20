@@ -175,6 +175,65 @@ Test Case 28: PATCH Update Product Removing Title
     Log To Console      ${new_product}
     Log To Console      ${status_code}
 
+Test Case 29: PATCH Update Product Title To Blank Spaces 
+    [Tags]    29
+    ${new_product}    ${status_code}        PATCH Static Data   5    product_blank_spaces_title
+    Log To Console      ${new_product}
+    Log To Console      ${status_code}
+
+Test Case 30: PATCH Update Product Removing Price
+    [Tags]    30
+    ${new_product}    ${status_code}        PATCH Static Data   5    product_without_price
+    Log To Console      ${status_code}
+
+Test Case 31: PATCH Update Product Price To Blank Spaces
+    [Tags]    31
+    ${new_product}    ${status_code}        PATCH Static Data   5    product_blank_spaces_price
+    Log To Console      ${new_product}
+    Log To Console      ${status_code}
+
+Test Case 32: PATCH Update Product Price To Negative Value
+    [Tags]    32
+    ${new_product}    ${status_code}        PATCH Static Data   5    product_negative_price
+    Log To Console      ${new_product}
+    Log To Console      ${status_code}
+
+Test Case 33: PATCH Update Product Removing Description
+    [Tags]    33
+    ${new_product}    ${status_code}        PATCH Static Data   5    product_without_description
+    Log To Console      ${new_product}
+    Log To Console      ${status_code}
+
+Test Case 34: PATCH Update Product Description To Blank Spaces
+    [Tags]    34
+    ${new_product}    ${status_code}        PATCH Static Data   5    product_blank_spaces_description
+    Log To Console      ${new_product}
+    Log To Console      ${status_code}
+
+Test Case 35: PATCH Update Product Removing Image
+    [Tags]    35
+    ${new_product}    ${status_code}        PATCH Static Data   5    product_without_image
+    Log To Console      ${new_product}
+    Log To Console      ${status_code}
+
+Test Case 36: PATCH Update Product Image To Blank Spaces
+    [Tags]    36
+    ${new_product}    ${status_code}        PATCH Static Data   5    product_blank_spaces_image
+    Log To Console      ${new_product}
+    Log To Console      ${status_code}
+
+Test Case 37: PATCH Update Product Removing Category
+    [Tags]    37
+    ${new_product}    ${status_code}        PATCH Static Data   5    product_without_category
+    Log To Console      ${new_product}
+    Log To Console      ${status_code}
+
+Test Case 38: PATCH Update Product Category To Blank Spaces
+    [Tags]    38
+    ${new_product}    ${status_code}        PATCH Static Data   5    product_blank_spaces_category
+    Log To Console      ${new_product}
+    Log To Console      ${status_code}
+
 Test Case 39: DELETE Nonexist Product ID
     [Tags]    39
     ${new_product}    ${status_code}        DELETE Product   23
