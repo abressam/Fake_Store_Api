@@ -24,8 +24,18 @@ Fake Store API<br>
 # 🛒 Sobre a API Fake Store
 
 <p align="justify">
-  Adicionar texto.
+  A Fake Shop é uma API que simula um e-commerce, apresentando quatro recursos (endpoints) para realizar o fluxo de compra: products (produtos), cart (carrinho), user (usuário) e login.
 </p>
+
+## 🗺️ Mapa mental da API
+
+<p align="justify">
+  O mapa mental abaixo representa todas as rotas da Fake Shop API de acordo com a <a href="https://fakestoreapi.com/docs">documentação oficial</a>. A organização do mapa é representada da seguinte forma: o lado direito representa fluxo prioritário e o lado esquerdo o fluxo não prioritário.
+<br>
+</p>
+
+* **Fluxo prioritário**: são as rotas essenciais a serem testadas (/login, /user e /products);
+* **Fluxo não prioritário**: são rotas que podem ser testadas posteriormente (/cart).<br><br>
 
 <div id='instalacao' />
 
