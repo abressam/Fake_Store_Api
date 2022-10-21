@@ -32,16 +32,200 @@ Fake Store API<br>
 # ⚙️ Instalação das ferramentas
 
 <p align="justify">
-  Adicionar texto.
+  Neste tópico são descritas todas as ferramentas necessárias para acessar o projeto em seu computador. Entretanto, os passos informados são referentes ao sistema operacional Windows na versão de 64 bits.
 </p>
+
+`IMPORTANTE: siga todos os passos a seguir para garantir o funcionamento correto do projeto!`
+
+1. [Instalação do **Python**](#python)
+2. [Instalação do **Node.JS**](#node)
+3. [Instalação do **Robot Framework**](#robot)
+4. [Instalação do **Visual Studio Code**](#vscode)
+
+<div id='python' />
+
+## 🐍 Instalação do Python
+
+<p align="justify">
+  O Python é a linguagem de programação utilizada nesse projeto para interação com o Robot Framework. No entanto, será necessária a instalação da versão **3.8.2** da linguagem para evitar falhas de inconsistência.<br>
+ Os passos da instalação estão descritos a seguir:
+</p>
+
+1. <a href="https://www.python.org/downloads/release/python-382/">Clique aqui</a> para acessar a página de _Downloads_ na versão correta;
+2. Ao final da página na sessão _Files_, selecione a opção **Windows x86-64 executable installer**, baixe o arquivo e execute-o;
+
+<div align="center">
+<br><img src="https://github.com/abressam/RoboTron_Amanda_Bressam_ProjetoFinal/blob/develop/assets/python_version.png" width=600><br><br>
+</div>
+
+3. Na tela inicial de instalação do Python, selecione a opção **Add Python 3.8 to PATH** e clique em _Install Now_;
+
+`IMPORTANTE: não esqueça de selecionar a opção do PATH, caso contrário haverá problemas para acessar o Python!`
+
+<div align="center">
+<img src="https://github.com/abressam/RoboTron_Amanda_Bressam_ProjetoFinal/blob/develop/assets/python382.png" width=400><br><br>
+</div>
+
+4. Continue seguindo adiante até finalizar todos os passos da instalação.
+5. Para conferir se foi instalado corretamente, na barra de pesquisa do Windows digite **cmd**, abra o Prompt de Comando e digite **python**.
+
+<div align="center">
+<br><img src="https://github.com/abressam/RoboTron_Amanda_Bressam_ProjetoFinal/blob/develop/assets/prompt_python.png">
+</div>
+
+6. Agora o Python está instalado na sua máquina!
+
+<div id='node' />
+
+## 🟢 Instalação do Node.JS
+
+<p align="justify">
+  O Node.JS será utilizado para auxiliar uma das bibliotecas que será utilizada no Robot Framework.<br>
+ Os passos da instalação estão descritos a seguir:
+</p>
+
+1. <a href="https://nodejs.org/en/">Clique aqui</a> para acessar a página oficial do Node.JS;
+2. Instale a versão que possui o nome **LTS** e execute o arquivo;
+3. Conclua todos os passos da instalação;
+4. Agora o Node.JS está instalado!
+
+<div id='robot' />
+
+## 🤖 Instalação do Robot Framework
+
+<p align="justify">
+  O Robot Framework é um exemplo de ferramenta de automação de testes desenvolvido em Python que apresenta uma sintaxe simples e de fácil leitura, podendo ser utilizado em diferentes tecnologias e interfaces.<br>
+ Os passos da instalação estão descritos a seguir:
+</p>
+
+1. Abra a barra de pesquisas do Windows e digite **cmd** para abrir o Prompt de Comando;
+2. Informe no terminal o seguinte comando, obtido no <a href="https://robotframework.org/?tab=1#getting-started">site oficial do Robot</a>:
+
+```
+pip install robotframework
+```
+
+3. Para confirmar a instalação, informe no terminal o seguinte comando:
+
+```
+robot --version
+```
+
+<div align="center">
+<img src="https://github.com/abressam/RoboTron_Amanda_Bressam_ProjetoFinal/blob/develop/assets/robot.png"><br><br>
+</div>
+
+4. A seguir, instalaremos a primeira dependência utilizada no projeto, a <a href="https://robotframework-browser.org/#installation">Browser Library</a>, utilizando o seguinte comando no terminal:
+
+```
+pip install robotframework-browser
+```
+
+5. A segunda dependência a ser instalada é a  <a href="https://marketsquare.github.io/robotframework-requests/">Request Library</a> que será utilizada para fazer as requisições HTTPS, utilizando o comando a seguir:
+
+```
+pip install robotframework-requests
+```
+
+6. A terceira e última dependência a ser instalada é a  <a href="https://pypi.org/project/robotframework-faker/">Faker Library</a> que será utilizada para simular dados, utilizando o comando a seguir:
+
+```
+pip install robotframework-faker
+```
+
+7. Agora está tudo pronto e configurado!
+
+<div id='vscode' />
+
+## 🔨 Instalação do Visual Studio Code
+
+<p align="justify">
+  O Visual Studio Code é a IDE (Integrated Development Environment) utilizada para o desenvolvimento do projeto e será necessária para acessá-lo.<br>
+ Os passos da instalação estão descritos a seguir:
+</p>
+
+1. <a href="https://code.visualstudio.com/">Clique aqui</a> para acessar a página oficial do Visual Studio Code;
+2. Selecione a opção **Download for Windows**, baixe o arquivo e execute-o;
+3. Conclua todos os passos da instalação;
+4. Agora o VSCode está instalado!
+
+### 💡 Dicas de extensões para o Visual Studio Code
+<p align="justify">
+  A seguir será informado sugestões de extensões para instalar na IDE que facilitaram no momento de visualizar os arquivos do projeto.
+</p>
+
+1. Abra o Visual Studio Code e selecione a opção _Extensions_ pelo atalho _Ctrl+Shift+X_ ou clicando no ícone a seguir:
+
+<div align="center">
+ <img src="https://github.com/abressam/RoboTron_Amanda_Bressam_Compass/blob/main/assets_readme/button_extensions.png" width=600><br><br>
+</div>
+
+2. Na barra de pesquisa, informe cada uma das seguintes opções e clique em _install_.
+
+<div align="center">
+  
+| Extensão | Ícone |
+| ---------- | ------ |
+| Hyper Term Theme | <img src="https://github.com/abressam/RoboTron_Amanda_Bressam_ProjetoFinal/blob/develop/assets/extension_1.png" width=50> |
+| Material Icon Color | <img src="https://github.com/abressam/RoboTron_Amanda_Bressam_ProjetoFinal/blob/develop/assets/extension_2.png" width=50> |
+| Rainbow Brackets | <img src="https://github.com/abressam/RoboTron_Amanda_Bressam_ProjetoFinal/blob/develop/assets/extension_3.png" width=50> |
+
+</div>
+
+3. Agora as extensões foram instaladas no VSCode!
 
 <div id='baixar_repo' />
 
 # 🔽 Como baixar o repositório
 
 <p align="justify">
-  Adicionar texto.
+Existem duas maneiras de possuir este projeto em seu computador, escolha abaixo qual preferir!
 </p>
+
+* [Baixando o projeto através do **GIT**](#git)
+* [Baixando o projeto por **pasta compactada**](#compactada)
+
+<div id="git" />
+
+## ✅ Baixando o projeto através do GIT
+
+<p align="justify">
+Através da ferramenta de versionamento de código GIT é possível clonar esse repositório em seu computador. Para isso, siga os seguintes passos:
+</p>
+
+1. <a href="https://git-scm.com/">Clique aqui</a> para acessar a página oficial do GIT;
+2. Selecione a opção _Download for Windows_, baixe o arquivo e execute-o;
+3. Siga todos os passos até finalizar a instalação;
+4. Após instalado, crie uma pasta vazia na Área de Trabalho (ou no diretório que preferir);
+5. Abra a pasta e com o botão direito do mouse selecione a opção **Git Bash Here**;
+6. Informe dentro do terminal o comando abaixo (_git clone_ seguido da _URL do repositório_). A URL também pode ser obtida acessando o repositório e clicando no botão verde escrito _Code_;
+
+```
+git clone https://github.com/abressam/RoboTron_Amanda_Bressam_ProjetoFinal.git
+```
+
+<div align="center">
+<img src="https://github.com/abressam/RoboTron_Amanda_Bressam_Compass/blob/develop/assets_readme/git_clone.png" width=350>
+</div>
+
+7. Agora o projeto está no seu computador!
+
+<div id="compactada" />
+
+## 📁 Baixando o projeto por pasta compactada
+
+<p align="justify">
+Siga os passos abaixo para baixar o projeto:
+</p>
+
+1. Clique no botão verde escrito _Code_ e selecione a opção **Download ZIP**;
+
+<div align="center">
+<img src="https://github.com/abressam/RoboTron_Amanda_Bressam_Compass/blob/develop/assets_readme/zip_repo.png" width=350>
+</div>
+
+2. Após o arquivo ser baixado, clique com o botão direito e selecione a opção para descompactar a pasta;
+3. Agora o projeto está no seu computador!
 
 <div id='repo_vscode' />
 
