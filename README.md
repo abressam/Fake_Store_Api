@@ -88,5 +88,21 @@ Fake Store API<br>
 # 🔧 Ferramentas utilizadas
 
 <p align="justify">
-  Adicionar texto.
+As ferramentas utilizadas no projeto estão descritas a seguir:
 </p>
+
+<div align="center">
+  
+| Ferramenta | Versão | Observações |
+| ---------- | ------ | ----------- |
+| Python | 3.8.2 | Linguagem de programação utilizada nos exercícios |
+| VS Code | 1.72.1 | IDE usada para rodar o projeto |
+| Git | 2.38.1 | Software de versionamento de código |
+| GitHub | ------ | Plataforma online para alocar repositórios |
+| Robot Framework | 5.0.1 | Ferramenta de automação de testes |
+| Request Library | 0.9.3 | Biblioteca para testes de API usando Robot |
+| Browser Library | 14.1.0 | Biblioteca que disponibiliza recursos do Browser para o Robot |
+| Faker Library | 5.0.0 | Biblioteca com recursos para gerar massa de dados fictícia no Robot |
+| Node.JS | 16.18.0 LTS | Ambiente de execução JavaScript que auxilia a Browser Library |
+<br>
+</div>
