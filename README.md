@@ -282,7 +282,7 @@ A seguir, os casos de teste estão separados em seus respectivos endpoints e em 
 </p>
 
 1. [Resultados do endpoint **/login**](#login)
-2. [Resultados do endpoint **/products**](#product)
+2. [Resultados do endpoint **/products**](#products)
 3. [Resultados do endpoint **/cart**](#cart)
 4. [Resultados do endpoint **/user**](#user)
 
@@ -320,6 +320,25 @@ A seguir, os casos de teste estão separados em seus respectivos endpoints e em 
 | Test Case 6: POST Login User Wrong Username | Validar o login com username incorreto | não documentado | status code: 401 <br> Response: username or password is incorrect | PASS | Apesar de não estar documentado, era suposto retornar uma mensagem de erro |
 | Test Case 7: POST Login With Wrong Password | Validar o login com password incorreto | não documentado | status code: 401 <br> Response: username or password is incorrect | PASS | Apesar de não estar documentado, era suposto retornar uma mensagem de erro |
 
+<br>
+</div>
+
+<div id='products' />
+
+## 📜 Resultados do endpoint /products
+
+### ✔️ Cenários de teste **positivo**
+
+<div align="center">
+ 
+| Cenário de Teste | Objetivo | Resultado Esperado | Resultado Obtido | Status |  Observações |
+| ------ | ------ | ------ | ------ | :------: |  :------: |
+| Test Case 1: GET List All Products |  Listar todos os produtos | Response: [{<br>id: ...<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | status code: 200 <br> Response: [{<br>id: ...<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | PASS |  Teste ocorreu como esperado |
+| Test Case 2: GET Product By ID |  Listar um produto específico | Response: [{<br>id: 1<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | status code: 200 <br> Response: [{<br>id: 1<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | PASS |  Teste ocorreu como esperado |
+| Test Case 3: GET Limit Of Products |  Listar um intervalo de produtos (ex: 1 a 5) | Response: [{<br>id: 1<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}<br>...<br>{<br>id: 5<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | status code: 200 <br> Response: [{<br>id: 1<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}<br>...<br>{<br>id: 5<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | PASS |  Teste ocorreu como esperado |
+| Test Case 4: GET Products In Descending Order |  Listar todos os produtos em ordem decrescente | Response: [{<br>id: 20<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}<br>...<br>{<br>id: 1<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | status code: 200 <br> Response: [{<br>id: 20<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}<br>...<br>{<br>id: 1<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | PASS |  Teste ocorreu como esperado |
+| Test Case 5: GET Products In Ascending Order |  Listar todos os produtos em ordem crescente | Response: [{<br>id: 1<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}<br>...<br>{<br>id: 20<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | status code: 200 <br> Response: [{<br>id: 1<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}<br>...<br>{<br>id: 20<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | PASS |  Teste ocorreu como esperado |
+| Test Case 6: GET List Products Category |  Listar as categorias de produto | Response: ["electronics","jewelery","men's clothing","women's clothing"] | status code: 200 <br> Response: ["electronics","jewelery","men's clothing","women's clothing"] | PASS |  Teste ocorreu como esperado |
 <br>
 </div>
 
