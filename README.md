@@ -312,7 +312,7 @@ A seguir, os casos de teste estão separados em seus respectivos endpoints e em 
 
 | Cenário de Teste | Objetivo | Resultado Esperado | Resultado Obtido | Status |  Observações |
 | ------ | ------ | ------ | ------ | :------: | :------: |
-| Test Case 1: POST Login With User Does Not Exists | Validar o login com usuário que não existe | não documentado | status code: 401 <br> Response: username or password is incorrect | PASS | Apesar de não estar documentado, era suposto retornar uma mensagem de erro |
+| Test Case 1: POST Login With Non-existent User | Validar o login com usuário que não existe | não documentado | status code: 401 <br> Response: username or password is incorrect | PASS | Apesar de não estar documentado, era suposto retornar uma mensagem de erro |
 | Test Case 2: POST Login User Without Username | Validar o login de um usuário sem username | não documentado | status code: 524 <br> Response: código HTML | PASS | Não era esperado ocorrer falha no servidor, o teste deveria falhar |
 | Test Case 3: POST Login With Without Password | Validar o login de um usuário sem password | não documentado | status code: 524 <br> Response: código HTML | PASS | Não era esperado ocorrer falha no servidor, o teste deveria falhar |
 | Test Case 4: POST Login User With Blank Spaces Username | Validar o login com username preenchido com espaços em branco | não documentado | status code: 401 <br> Response: username or password is incorrect | PASS | Apesar de não estar documentado, era suposto retornar uma mensagem de erro |
