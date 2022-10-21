@@ -249,13 +249,13 @@ Após a instalação das ferramentas e o download do projeto, poderemos acessá-
 2. Selecione a pasta do repositório no seu computador e clique para abrir, após carregado ficará da seguinte forma:
 
 <div align="center">
-ADICIONAR IMAGEM<br><br>
+<img src="https://github.com/abressam/Fake_Store_Api/blob/develop/assets/diretorio_raiz.png"><br><br>
 </div>
 
 3. Para visualizar os arquivos presente nesse diretório, clique na flecha localizada ao lado de cada pasta;
 
 <div align="center">
-ADICIONAR IMAGEM<br><br>
+<img src="https://github.com/abressam/Fake_Store_Api/blob/develop/assets/diretorio_raiz_open.png"><br><br>
 </div>
 
 4. Agora o projeto está aberto no VSCode!
