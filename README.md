@@ -272,17 +272,25 @@ Após a instalação das ferramentas e o download do projeto, poderemos acessá-
 
 # 🗄️ Acessando os testes do projeto
 
-<p align="justify">
-  Adicionar texto.
-</p>
-
 <div id='resultados' />
 
 # 📝 Relatório dos resultados obtidos
 
 <p align="justify">
-  Adicionar texto.
+Nesta sessão está a comparação dos resultados obtidos nos testes em relação a documentação oficial da Fake Store API.<br>
+A seguir, os casos de teste estão separados em seus respectivos endpoints e em cenários positivos e negativos:
 </p>
+
+1. [Resultados do endpoint **/login**](#login)
+2. [Resultados do endpoint **/products**](#product)
+3. [Resultados do endpoint **/cart**](#cart)
+4. [Resultados do endpoint **/user**](#user)
+
+* Número total de testes: 140
+* Número de testes do **endpoint /login**: 8
+* Número de testes do **endpoint /produtos**: 53
+* Número de testes do **endpoint /carrinhos**: 52
+* Número de testes do **endpoint /usuarios**: 27
 
 <div id='observacoes' />
 
