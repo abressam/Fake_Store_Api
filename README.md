@@ -277,7 +277,7 @@ Após a instalação das ferramentas e o download do projeto, poderemos acessá-
 # 📝 Relatório dos resultados obtidos
 
 <p align="justify">
-Nesta sessão está a comparação dos resultados obtidos nos testes em relação a documentação oficial da Fake Store API.<br>
+Nesta sessão está a comparação dos resultados obtidos nos testes em relação a documentação oficial da Fake Store API. Entretanto, a documentação não apresenta com clareza, na grande maioria dos casos, uma resposta quando o usuário adiciona informações incorretas ou o status code esperado. Além disso, muitos casos onde deveriam ocorrer falhas, retonam com status code 200 e body vazio. <br>
 A seguir, os casos de teste estão separados em seus respectivos endpoints e em cenários positivos e negativos:
 </p>
 
@@ -291,6 +291,37 @@ A seguir, os casos de teste estão separados em seus respectivos endpoints e em 
 * Número de testes do **endpoint /produtos**: 53
 * Número de testes do **endpoint /carrinhos**: 52
 * Número de testes do **endpoint /usuarios**: 27
+
+<div id='login' />
+
+## 📜 Resultados do endpoint /login
+
+### ✔️ Cenários de teste **positivo**
+
+<div align="center">
+ 
+| Cenário de Teste | Objetivo | Resultado Esperado | Resultado Obtido | Status |  Observações |
+| ------ | ------ | ------ | ------ | :------: |  :------: |
+| Test Case 1: POST Login User | Validar o login de um usuário estático |  {"token": "..."} | status code: 200 <br> Response: {"token": "eyJhbGciOiJIUzI1NiI..."} | PASS |  Teste ocorreu como esperado |
+<br>
+</div>
+
+### ❌ Cenários de teste **negativo**
+
+<div align="center">
+
+| Cenário de Teste | Objetivo | Resultado Esperado | Resultado Obtido | Status |  Observações |
+| ------ | ------ | ------ | ------ | :------: | :------: |
+| Test Case 1: POST Login With User Does Not Exists | Validar o login com usuário que não existe | não documentado | status code: 401 <br> Response: username or password is incorrect | PASS | Apesar de não estar documentado, era suposto retornar uma mensagem de erro |
+| Test Case 2: POST Login User Without Username | Validar o login de um usuário sem username | não documentado | status code: 524 <br> Response: código HTML | PASS | Não era esperado ocorrer falha no servidor, o teste deveria falhar |
+| Test Case 3: POST Login With Without Password | Validar o login de um usuário sem password | não documentado | status code: 524 <br> Response: código HTML | PASS | Não era esperado ocorrer falha no servidor, o teste deveria falhar |
+| Test Case 4: POST Login User With Blank Spaces Username | Validar o login com username preenchido com espaços em branco | não documentado | status code: 401 <br> Response: username or password is incorrect | PASS | Apesar de não estar documentado, era suposto retornar uma mensagem de erro |
+| Test Case 5: POST Login User With Blank Spaces Password | Validar o login com password preenchido com espaços em branco | não documentado | status code: 401 <br> Response: username or password is incorrect | PASS | Apesar de não estar documentado, era suposto retornar uma mensagem de erro |
+| Test Case 6: POST Login User Wrong Username | Validar o login com username incorreto | não documentado | status code: 401 <br> Response: username or password is incorrect | PASS | Apesar de não estar documentado, era suposto retornar uma mensagem de erro |
+| Test Case 7: POST Login With Wrong Password | Validar o login com password incorreto | não documentado | status code: 401 <br> Response: username or password is incorrect | PASS | Apesar de não estar documentado, era suposto retornar uma mensagem de erro |
+
+<br>
+</div>
 
 <div id='observacoes' />
 
