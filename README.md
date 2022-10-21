@@ -242,8 +242,23 @@ Siga os passos abaixo para baixar o projeto:
 # 🛠️ Como acessar o repositório no Visual Studio Code
 
 <p align="justify">
-  Adicionar texto.
+Após a instalação das ferramentas e o download do projeto, poderemos acessá-lo através do VS Code! Siga os passos abaixo:
 </p>
+
+1. Abra o _Visual Studio Code_, clique na opção _File_ do menu de ferramentas e em seguida _Open folder..._ ou acesse pelo atalho (_Ctrl O + Ctrl K_);
+2. Selecione a pasta do repositório no seu computador e clique para abrir, após carregado ficará da seguinte forma:
+
+<div align="center">
+ADICIONAR IMAGEM<br><br>
+</div>
+
+3. Para visualizar os arquivos presente nesse diretório, clique na flecha localizada ao lado de cada pasta;
+
+<div align="center">
+ADICIONAR IMAGEM<br><br>
+</div>
+
+4. Agora o projeto está aberto no VSCode!
 
 <div id='organizacao' />
 
