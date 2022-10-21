@@ -16,11 +16,77 @@ Fake Store API<br>
 5. [Organização do projeto](#organizacao)
 6. [Acessando os testes do projeto](#acessar_testes)
 7. [Relatório dos resultados obtidos](#resultados)
-9. [Observações e pontos de melhoria](#observações)
+9. [Observações e pontos de melhoria](#observacoes)
 8. [Ferramentas utilizadas](#ferramentas)
 
-# 🚀 Observações
+<div id='fakestore' />
+
+# 🛒 Sobre a API Fake Store
+
+<p align="justify">
+  Adicionar texto.
+</p>
+
+<div id='instalacao' />
+
+# ⚙️ Instalação das ferramentas
+
+<p align="justify">
+  Adicionar texto.
+</p>
+
+<div id='baixar_repo' />
+
+# 🔽 Como baixar o repositório
+
+<p align="justify">
+  Adicionar texto.
+</p>
+
+<div id='repo_vscode' />
+
+# 🛠️ Como acessar o repositório no Visual Studio Code
+
+<p align="justify">
+  Adicionar texto.
+</p>
+
+<div id='organizacao' />
+
+# 📁 Organização do projeto
+
+<p align="justify">
+  Adicionar texto.
+</p>
+
+<div id='acessar_testes' />
+
+# 🗄️ Acessando os testes do projeto
+
+<p align="justify">
+  Adicionar texto.
+</p>
+
+<div id='resultados' />
+
+# 📝 Relatório dos resultados obtidos
+
+<p align="justify">
+  Adicionar texto.
+</p>
+
+<div id='observacoes' />
+
+# 👍 Observações e pontos de melhoria
 
 <p align="justify">
   A Fake Store API não apresenta com clareza na documentação o resultado de saída de cada endpoint e pouco informa o status code obtido após uma ação.
+</p>
+
+<div id='ferramentas' />
+
+# 🔧 Ferramentas utilizadas
+
+<p align="justify">
+  Adicionar texto.
 </p>
