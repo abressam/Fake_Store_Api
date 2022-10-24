@@ -68,19 +68,19 @@ Test Case 10: GET List All Products In Women's Clothing Category
 
 Test Case 11: POST Add New Product With Absolute Value
     [Tags]    11
-    ${new_product}    ${status_code}        Read Json    product_absolute_price
+    ${new_product}    ${status_code}        POST Static Data    product_absolute_price
     Log To Console      ${new_product}
     Log To Console      ${status_code}
 
 Test Case 12: POST Add New Product With Decimal Value
     [Tags]    12
-    ${new_product}    ${status_code}        Read Json    product_decimal_price
+    ${new_product}    ${status_code}        POST Static Data    product_decimal_price
     Log To Console      ${new_product}
     Log To Console      ${status_code}
 
 Test Case 13: POST Add New Product With Zero Value
     [Tags]    13
-    ${new_product}    ${status_code}        Read Json    product_zero_price
+    ${new_product}    ${status_code}        POST Static Data    product_zero_price
     Log To Console      ${new_product}
     Log To Console      ${status_code}
 

@@ -36,14 +36,14 @@ def Products_In_Ascending_Order():
 
     return response
 
-def Read_Json():
+def Read_Product_Json():
     with open('./fake_shop/support/fixtures/static/json_product.json', 'r') as product_data_file:
         json_product_data_file = json.load(product_data_file)
 
     return json_product_data_file
 
 def POST_Static_Data(json_object):
-    json_data = Read_Json()
+    json_data = Read_Product_Json()
     request = req.post(url='https://fakestoreapi.com/products', data=json_data[json_object])
     response = request.json()
     status_code = f"\nStatus Code: {request.status_code}\n"
@@ -51,7 +51,7 @@ def POST_Static_Data(json_object):
     return response, status_code
 
 def PUT_Static_Data(product_id, json_object):
-    json_data = Read_Json()
+    json_data = Read_Product_Json()
     request = req.put(url=f'https://fakestoreapi.com/products/{product_id}', data=json_data[json_object])
     response = request.json()
     status_code = f"\nStatus Code: {request.status_code}\n"
@@ -59,7 +59,7 @@ def PUT_Static_Data(product_id, json_object):
     return response, status_code
 
 def PATCH_Static_Data(product_id, json_object):
-    json_data = Read_Json()
+    json_data = Read_Product_Json()
     request = req.patch(url=f'https://fakestoreapi.com/products/{product_id}', data=json_data[json_object])
     response = request.json()
     status_code = f"\nStatus Code: {request.status_code}\n"

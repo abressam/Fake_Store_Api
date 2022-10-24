@@ -5,7 +5,7 @@ Resource        ../../keywords/login/login_keywords.robot
 Suite Setup     Open Session
 
 *** Test Cases ***
-Test Case 1: POST Login With User Does Not Exists
+Test Case 1: POST Login With Non-existent User
     [Tags]    1
     Login User Do Not Exists
     Print Return Status Code
