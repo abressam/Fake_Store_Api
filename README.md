@@ -272,6 +272,74 @@ Após a instalação das ferramentas e o download do projeto, poderemos acessá-
 
 # 🗄️ Acessando os testes do projeto
 
+<p align="justify">
+Como visto anteriormente, os testes estão separados por endpoints e discribuídos em dois arquivo: cenários positivos e cenários negativos. Segue abaixo a explicação de como rodar todos os testes de um arquivo ou rodar apenas um teste específico.
+</p>
+
+## 1️⃣ Acessando todos os testes de um arquivo
+
+<p align="justify">
+Com o projeto aberto no Visual Studio Code, acesse o terminal utilizando o atalho Ctrl + ' e siga os passos abaixo para executar o arquivo desejado, separados respectivamente em cenários válidos (valid) e inválidos (invalid) de cada endpoint:
+</p>
+
+* Executando os testes do endpoint **/login**
+
+```
+robot -d  ./fake_shop/reports ./fake_shop/tests/login/valid_login_test.robot
+```
+
+```
+robot -d  ./fake_shop/reports ./fake_shop/tests/login/invalid_login_test.robot
+```
+
+* Executando os testes do endpoint **/products**
+
+```
+robot -d  ./fake_shop/reports ./fake_shop/tests/product/valid_product_test.robot
+```
+
+```
+robot -d  ./fake_shop/reports ./fake_shop/tests/product/invalid_product_test.robot
+```
+
+* Executando os testes do endpoint **/carts**
+
+```
+robot -d  ./fake_shop/reports ./fake_shop/tests/cart/valid_cart_test.robot
+```
+
+```
+robot -d  ./fake_shop/reports ./fake_shop/tests/cart/invalid_cart_test.robot
+```
+
+* Executando os testes do endpoint **/user**
+
+```
+robot -d  ./fake_shop/reports ./fake_shop/tests/user/valid_user_test.robot
+```
+
+```
+robot -d  ./fake_shop/reports ./fake_shop/tests/user/invalid_user_test.robot
+```
+
+## 2️⃣ Acessando testes individualmente
+
+<p align="justify">
+Para executar um teste específico é necessário acessar a tag referente ao teste desejado, para isso, abra o arquivo de teste e localize em cada cenário o argumento [tags]. Veja um exemplo abaixo:
+</p>
+
+<div align="center">
+ADICIONAR IMAGEM
+</div>
+
+<p align="justify">
+Cada cenário de teste está numerado em sequência, sempre iniciando em 1. Assim, o processo de executar o teste é semelhante a etapa anterior, porém é necessário adicionar o comando (-i nome_da_tag) entre a localização do diretório reports e do diretório do arquivo de teste. Veja um exemplo abaixo de como acessar apenas o primeiro teste, referente ao cenário de testes positivos do endpoint /user:
+</p>
+
+```
+robot -d  ./fake_shop/reports -i 1 ./fake_shop/tests/user/valid_user_test.robot
+```
+
 <div id='resultados' />
 
 # 📝 Relatório dos resultados obtidos
@@ -288,9 +356,9 @@ A seguir, os casos de teste estão separados em seus respectivos endpoints e em 
 
 * Número total de testes: 140
 * Número de testes do **endpoint /login**: 8
-* Número de testes do **endpoint /produtos**: 53
-* Número de testes do **endpoint /carrinhos**: 52
-* Número de testes do **endpoint /usuarios**: 27
+* Número de testes do **endpoint /products**: 53
+* Número de testes do **endpoint /cart**: 52
+* Número de testes do **endpoint /user**: 27
 
 <div id='login' />
 
