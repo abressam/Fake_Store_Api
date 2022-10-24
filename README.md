@@ -329,7 +329,7 @@ Para executar um teste específico é necessário acessar a tag referente ao tes
 </p>
 
 <div align="center">
-ADICIONAR IMAGEM
+  <img src="https://github.com/abressam/Fake_Store_Api/blob/develop/assets/tags.png" width=600><br><br>
 </div>
 
 <p align="justify">
