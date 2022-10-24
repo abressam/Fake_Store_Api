@@ -1,10 +1,6 @@
 *** Settings ***
 Documentation    Creating valid test for the endpoint /user
-Resource        ../../keywords/user/get_user_keywords.robot
-Resource        ../../keywords/user/post_user_keywords.robot
-Resource        ../../keywords/user/put_user_keywords.robot
-Resource        ../../keywords/user/patch_user_keywords.robot
-Resource        ../../keywords/user/delete_user_keywords.robot
+Resource        ../../keywords/user/user_keywords.robot
 
 Suite Setup     Open Session
 
@@ -47,15 +43,15 @@ Test Case 6: POST Add New User
 
 Test Case 7: PUT Update All User Fields
     [Tags]    7
-    PUT Update User All Fields
-    Print Return Status Code
-    Print Return Message
+    ${update_user}       ${status_code}        PUT User Static Data        3        valid_user
+    Log To Console      ${update_user}        
+    Log To Console      ${status_code}
 
 Test Case 8: PATCH Update All User Fields
     [Tags]    8
-    PATCH Update User All Fields
-    Print Return Status Code
-    Print Return Message
+    ${update_user}       ${status_code}        PATCH User Static Data        5        valid_user
+    Log To Console      ${update_user}        
+    Log To Console      ${status_code}
 
 Test Case 9: DELETE Remove User By ID
     [Tags]    9

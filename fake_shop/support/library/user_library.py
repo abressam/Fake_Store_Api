@@ -36,21 +36,21 @@ def POST_User_Static_Data(json_object):
 
     return response, status_code
 
-# def PUT_Cart_Static_Data(cart_id, json_object):
-#     json_data = Read_Json()
-#     request = req.put(url=f'{url_cart}/{cart_id}', data=json_data[json_object])
-#     response = request.json()
-#     status_code = f"\nStatus Code: {request.status_code}\n"
+def PUT_User_Static_Data(user_id, json_object):
+    json_data = Read_Json()
+    request = req.put(url=f'{user_url}/{user_id}', data=json_data[json_object])
+    response = request.json()
+    status_code = f"\nStatus Code: {request.status_code}\n"
 
-#     return response, status_code
+    return response, status_code
 
-# def PATCH_Cart_Static_Data(cart_id, json_object):
-#     json_data = Read_Json()
-#     request = req.patch(url=f'{url_cart}/{cart_id}', data=json_data[json_object])
-#     response = request.json()
-#     status_code = f"\nStatus Code: {request.status_code}\n"
+def PATCH_User_Static_Data(user_id, json_object):
+    json_data = Read_Json()
+    request = req.patch(url=f'{user_url}/{user_id}', data=json_data[json_object])
+    response = request.json()
+    status_code = f"\nStatus Code: {request.status_code}\n"
 
-#     return response, status_code
+    return response, status_code
 
 def DELETE_User(user_id):
     request = req.delete(url=f'{user_url}/{user_id}')

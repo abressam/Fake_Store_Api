@@ -1,75 +1,445 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.8.2 on win32)" generated="20221024 09:12:33.185" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.8.2 on win32)" generated="20221024 16:54:58.225" rpa="false" schemaversion="3">
 <suite id="s1" name="Valid User Test" source="C:\Users\amanda.martins\OneDrive - COMPASSO TECNOLOGIA LTDA\Área de Trabalho\Fake_Store_Api\fake_shop\tests\user\valid_user_test.robot">
 <kw name="Open Session" library="base" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>fakeshop</arg>
 <arg>${BASE_URL}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20221024 09:12:33.742" level="INFO">Creating Session using : alias=fakeshop, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20221024 09:12:33.741" endtime="20221024 09:12:33.742"/>
+<msg timestamp="20221024 16:54:58.912" level="INFO">Creating Session using : alias=fakeshop, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20221024 16:54:58.912" endtime="20221024 16:54:58.912"/>
 </kw>
-<status status="PASS" starttime="20221024 09:12:33.741" endtime="20221024 09:12:33.742"/>
+<status status="PASS" starttime="20221024 16:54:58.911" endtime="20221024 16:54:58.912"/>
 </kw>
-<test id="s1-t1" name="Test Case 1: GET List All Users" line="12">
-<kw name="GET All Users Endpoint /users" library="get_user_keywords">
+<test id="s1-t1" name="Test Case 1: GET List All Users" line="8">
+<kw name="GET All Users Endpoint /users" library="user_keywords">
 <kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>fakeshop</arg>
 <arg>/users</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20221024 09:12:34.750" level="INFO">GET Request : url=https://fakestoreapi.com/users 
+<msg timestamp="20221024 16:54:59.481" level="INFO">GET Request : url=https://fakestoreapi.com/users 
  path_url=/users 
  headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg timestamp="20221024 09:12:34.750" level="INFO">GET Response : url=https://fakestoreapi.com/users 
+<msg timestamp="20221024 16:54:59.482" level="INFO">GET Response : url=https://fakestoreapi.com/users 
  status=200, reason=OK 
- headers={'Date': 'Mon, 24 Oct 2022 12:12:34 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"bae-Vi0JNVg0EAD6LcGk4v18ASK0bgA"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=rgrV14JBX5mvn8ZDBcAgzu0OL6EBf5bwvKEJldK4%2BZJVfRgv9v9d3CEBcGTbCb5jvt%2FWRlpVLK%2FsbcoZGfEjTe5YfWApHzrUPCSXhTJwMi7yeHc00bLrDxr%2B4Q4YA7HH65N0"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f29f14da00011c-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ headers={'Date': 'Mon, 24 Oct 2022 19:54:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"bae-Vi0JNVg0EAD6LcGk4v18ASK0bgA"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=TdC2T9yeB4jZWuTquMOIWaqDUq6jmB4kzsJepjeC3oP4o6bzX4GufF%2B2KT37lkQPPLwooVSfAqTZTkqVg54WhGPWG4LauTcjR7QfWfivyzTNjjunQYf3erkF%2Fp6r%2FUi0xCah"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f54474e85aa58f-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
  body=[{"address":{"geolocation":{"lat":"-37.3159","long":"81.1496"},"city":"kilcoole","street":"new road","number":7682,"zipcode":"12926-3874"},"id":1,"email":"john@gmail.com","username":"johnd","password":"m38rmF$","name":{"firstname":"john","lastname":"doe"},"phone":"1-570-236-7033","__v":0},{"address":{"geolocation":{"lat":"-37.3159","long":"81.1496"},"city":"kilcoole","street":"Lovers Ln","number":7267,"zipcode":"12926-3874"},"id":2,"email":"morrison@gmail.com","username":"mor_2314","password":"83r5^_","name":{"firstname":"david","lastname":"morrison"},"phone":"1-570-236-7033","__v":0},{"address":{"geolocation":{"lat":"40.3467","long":"-30.1310"},"city":"Cullman","street":"Frances Ct","number":86,"zipcode":"29567-1452"},"id":3,"email":"kevin@gmail.com","username":"kevinryan","password":"kev02937@","name":{"firstname":"kevin","lastname":"ryan"},"phone":"1-567-094-1345","__v":0},{"address":{"geolocation":{"lat":"50.3467","long":"-20.1310"},"city":"San Antonio","street":"Hunters Creek Dr","number":6454,"zipcode":"98234-1734"},"id":4,"email":"don@gmail.com","username":"donero","password":"ewedon","name":{"firstname":"don","lastname":"romer"},"phone":"1-765-789-6734","__v":0},{"address":{"geolocation":{"lat":"40.3467","long":"-40.1310"},"city":"san Antonio","street":"adams St","number":245,"zipcode":"80796-1234"},"id":5,"email":"derek@gmail.com","username":"derek","password":"jklg*_56","name":{"firstname":"derek","lastname":"powell"},"phone":"1-956-001-1945","__v":0},{"address":{"geolocation":{"lat":"20.1677","long":"-10.6789"},"city":"el paso","street":"prospect st","number":124,"zipcode":"12346-0456"},"id":6,"email":"david_r@gmail.com","username":"david_r","password":"3478*#54","name":{"firstname":"david","lastname":"russell"},"phone":"1-678-345-9856","__v":0},{"address":{"geolocation":{"lat":"10.3456","long":"20.6419"},"city":"fresno","street":"saddle st","number":1342,"zipcode":"96378-0245"},"id":7,"email":"miriam@gmail.com","username":"snyder","password":"f238&amp;@*$","name":{"firstname":"miriam","lastname":"snyder"},"phone":"1-123-943-0563","__v":0},{"address":{"geolocation":{"lat":"50.3456","long":"10.6419"},"city":"mesa","street":"vally view ln","number":1342,"zipcode":"96378-0245"},"id":8,"email":"william@gmail.com","username":"hopkins","password":"William56$hj","name":{"firstname":"william","lastname":"hopkins"},"phone":"1-478-001-0890","__v":0},{"address":{"geolocation":{"lat":"40.12456","long":"20.5419"},"city":"miami","street":"avondale ave","number":345,"zipcode":"96378-0245"},"id":9,"email":"kate@gmail.com","username":"kate_h","password":"kfejk@*_","name":{"firstname":"kate","lastname":"hale"},"phone":"1-678-456-1934","__v":0},{"address":{"geolocation":{"lat":"30.24788","long":"-20.545419"},"city":"fort wayne","street":"oak lawn ave","number":526,"zipcode":"10256-4532"},"id":10,"email":"jimmie@gmail.com","username":"jimmie_k","password":"klein*#%*","name":{"firstname":"jimmie","lastname":"klein"},"phone":"1-104-001-4567","__v":0}] 
  </msg>
-<msg timestamp="20221024 09:12:34.750" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 09:12:33.743" endtime="20221024 09:12:34.750"/>
+<msg timestamp="20221024 16:54:59.482" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 16:54:58.914" endtime="20221024 16:54:59.483"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${response}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<msg timestamp="20221024 09:12:34.751" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20221024 09:12:34.750" endtime="20221024 09:12:34.751"/>
+<msg timestamp="20221024 16:54:59.485" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 16:54:59.483" endtime="20221024 16:54:59.486"/>
 </kw>
-<status status="PASS" starttime="20221024 09:12:33.743" endtime="20221024 09:12:34.751"/>
+<status status="PASS" starttime="20221024 16:54:58.913" endtime="20221024 16:54:59.486"/>
 </kw>
 <kw name="Print Return Status Code" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nStatus Code: ${response.status_code}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 09:12:34.751" endtime="20221024 09:12:34.752"/>
+<status status="PASS" starttime="20221024 16:54:59.489" endtime="20221024 16:54:59.493"/>
 </kw>
-<status status="PASS" starttime="20221024 09:12:34.751" endtime="20221024 09:12:34.752"/>
+<status status="PASS" starttime="20221024 16:54:59.488" endtime="20221024 16:54:59.493"/>
 </kw>
 <kw name="Print Return Message" library="common">
 <kw name="Log To Console" library="BuiltIn">
 <arg>\nResponse: ${response.content}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20221024 09:12:34.753" endtime="20221024 09:12:34.756"/>
+<status status="PASS" starttime="20221024 16:54:59.495" endtime="20221024 16:54:59.498"/>
 </kw>
-<status status="PASS" starttime="20221024 09:12:34.753" endtime="20221024 09:12:34.756"/>
+<status status="PASS" starttime="20221024 16:54:59.494" endtime="20221024 16:54:59.499"/>
 </kw>
 <tag>1</tag>
-<status status="PASS" starttime="20221024 09:12:33.742" endtime="20221024 09:12:34.757"/>
+<status status="PASS" starttime="20221024 16:54:58.913" endtime="20221024 16:54:59.500"/>
+</test>
+<test id="s1-t2" name="Test Case 2: GET User By ID" line="14">
+<kw name="GET User By ID /users/id" library="user_keywords">
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>fakeshop</arg>
+<arg>/users/1</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20221024 16:55:00.000" level="INFO">GET Request : url=https://fakestoreapi.com/users/1 
+ path_url=/users/1 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20221024 16:55:00.001" level="INFO">GET Response : url=https://fakestoreapi.com/users/1 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 24 Oct 2022 19:54:59 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"120-HNMhv14aQeBJetA9fBvavCZ+gdk"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=kfo4NYGrOhwBbzuSZhpadyH%2BHz5sFQYVfI7GVFzbyGdFr9kY%2FAq6h7huygsvBIBMF0I0mt3azOsdjjejCKMPwdm2fBLVP82dcHEByLGPHVb7CJ78COm9BaCWbaMmDu07Bv4X"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f544783c6da58f-GRU', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body={"address":{"geolocation":{"lat":"-37.3159","long":"81.1496"},"city":"kilcoole","street":"new road","number":7682,"zipcode":"12926-3874"},"id":1,"email":"john@gmail.com","username":"johnd","password":"m38rmF$","name":{"firstname":"john","lastname":"doe"},"phone":"1-570-236-7033","__v":0} 
+ </msg>
+<msg timestamp="20221024 16:55:00.001" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 16:54:59.507" endtime="20221024 16:55:00.001"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221024 16:55:00.003" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 16:55:00.002" endtime="20221024 16:55:00.003"/>
+</kw>
+<status status="PASS" starttime="20221024 16:54:59.506" endtime="20221024 16:55:00.003"/>
+</kw>
+<kw name="Print Return Status Code" library="common">
+<kw name="Log To Console" library="BuiltIn">
+<arg>\nStatus Code: ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:00.005" endtime="20221024 16:55:00.006"/>
+</kw>
+<status status="PASS" starttime="20221024 16:55:00.004" endtime="20221024 16:55:00.007"/>
+</kw>
+<kw name="Print Return Message" library="common">
+<kw name="Log To Console" library="BuiltIn">
+<arg>\nResponse: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:00.008" endtime="20221024 16:55:00.010"/>
+</kw>
+<status status="PASS" starttime="20221024 16:55:00.007" endtime="20221024 16:55:00.010"/>
+</kw>
+<tag>2</tag>
+<status status="PASS" starttime="20221024 16:54:59.503" endtime="20221024 16:55:00.010"/>
+</test>
+<test id="s1-t3" name="Test Case 3: GET Limited List Of User" line="20">
+<kw name="GET Limit User" library="user_library">
+<var>${get_limit}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<msg timestamp="20221024 16:55:00.865" level="INFO">${get_limit} = [{'address': {'geolocation': {'lat': '-37.3159', 'long': '81.1496'}, 'city': 'kilcoole', 'street': 'new road', 'number': 7682, 'zipcode': '12926-3874'}, 'id': 1, 'email': 'john@gmail.com', 'username':...</msg>
+<msg timestamp="20221024 16:55:00.866" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221024 16:55:00.013" endtime="20221024 16:55:00.866"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${get_limit}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:00.868" endtime="20221024 16:55:00.875"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:00.877" endtime="20221024 16:55:00.880"/>
+</kw>
+<tag>3</tag>
+<status status="PASS" starttime="20221024 16:55:00.012" endtime="20221024 16:55:00.881"/>
+</test>
+<test id="s1-t4" name="Test Case 4: GET Users In Descending Order" line="26">
+<kw name="GET Order User" library="user_library">
+<var>${get_order}</var>
+<var>${status_code}</var>
+<arg>desc</arg>
+<msg timestamp="20221024 16:55:01.710" level="INFO">${get_order} = [{'address': {'geolocation': {'lat': '30.24788', 'long': '-20.545419'}, 'city': 'fort wayne', 'street': 'oak lawn ave', 'number': 526, 'zipcode': '10256-4532'}, 'id': 10, 'email': 'jimmie@gmail.com', ...</msg>
+<msg timestamp="20221024 16:55:01.711" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221024 16:55:00.886" endtime="20221024 16:55:01.711"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${get_order}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:01.713" endtime="20221024 16:55:01.721"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:01.722" endtime="20221024 16:55:01.723"/>
+</kw>
+<tag>4</tag>
+<status status="PASS" starttime="20221024 16:55:00.885" endtime="20221024 16:55:01.723"/>
+</test>
+<test id="s1-t5" name="Test Case 5: GET Users In Ascending Order" line="32">
+<kw name="GET Order User" library="user_library">
+<var>${get_order}</var>
+<var>${status_code}</var>
+<arg>asc</arg>
+<msg timestamp="20221024 16:55:02.277" level="INFO">${get_order} = [{'address': {'geolocation': {'lat': '-37.3159', 'long': '81.1496'}, 'city': 'kilcoole', 'street': 'new road', 'number': 7682, 'zipcode': '12926-3874'}, 'id': 1, 'email': 'john@gmail.com', 'username':...</msg>
+<msg timestamp="20221024 16:55:02.277" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221024 16:55:01.725" endtime="20221024 16:55:02.277"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${get_order}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:02.280" endtime="20221024 16:55:02.292"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:02.294" endtime="20221024 16:55:02.296"/>
+</kw>
+<tag>5</tag>
+<status status="PASS" starttime="20221024 16:55:01.724" endtime="20221024 16:55:02.297"/>
+</test>
+<test id="s1-t6" name="Test Case 6: POST Add New User" line="38">
+<kw name="Create and Register Valid Dynamic User" library="user_keywords">
+<kw name="Create Valid User Data" library="dynamic">
+<var>&amp;{payload}</var>
+<kw name="Email" library="FakerLibrary">
+<var>${email}</var>
+<msg timestamp="20221024 16:55:02.305" level="INFO">${email} = anthony05@example.com</msg>
+<status status="PASS" starttime="20221024 16:55:02.304" endtime="20221024 16:55:02.305"/>
+</kw>
+<kw name="User Name" library="FakerLibrary">
+<var>${username}</var>
+<msg timestamp="20221024 16:55:02.306" level="INFO">${username} = dmurray</msg>
+<status status="PASS" starttime="20221024 16:55:02.305" endtime="20221024 16:55:02.306"/>
+</kw>
+<kw name="Password" library="FakerLibrary">
+<var>${password}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<msg timestamp="20221024 16:55:02.307" level="INFO">${password} = #J0V4LuD5%</msg>
+<status status="PASS" starttime="20221024 16:55:02.306" endtime="20221024 16:55:02.307"/>
+</kw>
+<kw name="Name" library="FakerLibrary">
+<var>${first_name}</var>
+<doc>:example 'John Doe'</doc>
+<msg timestamp="20221024 16:55:02.308" level="INFO">${first_name} = Linda Davis</msg>
+<status status="PASS" starttime="20221024 16:55:02.307" endtime="20221024 16:55:02.308"/>
+</kw>
+<kw name="Last Name" library="FakerLibrary">
+<var>${last_name}</var>
+<msg timestamp="20221024 16:55:02.309" level="INFO">${last_name} = Brown</msg>
+<status status="PASS" starttime="20221024 16:55:02.308" endtime="20221024 16:55:02.309"/>
+</kw>
+<kw name="City" library="FakerLibrary">
+<var>${city}</var>
+<doc>:example: 'Sashabury'</doc>
+<msg timestamp="20221024 16:55:02.309" level="INFO">${city} = Port Cliffordfurt</msg>
+<status status="PASS" starttime="20221024 16:55:02.309" endtime="20221024 16:55:02.309"/>
+</kw>
+<kw name="Street Address" library="FakerLibrary">
+<var>${street}</var>
+<doc>:example: '791 Crist Parks'</doc>
+<msg timestamp="20221024 16:55:02.310" level="INFO">${street} = 82814 Mcclain Loop</msg>
+<status status="PASS" starttime="20221024 16:55:02.309" endtime="20221024 16:55:02.310"/>
+</kw>
+<kw name="Random Int" library="FakerLibrary">
+<var>${number}</var>
+<doc>Generate a random integer between two integers ``min`` and ``max`` inclusive
+while observing the provided ``step`` value.</doc>
+<msg timestamp="20221024 16:55:02.310" level="INFO">${number} = 9418</msg>
+<status status="PASS" starttime="20221024 16:55:02.310" endtime="20221024 16:55:02.310"/>
+</kw>
+<kw name="Zipcode" library="FakerLibrary">
+<var>${zipcode}</var>
+<msg timestamp="20221024 16:55:02.311" level="INFO">${zipcode} = 54438</msg>
+<status status="PASS" starttime="20221024 16:55:02.311" endtime="20221024 16:55:02.311"/>
+</kw>
+<kw name="Phone Number" library="FakerLibrary">
+<var>${phone}</var>
+<msg timestamp="20221024 16:55:02.311" level="INFO">${phone} = 769.713.6478</msg>
+<status status="PASS" starttime="20221024 16:55:02.311" endtime="20221024 16:55:02.311"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${name}</var>
+<arg>firstname=${first_name}</arg>
+<arg>lastname=${last_name}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221024 16:55:02.313" level="INFO">${name} = {'firstname': 'Linda Davis', 'lastname': 'Brown'}</msg>
+<status status="PASS" starttime="20221024 16:55:02.312" endtime="20221024 16:55:02.313"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${geolocation}</var>
+<arg>lat=-30.2015</arg>
+<arg>long=74.3698</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221024 16:55:02.313" level="INFO">${geolocation} = {'lat': '-30.2015', 'long': '74.3698'}</msg>
+<status status="PASS" starttime="20221024 16:55:02.313" endtime="20221024 16:55:02.313"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${address}</var>
+<arg>city=${city}</arg>
+<arg>street=${street}</arg>
+<arg>number=${number}</arg>
+<arg>zipcode=${zipcode}</arg>
+<arg>geolocation=${geolocation}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221024 16:55:02.315" level="INFO">${address} = {'city': 'Port Cliffordfurt', 'street': '82814 Mcclain Loop', 'number': 9418, 'zipcode': '54438', 'geolocation': {'lat': '-30.2015', 'long': '74.3698'}}</msg>
+<status status="PASS" starttime="20221024 16:55:02.314" endtime="20221024 16:55:02.315"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${payload}</var>
+<arg>email=${email}</arg>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<arg>name=${name}</arg>
+<arg>address=${address}</arg>
+<arg>phone=${phone}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20221024 16:55:02.316" level="INFO">${payload} = {'email': 'anthony05@example.com', 'username': 'dmurray', 'password': '#J0V4LuD5%', 'name': {'firstname': 'Linda Davis', 'lastname': 'Brown'}, 'address': {'city': 'Port Cliffordfurt', 'street': '82814...</msg>
+<status status="PASS" starttime="20221024 16:55:02.315" endtime="20221024 16:55:02.316"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${payload}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221024 16:55:02.318" level="INFO">${payload} = {'email': 'anthony05@example.com', 'username': 'dmurray', 'password': '#J0V4LuD5%', 'name': {'firstname': 'Linda Davis', 'lastname': 'Brown'}, 'address': {'city': 'Port Cliffordfurt', 'street': '82814...</msg>
+<status status="PASS" starttime="20221024 16:55:02.317" endtime="20221024 16:55:02.318"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n\nDados Criados: ${payload}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:02.318" endtime="20221024 16:55:02.320"/>
+</kw>
+<msg timestamp="20221024 16:55:02.320" level="INFO">&amp;{payload} = { }</msg>
+<status status="PASS" starttime="20221024 16:55:02.303" endtime="20221024 16:55:02.320"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>&amp;{payload}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221024 16:55:02.321" level="INFO">&amp;{payload} = { }</msg>
+<status status="PASS" starttime="20221024 16:55:02.321" endtime="20221024 16:55:02.321"/>
+</kw>
+<kw name="POST Create New User" library="user_keywords">
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>fakeshop</arg>
+<arg>/users</arg>
+<arg>json=&amp;{payload}</arg>
+<arg>expected_status=anything</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20221024 16:55:02.820" level="INFO">POST Request : url=https://fakestoreapi.com/users 
+ path_url=/users 
+ headers={'User-Agent': 'python-requests/2.28.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '2', 'Content-Type': 'application/json'} 
+ body=b'{}' 
+ </msg>
+<msg timestamp="20221024 16:55:02.821" level="INFO">POST Response : url=https://fakestoreapi.com/users 
+ status=200, reason=OK 
+ headers={'Date': 'Mon, 24 Oct 2022 19:55:02 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '9', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"9-hVv0cNJophUD7CGn+ZqXp8tVGo0"', 'X-Powered-By': 'Express', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=v1NeB8Gck9qqQ858r%2Fazr%2Fw29jNyypC8hFi6lmHAXpfbYW6ksQDoQ3TXScSv1qwLnma%2F%2FDiWU4Q%2BsCRIfmhjK3htqjEcr2XM5%2BWsQVnEeo3WkBZb4Okf6nxz4WVvMS9GH9fa"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '75f54489d957a58f-GRU', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'} 
+ body={"id":11} 
+ </msg>
+<msg timestamp="20221024 16:55:02.822" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 16:55:02.322" endtime="20221024 16:55:02.822"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20221024 16:55:02.824" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20221024 16:55:02.822" endtime="20221024 16:55:02.824"/>
+</kw>
+<status status="PASS" starttime="20221024 16:55:02.321" endtime="20221024 16:55:02.825"/>
+</kw>
+<status status="PASS" starttime="20221024 16:55:02.302" endtime="20221024 16:55:02.825"/>
+</kw>
+<kw name="Print Return Status Code" library="common">
+<kw name="Log To Console" library="BuiltIn">
+<arg>\nStatus Code: ${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:02.829" endtime="20221024 16:55:02.833"/>
+</kw>
+<status status="PASS" starttime="20221024 16:55:02.827" endtime="20221024 16:55:02.834"/>
+</kw>
+<kw name="Print Return Message" library="common">
+<kw name="Log To Console" library="BuiltIn">
+<arg>\nResponse: ${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:02.837" endtime="20221024 16:55:02.842"/>
+</kw>
+<status status="PASS" starttime="20221024 16:55:02.836" endtime="20221024 16:55:02.843"/>
+</kw>
+<tag>6</tag>
+<status status="PASS" starttime="20221024 16:55:02.300" endtime="20221024 16:55:02.845"/>
+</test>
+<test id="s1-t7" name="Test Case 7: PUT Update All User Fields" line="44">
+<kw name="PUT User Static Data" library="user_library">
+<var>${update_user}</var>
+<var>${status_code}</var>
+<arg>3</arg>
+<arg>valid_user</arg>
+<msg timestamp="20221024 16:55:03.567" level="INFO">${update_user} = {'email': 'gooduser@qa.com', 'username': 'gooduser', 'password': 'teste123', 'name': ['firstname', 'lastname'], 'address': ['city', 'street', 'number', 'zipcode', 'geolocation'], 'phone': '1-547-320-8...</msg>
+<msg timestamp="20221024 16:55:03.568" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221024 16:55:02.850" endtime="20221024 16:55:03.568"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${update_user}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:03.570" endtime="20221024 16:55:03.573"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:03.575" endtime="20221024 16:55:03.579"/>
+</kw>
+<tag>7</tag>
+<status status="PASS" starttime="20221024 16:55:02.848" endtime="20221024 16:55:03.580"/>
+</test>
+<test id="s1-t8" name="Test Case 8: PATCH Update All User Fields" line="50">
+<kw name="PATCH User Static Data" library="user_library">
+<var>${update_user}</var>
+<var>${status_code}</var>
+<arg>5</arg>
+<arg>valid_user</arg>
+<msg timestamp="20221024 16:55:04.271" level="INFO">${update_user} = {'email': 'gooduser@qa.com', 'username': 'gooduser', 'password': 'teste123', 'name': ['firstname', 'lastname'], 'address': ['city', 'street', 'number', 'zipcode', 'geolocation'], 'phone': '1-547-320-8...</msg>
+<msg timestamp="20221024 16:55:04.271" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221024 16:55:03.586" endtime="20221024 16:55:04.271"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${update_user}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:04.272" endtime="20221024 16:55:04.272"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:04.273" endtime="20221024 16:55:04.273"/>
+</kw>
+<tag>8</tag>
+<status status="PASS" starttime="20221024 16:55:03.584" endtime="20221024 16:55:04.274"/>
+</test>
+<test id="s1-t9" name="Test Case 9: DELETE Remove User By ID" line="56">
+<kw name="DELETE User" library="user_library">
+<var>${delete_user}</var>
+<var>${status_code}</var>
+<arg>3</arg>
+<msg timestamp="20221024 16:55:04.869" level="INFO">${delete_user} = {'address': {'geolocation': {'lat': '40.3467', 'long': '-30.1310'}, 'city': 'Cullman', 'street': 'Frances Ct', 'number': 86, 'zipcode': '29567-1452'}, 'id': 3, 'email': 'kevin@gmail.com', 'username': ...</msg>
+<msg timestamp="20221024 16:55:04.870" level="INFO">${status_code} = 
+Status Code: 200
+</msg>
+<status status="PASS" starttime="20221024 16:55:04.276" endtime="20221024 16:55:04.870"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${delete_user}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:04.872" endtime="20221024 16:55:04.875"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20221024 16:55:04.876" endtime="20221024 16:55:04.880"/>
+</kw>
+<tag>9</tag>
+<status status="PASS" starttime="20221024 16:55:04.275" endtime="20221024 16:55:04.882"/>
 </test>
 <doc>Creating valid test for the endpoint /user</doc>
-<status status="PASS" starttime="20221024 09:12:33.188" endtime="20221024 09:12:34.758"/>
+<status status="PASS" starttime="20221024 16:54:58.228" endtime="20221024 16:55:04.886"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="9" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 <stat pass="1" fail="0" skip="0">1</stat>
+<stat pass="1" fail="0" skip="0">2</stat>
+<stat pass="1" fail="0" skip="0">3</stat>
+<stat pass="1" fail="0" skip="0">4</stat>
+<stat pass="1" fail="0" skip="0">5</stat>
+<stat pass="1" fail="0" skip="0">6</stat>
+<stat pass="1" fail="0" skip="0">7</stat>
+<stat pass="1" fail="0" skip="0">8</stat>
+<stat pass="1" fail="0" skip="0">9</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Valid User Test">Valid User Test</stat>
+<stat pass="9" fail="0" skip="0" id="s1" name="Valid User Test">Valid User Test</stat>
 </suite>
 </statistics>
 <errors>
