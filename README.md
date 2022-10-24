@@ -347,8 +347,16 @@ A seguir, os casos de teste estão separados em seus respectivos endpoints e em 
 # 👍 Observações e pontos de melhoria
 
 <p align="justify">
-  A Fake Store API não apresenta com clareza na documentação o resultado de saída de cada endpoint e pouco informa o status code obtido após uma ação.
+  A Fake Store API não apresenta com clareza na documentação o resultado de saída de cada endpoint e está incompleta em vários aspectos. A seguir estão dispostas sugestões de como melhorar a API e sua documentação.
 </p>
+
+* Revisar os possíveis cenários negativos, apresentado no tópico anterior, para criar novos recursos e tornam a API mais robusta em cenários de falha;
+* Adicionar o status code de cada rota;
+* Adicionar mensagens de sucesso (ex: "Login realizado com sucesso", "Cadastro realizado com sucesso", etc);
+* Adicionar mensagens de falha (ex: "E-mail já cadastrado", "Usuário não encontrado", "Produto não encontrado", "[Campo] não pode ser vazio", etc);
+* Arrumar endpoint "Get carts in date range", pois exige o id dos carts para executar a ação sendo que deveria retornar-los como response;
+* Tornar o token gerado no login relevante para as ações no endpoint cart e products;
+* Diferenciar os usuários clientes (não podem modificar os produtos) dos usuários administradores (possuem permissão para adicionar, alterar e deletar produtos)
 
 <div id='ferramentas' />
 
