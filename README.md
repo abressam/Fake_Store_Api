@@ -418,6 +418,19 @@ A seguir, os casos de teste estão separados em seus respectivos endpoints e em 
 <br>
 </div>
 
+### ❌ Cenários de teste **negativo**
+
+<div align="center">
+
+| Cenário de Teste | Objetivo | Resultado Esperado | Resultado Obtido | Status |  Observações |
+| ------ | ------ | ------ | ------ | :------: | :------: |
+| Test Case 1: GET Nonexist Product ID | Informar um ID que não existe para produto | não documentado | status code: 200 <br> Response: | PASS |  Teste deveria falhar, porém retornou status code 200 e response vazio |
+| Test Case 2: GET Negative Limit In Product ID | Buscar produtos em um intervalo negativo | não documentado | status code: 200 <br> Response: subtrai do valor total o número inserido e imprime na tela os id's restantes do cálculo (ex: 20 - 18 irá informar o id 1 e o id 2)  | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste ao invés de aceitar números negativos como intervalo |
+| Test Case 3: GET Highest Limit In Product ID | Buscar produtos em um intervalo maior do que o número de produtos cadastrados | não documentado | status code: 200 <br> Response: informa todos os produtos  | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste ao invés de aceitar como intervalo um número que ultrapassa a quantidade total de produtos |
+
+<br>
+</div>
+
 <div id='observacoes' />
 
 # 👍 Observações e pontos de melhoria
