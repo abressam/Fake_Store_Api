@@ -482,6 +482,21 @@ A seguir, os casos de teste estão separados em seus respectivos endpoints e em 
 <br>
 </div>
 
+<div id='cart' />
+
+## 📜 Resultados do endpoint /cart
+
+### ✔️ Cenários de teste **positivo**
+
+<div align="center">
+ 
+| Cenário de Teste | Objetivo | Resultado Esperado | Resultado Obtido | Status |  Observações |
+| :------: | ------ | ------ | ------ | :------: |  :------: |
+| Test Case 1: GET List All Carts | Listas todos os carrinhos cadastrados |  Response: [{<br>id: 1<br>userId: ...<br>date: "..."<br>products: [<br>{<br>productId: "...",<br> quantity: "..."<br>}]}<br>...<br>[{<br>id: 6<br>userId: ...<br>date: "..."<br>products: [<br>{<br>productId: "...",<br> quantity: "..."<br>}]} | status code: 200 <br> Response: [{<br>id: 1<br>userId: ...<br>date: "..."<br>products: [<br>{<br>productId: "...",<br> quantity: "..."<br>}]}<br>...<br>[{<br>id: 6<br>userId: ...<br>date: "..."<br>products: [<br>{<br>productId: "...",<br> quantity: "..."<br>}]} | PASS |  Teste ocorreu como esperado |
+<br>
+</div>
+
+
 <div id='observacoes' />
 
 # 👍 Observações e pontos de melhoria
