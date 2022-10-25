@@ -477,7 +477,7 @@ A seguir, os casos de teste estão separados em seus respectivos endpoints e em 
 | Test Case 36: PATCH Update Product Image To Blank Spaces | Atualizar um produto deixando a imagem com espaços em branco | não documentado | status code: 200 <br> Response: [{<br>id: ...<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "<br>     "<br>}  | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste ao invés de atualizar um produto, deixando o campo imagem com espaços em branco |
 | Test Case 37: PATCH Update Product Removing Category | Atualizar um produto deixando a categoria vazia | não documentado | status code: 200 <br> Response: [{<br>id: ...<br>title: "..."<br>price: "..."<br>category: ""<br>description: "..."<br>image: "..."<br>}  | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste ao invés de atualizar um produto, deixando o campo categoria vazio |
 | Test Case 38: PATCH Update Product Category To Blank Spaces | Atualizar um produto deixando a categoria com espaços em branco | não documentado | status code: 200 <br> Response: [{<br>id: ...<br>title: "..."<br>price: "..."<br>category: "<br>"<br>description: "..."<br>image: "..."<br>}  | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste ao invés de atualizar um produto, deixando o campo categoria com espaços em branco |
-
+| Test Case 39: DELETE Nonexist Product ID | Deletar o ID de um produto que não existe | não documentado | status code: 200 <br> Response: None  | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste ao invés de retornar status code 200, como se um produto tivesse realmente sido deletado |
 
 <br>
 </div>
