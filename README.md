@@ -37,6 +37,10 @@ Fake Store API<br>
 * **Fluxo prioritário**: são as rotas essenciais a serem testadas (/login, /user e /products);
 * **Fluxo não prioritário**: são rotas que podem ser testadas posteriormente (/cart).<br><br>
 
+<div align="center">
+  <img src="https://github.com/abressam/Fake_Store_Api/blob/develop/assets/mind_map.png">
+</div>
+
 <div id='instalacao' />
 
 # ⚙️ Instalação das ferramentas
