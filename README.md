@@ -509,6 +509,26 @@ A seguir, os casos de teste estão separados em seus respectivos endpoints e em 
 <br>
 </div>
 
+### ❌ Cenários de teste **negativo**
+
+<div align="center">
+
+| Cenário de Teste | Objetivo | Resultado Esperado | Resultado Obtido | Status |  Observações |
+| :------: | ------ | ------ | ------ | :------: | :------: |
+| Test Case 1: GET Cart With Invalid ID | Validar o ID de um carrinho que não existe | não documentado | status code: 200 <br> Response: None | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste quando recebesse um ID que não está cadastrado no sistema |
+| Test Case 2: GET Exceed Limit Of Carts | Validar ultrapassar o limite de carrinhos cadastrados | não documentado | status code: 200 <br> Response: lista todos os carrinhos cadastrados | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste quando recebesse um limite superior ao número de carrinhos cadastrados no sistema |
+| Test Case 3: GET Use Negative Range In Limit Of Carts | Validar adicionar um limite negativo no intervalo de carrinhos | não documentado | status code: 200 <br> Response: lista os carrinhos resultante da subtração entre o total e o valor inserido (ex: 6 - 3, irá listar os id's 1, 2 e 3) | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste ao invés de realizar uma subtração para listar os carrinhos |
+| Test Case 4: GET Cart Using Invalid Date Format | Validar listar carrinhos adicionando um formato de data inválido | não documentado | status code: 400 <br> Response: <br>{ status: "error", <br> message: "cart id should be provided" } | PASS | A API apresenta um erro nesse endpoint, pois é solicitado o id's dos carrinhos, sendo que o response deveria retorná-los. Assim, não foi possível realizar o teste de formato de data inválido |
+| Test Case 5: GET Cart Using Invalid Start Year | Validar listar carrinhos adicionando o ano inicial como 1800 | não documentado | status code: 400 <br> Response: <br>{ status: "error", <br> message: "cart id should be provided" } | PASS | A API apresenta um erro nesse endpoint, pois é solicitado o id's dos carrinhos, sendo que o response deveria retorná-los. Assim, não foi possível realizar o teste de ano inicial inválido |
+| Test Case 6: GET Cart Using Invalid End Year | Validar listar carrinhos adicionando o ano final como 2100 | não documentado | status code: 400 <br> Response: <br>{ status: "error", <br> message: "cart id should be provided" } | PASS | A API apresenta um erro nesse endpoint, pois é solicitado o id's dos carrinhos, sendo que o response deveria retorná-los. Assim, não foi possível realizar o teste de ano final inválido |
+| Test Case 7: POST Add New Cart Without User ID | Validar o registro de um carrinho sem o ID do usuário | não documentado | status code: 200 <br> Response: {<br>id: 11<br>userId: ""<br>date: "..."<br>products: [<br> { productId: "...",<br> quantity: "..." }<br>] } | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste ao invés de registrar um carrinho sem vínculo com um usuário |
+| Test Case 8: POST Add New Cart With Nonexist User ID | Validar o registro de um carrinho com um ID de usuário inexistente | não documentado | status code: 200 <br> Response: {<br>id: 11<br>userId: 40<br>date: "..."<br>products: [<br> { productId: "...",<br> quantity: "..." }<br>] } | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste ao invés de registrar um carrinho a um usuário que não existe |
+| Test Case 9: POST Add New Cart With Blank Spaces User ID | Validar o registro de um carrinho com um ID de usuário inexistente | não documentado | status code: 200 <br> Response: {<br>id: 11<br>userId: "<br>"<br>date: "..."<br>products: [<br> { productId: "...",<br> quantity: "..." }<br>] } | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste ao invés de registrar um carrinho a um usuário com ID inválido |
+| Test Case 10: POST Add New Cart With Invalid Date | Validar o registro de um carrinho com data inválida | não documentado | status code: 200 <br> Response: {<br>id: 11<br>userId: "..."<br>date: "1800-10-20"<br>products: [<br> { productId: "...",<br> quantity: "..." }<br>] } | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste ao invés de registrar um carrinho com data inválida |
+
+
+<br>
+</div>
 
 <div id='observacoes' />
 
