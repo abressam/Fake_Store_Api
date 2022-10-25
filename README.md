@@ -265,8 +265,19 @@ Após a instalação das ferramentas e o download do projeto, poderemos acessá-
 # 📁 Organização do projeto
 
 <p align="justify">
-  Adicionar texto.
+O projeto de automação encontra-se no diretório "fake_shop" e está estruturado baseado no modelo Service-Object, possuindo algumas adaptações para melhor organização dos arquivos.
 </p>
+
+<div align="center">
+
+| Diretório | Conteúdo | Imagem |
+| :----------: | :------: | :-------: |
+| Keywords | Possui arquivos com as keywords correspondentes a cada endpoint. | <img src="https://github.com/abressam/Fake_Store_Api/blob/develop/assets/keywords.png" width=200> |
+| Reports | Arquivos .html e .xml que retornam os resultados obtidos após rodar os testes. | <img src="https://github.com/abressam/Fake_Store_Api/blob/develop/assets/reports.png" width=200> |
+| Support | Diretório que contém arquivos que auxiliam na realização dos testes. | <img src="https://github.com/abressam/Fake_Store_Api/blob/develop/assets/support.png" width=200> |
+| Tests | Contém arquivos referêntes a testes de cenário positivos e negativos para cada endpoint. | <img src="https://github.com/abressam/Fake_Store_Api/blob/develop/assets/tests.png" width=200> |
+
+</div>
 
 <div id='acessar_testes' />
 
@@ -369,7 +380,7 @@ A seguir, os casos de teste estão separados em seus respectivos endpoints e em 
 <div align="center">
  
 | Cenário de Teste | Objetivo | Resultado Esperado | Resultado Obtido | Status |  Observações |
-| ------ | ------ | ------ | ------ | :------: |  :------: |
+| :------: | ------ | ------ | ------ | :------: |  :------: |
 | Test Case 1: POST Login User | Validar o login de um usuário estático |  {"token": "..."} | status code: 200 <br> Response: {"token": "eyJhbGciOiJIUzI1NiI..."} | PASS |  Teste ocorreu como esperado |
 <br>
 </div>
@@ -379,7 +390,7 @@ A seguir, os casos de teste estão separados em seus respectivos endpoints e em 
 <div align="center">
 
 | Cenário de Teste | Objetivo | Resultado Esperado | Resultado Obtido | Status |  Observações |
-| ------ | ------ | ------ | ------ | :------: | :------: |
+| :------: | ------ | ------ | ------ | :------: | :------: |
 | Test Case 1: POST Login With Non-existent User | Validar o login com usuário que não existe | não documentado | status code: 401 <br> Response: username or password is incorrect | PASS | Apesar de não estar documentado, era suposto retornar uma mensagem de erro |
 | Test Case 2: POST Login User Without Username | Validar o login de um usuário sem username | não documentado | status code: 524 <br> Response: código HTML | PASS | Não era esperado ocorrer falha no servidor, o teste deveria falhar |
 | Test Case 3: POST Login With Without Password | Validar o login de um usuário sem password | não documentado | status code: 524 <br> Response: código HTML | PASS | Não era esperado ocorrer falha no servidor, o teste deveria falhar |
@@ -400,7 +411,7 @@ A seguir, os casos de teste estão separados em seus respectivos endpoints e em 
 <div align="center">
  
 | Cenário de Teste | Objetivo | Resultado Esperado | Resultado Obtido | Status |  Observações |
-| ------ | ------ | ------ | ------ | :------: |  :------: |
+| :------: | ------ | ------ | ------ | :------: |  :------: |
 | Test Case 1: GET List All Products |  Listar todos os produtos | Response: [{<br>id: ...<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | status code: 200 <br> Response: [{<br>id: ...<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | PASS |  Teste ocorreu como esperado |
 | Test Case 2: GET Product By ID |  Listar um produto específico | Response: [{<br>id: 1<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | status code: 200 <br> Response: [{<br>id: 1<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | PASS |  Teste ocorreu como esperado |
 | Test Case 3: GET Limit Of Products |  Listar um intervalo de produtos (ex: 1 a 5) | Response: [{<br>id: 1<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}<br>...<br>{<br>id: 5<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | status code: 200 <br> Response: [{<br>id: 1<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}<br>...<br>{<br>id: 5<br>title: "..."<br>price: "..."<br>category: "..."<br>description: "..."<br>image: "..."<br>}] | PASS |  Teste ocorreu como esperado |
@@ -423,7 +434,7 @@ A seguir, os casos de teste estão separados em seus respectivos endpoints e em 
 <div align="center">
 
 | Cenário de Teste | Objetivo | Resultado Esperado | Resultado Obtido | Status |  Observações |
-| ------ | ------ | ------ | ------ | :------: | :------: |
+| :------: | ------ | ------ | ------ | :------: | :------: |
 | Test Case 1: GET Nonexist Product ID | Informar um ID que não existe para produto | não documentado | status code: 200 <br> Response: | PASS |  Teste deveria falhar, porém retornou status code 200 e response vazio |
 | Test Case 2: GET Negative Limit In Product ID | Buscar produtos em um intervalo negativo | não documentado | status code: 200 <br> Response: subtrai do valor total o número inserido e imprime na tela os id's restantes do cálculo (ex: 20 - 18 irá informar o id 1 e o id 2)  | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste ao invés de aceitar números negativos como intervalo |
 | Test Case 3: GET Highest Limit In Product ID | Buscar produtos em um intervalo maior do que o número de produtos cadastrados | não documentado | status code: 200 <br> Response: informa todos os produtos  | PASS | A API não está preparada para esse tipo de resposta, pois deveria falhar o teste ao invés de aceitar como intervalo um número que ultrapassa a quantidade total de produtos |
